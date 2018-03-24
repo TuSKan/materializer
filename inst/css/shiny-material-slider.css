@@ -1,0 +1,32 @@
+input[type=range].slider-indigo::-webkit-slider-thumb {
+  background-color:  #3f51b5;
+}
+input[type=range].slider-indigo::-moz-range-thumb {
+  background-color:  #3f51b5;
+}
+input[type=range].slider-indigo::-ms-thumb {
+  background-color:  #3f51b5;
+}
+
+input[type=range].slider-indigo + .thumb {
+  background-color:  #3f51b5;
+}
+
+input[type=range].slider-indigo + .thumb.active .value {
+  color: white;
+}
+input[type=range].slider-red-accent-4::-webkit-slider-thumb {
+  background-color: #d50000;
+}
+input[type=range].slider-red-accent-4::-moz-range-thumb {
+  background-color: #d50000;
+}
+input[type=range].slider-red-accent-4::-ms-thumb {
+  background-color: #d50000;
+}
+input[type=range].slider-red-accent-4 + .thumb {
+  background-color: #d50000;
+}
+input[type=range].slider-red-accent-4 + .thumb.active .value {
+  color: white;
+}

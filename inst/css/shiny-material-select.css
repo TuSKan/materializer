@@ -1,0 +1,7 @@
+.select-indigo ul.dropdown-content.select-dropdown li span {
+    color:  #3f51b5;
+}
+
+.select-indigo .select-wrapper input.select-dropdown:focus {
+    border-bottom: 1px solid #3f51b5;
+}
