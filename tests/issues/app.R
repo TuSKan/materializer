@@ -1,5 +1,5 @@
 library(shiny)
-library(shinymaterial)
+library(materialize)
 
 ui <- material_page(
   title = "Basic Page + Side-Nav with Tabs",

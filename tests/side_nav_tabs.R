@@ -1,8 +1,8 @@
 if(interactive()){
   library(shiny)
-  library(shinymaterial)
-  
-  # Wrap shinymaterial apps in material_page
+  library(materialize)
+
+  # Wrap materialize apps in material_page
   ui <- material_page(
     title = "Basic Page + Side-Nav with Tabs",
     # Place side-nav in the beginning of the UI
@@ -27,10 +27,10 @@ if(interactive()){
       tags$h1("Second Side-Nav Tab Content")
     )
   )
-  
-  
+
+
   server <- function(input, output) {
-    
+
   }
   shinyApp(ui = ui, server = server)
 }

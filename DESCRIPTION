@@ -1,9 +1,9 @@
 Package: materializer
 Type: Package
 Title: Implement Material Design in Shiny Applications
-Version: 0.6.0
+Version: 0.1.0
 Authors@R: c(
-    person("Eric", "Anderson", role = c("aut", "cre"), email = "eric.ray.anderson@gmail.com"),
+    person("Rener", "Castro", role = c("aut", "cre"), email = "tuskan.net@gmail.com"),
     person("Alvin", "Wang", role = c("ctb", "cph"), comment = "Materialize CSS library"),
     person("Alan", "Chang", role = c("ctb", "cph"), comment = "Materialize CSS library"),
     person("Alex", "Mark", role = c("ctb", "cph"), comment = "Materialize CSS library"),
@@ -13,7 +13,9 @@ Maintainer: Rener Castro <tuskan.net@gmail.com>
 Description: Allows shiny developers to incorporate UI elements based on Google's Material design. See <https://material.io/guidelines/> for more information.
 URL: 
 License: GPL-3 | file LICENSE
-Imports: shiny (>= 0.7.0)
+Depends: R (>= 3.0.0)
+Imports: shiny
 Encoding: UTF-8
 LazyData: true
+Roxygen: list(markdown = TRUE)
 RoxygenNote: 6.0.1

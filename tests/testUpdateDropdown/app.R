@@ -1,15 +1,15 @@
 if (interactive()) {
   library(shiny)
-  library(shinymaterial)
+  library(materializer)
 
-  # Wrap shinymaterial apps in material_page
+  # Wrap materialize apps in material_page
   ui <- material_page(
     title = "Basic Page", nav_bar_fixed = TRUE, include_fonts = TRUE,
     tags$h1("Page Content"),
     material_row(
       material_column(
         width = 4,
-        material_button(inputId = "btn1", label = "Select", color = "#ffd600"),
+        material_button(inputId = "btn1", label = "Select", color = "#ffd600", class = "round"),
         material_button(inputId = "btn2", label = "Choice", color = "#ffd600"),
         material_button(inputId = "btn3", label = "Label", color = "#ffd600"),
         material_button(inputId = "btn4", label = "Check", color = "#ffd600"),
@@ -19,7 +19,14 @@ if (interactive()) {
                         selected = 2,
                         color = "#ffd600"),
         material_checkbox(inputId = "chk1", label = "Checkbox", checked = TRUE, color = "#ffd600"),
-        material_text(inputId = "txt1", label = "Label", color = "#ffd600")
+        material_text(inputId = "txt1", label = "Label", color = "#ffd600"),
+        material_radio(inputId = "rdo1",
+                       choices = c("Radio 1" = 1,
+                                   "Radio 2" = 2),
+                       selected = 2,
+                       inline = FALSE,
+                       class = NULL,
+                       color = "#ffd600")
       ),
       material_column(
         width = 8,
@@ -45,11 +52,18 @@ if (interactive()) {
       update_material_select(
         inputId = "sel1",
         choices = c("Choice 3" = 1,
-                    "Choice 4" = 2)
+                    "Choice 4" = 2,
+                    "Choice 5" = 3)
       )
       update_material_text(
         inputId = "txt1",
         placeholder = "Pre-filled"
+      )
+      update_material_radio(
+        inputId = "rdo1",
+        choices = c("Radio 3" = 1,
+                    "Radio 4" = 2,
+                    "Radio 5" = 3)
       )
     }, ignoreInit = TRUE)
 
@@ -73,12 +87,22 @@ if (interactive()) {
         inputId = "chk1",
         checked = !input$chk1
       )
+      update_material_radio(
+        inputId = "rdo1",
+        disabled = (1 + !input$chk1)
+      )
     }, ignoreInit = TRUE)
 
     observeEvent(input$chk1, {
       update_material_text(
         inputId = "txt1",
         readonly = input$chk1
+      )
+    }, ignoreInit = TRUE)
+    observeEvent(input$rdo1, {
+      update_material_select(
+        inputId = "sel1",
+        selected = input$rdo1
       )
     }, ignoreInit = TRUE)
 

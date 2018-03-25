@@ -1,8 +1,8 @@
 if(interactive()){
   library(shiny)
-  library(shinymaterial)
+  library(materialize)
 
-  # Wrap shinymaterial apps in material_page
+  # Wrap materialize apps in material_page
   ui <- material_page(
     title = "Basic Page",
     include_fonts = TRUE,
