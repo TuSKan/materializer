@@ -1,0 +1,6 @@
+.switch-indigo input[type="checkbox"]:checked+.lever {
+    background-color: rgba(63,81,181,0.6) !important;
+}
+.switch-indigo input[type="checkbox"]:checked+.lever:after {
+    background-color: rgba(63,81,181,1) !important;
+}

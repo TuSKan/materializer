@@ -2,23 +2,27 @@
 % Please edit documentation in R/materialize-switch.R
 \name{material_switch}
 \alias{material_switch}
+\alias{update_material_switch}
 \title{Create a materialize switch}
 \usage{
-material_switch(inputId, label, off_label = "", on_label = "",
-  initial_value = FALSE, color = NULL)
+material_switch(inputId, on = "On", off = "Off", init = FALSE,
+  disabled = FALSE, color = NULL)
+
+update_material_switch(inputId, on = NULL, off = NULL, init = NULL,
+  disabled = NULL, session = shiny::getDefaultReactiveDomain())
 }
 \arguments{
 \item{inputId}{String. The input identifier used to access the value.}
 
-\item{label}{String. The switch label.}
+\item{on}{String. The label for the 'on' position of the switch.}
 
-\item{off_label}{String. The label for the 'off' position of the switch.}
+\item{off}{String. The label for the 'off' position of the switch.}
 
-\item{on_label}{String. The label for the 'on' position of the switch.}
+\item{init}{Boolean. Is the switch initially on?}
 
-\item{initial_value}{Boolean. Is the switch initially on?}
+\item{disabled}{String. The radio button should be disabled?}
 
-\item{color}{String. The color of the switch. Leave empty for the default color. Visit \url{http://materializecss.com/color.html} for a list of available colors. \emph{This input requires using color hex codes, rather than the word form. E.g., "#ef5350", rather than "red lighten-1".}}
+\item{color}{String. The color of the switch. Leave empty for the default color. Visit \url{http://materializecss.com/color.html} for a list of available colors.}
 }
 \description{
 Build a materialize switch. The value is a boolean (TRUE if 'on', FALSE if 'off').
@@ -26,10 +30,9 @@ Build a materialize switch. The value is a boolean (TRUE if 'on', FALSE if 'off'
 \examples{
 material_switch(
   inputId = "example_switch",
-  label = "Switch",
-  off_label = "Off",
-  on_label = "On",
-  initial_value = TRUE,
+  off = "Off",
+  on = "On",
+  init = TRUE,
   color = "#ef5350"
 )
 }

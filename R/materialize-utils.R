@@ -13,6 +13,11 @@ clean <- function(x) x[!vapply(x, isEmpty, FUN.VALUE = logical(1))]
 
 cleanList <- function(...) clean(list(...))
 
+hex2rgb <- function(hexcol) {
+  if (substr(hexcol,1,1) != "#") stop("helcol is not a hex code color")
+  setNames(strtoi(c(substr(hexcol,2,3),substr(hexcol,4,5),substr(hexcol,6,7)), 16), c("r","g","b"))
+}
+
 includeInHead <- function(..., style = NULL, script = NULL, package = "materializer") {
   files <- list(...)
   shiny::tagList(

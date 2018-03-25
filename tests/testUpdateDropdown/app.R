@@ -26,7 +26,8 @@ if (interactive()) {
                        selected = 2,
                        inline = FALSE,
                        class = NULL,
-                       color = "#ffd600")
+                       color = "#ffd600"),
+        material_switch(inputId = "sch1", on = "On", off = "Off", init = TRUE, color = "#ffd600")
       ),
       material_column(
         width = 8,
@@ -46,6 +47,10 @@ if (interactive()) {
         inputId = "sel1",
         selected = 2
       )
+      update_material_switch(
+        inputId = "sch1",
+        init = !input$sch1
+      )
     }, ignoreInit = TRUE)
 
     observeEvent(input$btn2, {
@@ -64,6 +69,13 @@ if (interactive()) {
         choices = c("Radio 3" = 1,
                     "Radio 4" = 2,
                     "Radio 5" = 3)
+
+      )
+      update_material_switch(
+        inputId = "sch1",
+        on = "Up",
+        off = "Down",
+        init = FALSE
       )
     }, ignoreInit = TRUE)
 
@@ -97,6 +109,10 @@ if (interactive()) {
       update_material_text(
         inputId = "txt1",
         readonly = input$chk1
+      )
+      update_material_switch(
+        inputId = "sch1",
+        disabled = input$chk1
       )
     }, ignoreInit = TRUE)
     observeEvent(input$rdo1, {

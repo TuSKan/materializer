@@ -19,7 +19,7 @@
 material_card <- function(..., title = NULL, img = NULL, footer = NULL, class = "stacked", header = TRUE, depth = NULL, horizontal = FALSE) {
 
     shiny::div(
-      class = paste("card", ifDef(depth, "z-depth-"), ifDef(horizontal, "horizontal")),
+      class = paste("card", "hoverable", ifDef(depth, "z-depth-"), ifDef(horizontal, "horizontal")),
       if (header) {
         shiny::div(
           class = ifelse(is.null(img), "card-header", "card-image"),

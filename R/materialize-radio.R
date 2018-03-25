@@ -4,7 +4,7 @@
 #' @param inputId String. The input identifier used to access the value.
 #' @param choices Named vector. The radio names and underyling values.
 #' @param selected String. The initially selected underyling value.
-#' @param disabled String. The radio button label.
+#' @param disabled String. The radio button should be disabled?
 #' @param class String. Aditional class for checkbox. Values should be with-gap or NULL
 #' @param inline Logical. The option to create the radio buttons inline.
 #' @param color String. The hex code color of the radio buttons. Leave empty for the default color. Visit \url{http://materializecss.com/color.html} for a list of available colors.

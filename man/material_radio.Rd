@@ -14,11 +14,11 @@ update_material_radio(inputId, choices = NULL, selected = NULL,
 \arguments{
 \item{inputId}{String. The input identifier used to access the value.}
 
-\item{choices}{Named vector. The option names and underyling values.}
+\item{choices}{Named vector. The radio names and underyling values.}
 
 \item{selected}{String. The initially selected underyling value.}
 
-\item{disabled}{String. The radio button label.}
+\item{disabled}{String. The radio button should be disabled?}
 
 \item{class}{String. Aditional class for checkbox. Values should be with-gap or NULL}
 
