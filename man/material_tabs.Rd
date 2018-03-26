@@ -2,14 +2,31 @@
 % Please edit documentation in R/materialize-tabs.R
 \name{material_tabs}
 \alias{material_tabs}
+\alias{update_material_tabs}
 \title{Place UI content within a tab}
 \usage{
-material_tabs(tabs, color = NULL)
+material_tabs(inputId, tabs, ..., active = NULL, incard = FALSE,
+  color = NULL, background_color = NULL)
+
+update_material_tabs(inputId, active = NULL,
+  session = shiny::getDefaultReactiveDomain())
 }
 \arguments{
+\item{inputId}{String. The input identifier used to access the value.}
+
 \item{tabs}{Named vector. The tab display names and corresponding tab ids.}
 
-\item{color}{String. The accent color of the tabs. Leave blank for the default color. Visit \url{http://materializecss.com/color.html} for a list of available colors. \emph{Tab color requires using word forms of colors (e.g. "deep-purple"). Also, lighten or darken effects do not work on tab colors.}}
+\item{...}{tagList. The material_tab_content elements}
+
+\item{active}{logical Which tab should be actived}
+
+\item{incard}{Logical. This tabs willinsert in a card ?}
+
+\item{color}{String. The hex code color of the tabs. Leave blank for the default color. Visit \url{http://materializecss.com/color.html} for a list of available colors.}
+
+\item{background_color}{String. The hex code background color of the tabs. Leave blank for the default color. Visit \url{http://materializecss.com/color.html} for a list of available colors.}
+
+\item{session}{Shiny default reactive domain.}
 }
 \description{
 Use this function to create tabs in your application.
@@ -20,6 +37,13 @@ material_tabs(
     "Example Tab 1" = "example_tab_1",
     "Example Tab 2" = "example_tab_2"
   ),
-  color = "deep-purple"
+  material_tab_content(
+    inputId = "example_tab_1",
+    h5("Content of Example Tab 1")
+  ),
+  material_tab_content(
+    inputId = "example_tab_2",
+    h5("Content of Example Tab 2")
+  )
 )
 }

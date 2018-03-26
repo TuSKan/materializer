@@ -6,7 +6,7 @@
 #' @param icon String. The name of the icon. Leave empty for no icon. Visit \url{http://materializecss.com/icons.html} for a list of available icons.
 #' @param class String. Aditional class for button. Value should be round, floating, large and small.
 #' @param depth Integer. The amount of depth of the button. The value should be between 0 and 5. Leave empty for the default depth.
-#' @param color String. The hex codes color of the check. Leave empty for the default color. Visit \url{http://materializecss.com/color.html} for a list of available colors. \emph{This input requires using color hex codes, rather than the word form. E.g., "#ef5350", rather than "red lighten-1".}
+#' @param color String. The hex codes color of the check. Leave empty for the default color. Visit \url{http://materializecss.com/color.html} for a list of available colors.
 #' @examples
 #' material_button(
 #'   inputId = "example_button",

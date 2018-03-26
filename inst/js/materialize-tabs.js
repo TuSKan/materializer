@@ -1,9 +1,44 @@
-$(document).ready(function(){
-  //$('ul.tabs').tabs();
-  $(document).on("click", "li.tab a", function () {
-    $(this).trigger("shown");
+$(document).ready(function () {
+    function initmaterializeTabs(callback) {
+        $('.tabs').tabs();
+        callback();
+    }
+
+    initmaterializeTabs(function () {
+
+        var materializeTabs = new Shiny.InputBinding();
+        $.extend(materializeTabs, {
+            find: function (scope) {
+                return $(scope).find(".materialize-tabs");
+            },
+            getValue: function (el) {
+              return $(el).find("a.active").attr("href");
+            },
+            setValue: function(el, value) {
+              var instance = M.Tabs.getInstance($(el).find('.tabs'));
+              instance.select(value);
+              $(el).change();
+            },
+            getState: function(el) {
+              return { value: this.getValue(el) };
+            },
+            subscribe: function (el, callback) {
+                $(el).on("change.materialize-tabs", function (e) {
+                    callback();
+                });
+            },
+            unsubscribe: function (el) {
+              M.Tabs.getInstance($(el).find('.tabs')).destroy();
+            },
+            receiveMessage: function(el, data) {
+              var $el = $(el);
+              if (data.active !== undefined) {
+                this.setValue(el, data.active);
+                return;
+              }
+            }
+        });
+
+        Shiny.inputBindings.register(materializeTabs);
+    });
 });
-  $(".materialize-tab-content").css("visibility", "visible")
-})
-
-

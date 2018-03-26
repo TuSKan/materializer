@@ -7,8 +7,10 @@
 #' @param footer The UI elements to place in the card footer
 #' @param class The aditional class to the card. Values shound be stacked or panel.
 #' @param header Option to include a header in the card.
+#' @param tabs A material_tabs object to insert inside the card
 #' @param depth Integer. The amount of depth of the card. The value should be between 0 and 5. Leave empty for the default depth.
-#' @param horizontal Should the card be on horizontal orientation?
+#' @param horizontal Should the card be on horizontal orientation?'
+#' @param background_color String. The hex codes background color of the card. Leave empty for the default color. Visit \url{http://materializecss.com/color.html} for a list of available colors.
 #' @examples
 #' material_card(
 #'   title = "Example Card",
@@ -16,10 +18,15 @@
 #'   footer = shiny::hr()
 #' )
 #' @export
-material_card <- function(..., title = NULL, img = NULL, footer = NULL, class = "stacked", header = TRUE, depth = NULL, horizontal = FALSE) {
+material_card <- function(..., title = NULL, img = NULL, footer = NULL, class = "stacked", header = TRUE, tabs = NULL, depth = NULL, horizontal = FALSE, hoverable = TRUE, background_color = NULL) {
 
     shiny::div(
-      class = paste("card", "hoverable", ifDef(depth, "z-depth-"), ifDef(horizontal, "horizontal")),
+      class = paste("card",
+                    if (hoverable) "hoverable",
+                    ifDef(depth, "z-depth-"),
+                    ifDef(horizontal, "horizontal"),
+                    if (!is.null(background_color)) material_colormap(background_color)
+              ),
       if (header) {
         shiny::div(
           class = ifelse(is.null(img), "card-header", "card-image"),
@@ -36,6 +43,9 @@ material_card <- function(..., title = NULL, img = NULL, footer = NULL, class = 
           class = "card-content",
           ...
         ),
+        if (!is.null(tabs)) {
+            tabs
+        },
         if (!is.null(footer)) {
           shiny::div(
             class = "card-action",

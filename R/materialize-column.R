@@ -22,3 +22,51 @@ material_column <- function(..., width = 6, type = "s", offset = NULL){
     ...
   )
 }
+
+
+
+#' Create a section to organize UI content
+#'
+#' UI content can be insert in section to organize items on a page.
+#' @param ... The UI elements to place in the column.
+#' @param title Integer. The width of the column. The value should be between 1 and 12.
+#' @examples
+#' material_section(
+#'   title = "Section",
+#'   shiny::h1("Content goes here")
+#' )
+#' @export
+material_section <- function(..., title = NULL){
+  shiny::div(
+    class = "section",
+    if (!is.null(title)) shiny::tags$h5(title),
+    ...
+  )
+}
+
+#' Create a divider to organize UI content
+#'
+#' UI content can be divide to organize items on a page.
+#' @examples
+#' material_divider()
+#' @export
+material_divider <- function(){
+  shiny::div(
+    class = "divider"
+  )
+}
+
+#' Create a container to organize UI content
+#'
+#' UI content can be insert in a container to organize items on a page.
+#' @param ... tagList. UI content list
+#' @examples
+#' material_container()
+#' @export
+material_container <- function(...){
+  shiny::div(
+    class = "container",
+    ...
+  )
+}
+

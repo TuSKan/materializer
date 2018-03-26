@@ -7,6 +7,7 @@
 #' @param init Boolean. Is the switch initially on?
 #' @param disabled String. The radio button should be disabled?
 #' @param color String. The color of the switch. Leave empty for the default color. Visit \url{http://materializecss.com/color.html} for a list of available colors.
+#' @param session Shiny default reactive domain.
 #' @examples
 #' material_switch(
 #'   inputId = "example_switch",

@@ -18,7 +18,7 @@ material_button(inputId, label, icon = NULL, class = NULL, depth = NULL,
 
 \item{depth}{Integer. The amount of depth of the button. The value should be between 0 and 5. Leave empty for the default depth.}
 
-\item{color}{String. The hex codes color of the check. Leave empty for the default color. Visit \url{http://materializecss.com/color.html} for a list of available colors. \emph{This input requires using color hex codes, rather than the word form. E.g., "#ef5350", rather than "red lighten-1".}}
+\item{color}{String. The hex codes color of the check. Leave empty for the default color. Visit \url{http://materializecss.com/color.html} for a list of available colors.}
 }
 \description{
 Build a materialize button. The initial value is zero, and increases by one on each press.

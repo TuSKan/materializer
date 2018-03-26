@@ -4,18 +4,16 @@
 \alias{material_page}
 \title{Create a materialize page}
 \usage{
-material_page(..., title = "", nav_bar_fixed = FALSE,
-  nav_bar_color = NULL, background_color = "grey lighten-4",
-  font_color = NULL, include_fonts = FALSE)
+material_page(..., title = "", footer = NULL,
+  background_color = "grey lighten-4", font_color = NULL,
+  include_fonts = FALSE)
 }
 \arguments{
 \item{...}{The UI elements to place in the page.}
 
 \item{title}{String. The title of the page.}
 
-\item{nav_bar_fixed}{Boolean. Should the nav bar remain fixed on the screen?}
-
-\item{nav_bar_color}{Color of the nav bar. Leave blank for the default color. Visit \url{http://materializecss.com/color.html} for a list of available colors.}
+\item{footer}{tagList. The footerof thepage}
 
 \item{background_color}{Page background color. Leave blank for the default color. Visit \url{http://materializecss.com/color.html} for a list of available colors.}
 

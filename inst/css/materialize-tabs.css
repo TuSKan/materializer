@@ -1,3 +1,14 @@
-.materialize-tab-content > .active {
-    display: block;
+.tabs-indigo .indicator {
+  background-color: #3f51b5;
+}
+
+.tabs-indigo .tab a,
+.tabs-indigo .tab.disabled a,
+.tabs-indigo .tab.disabled a:hover {
+  color: rgba(63,81,181,0.6);
+}
+
+.tabs-indigo .tab a:hover,
+.tabs-indigo .tab a.active {
+  color: #3f51b5;
 }

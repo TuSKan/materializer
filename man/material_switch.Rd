@@ -23,6 +23,8 @@ update_material_switch(inputId, on = NULL, off = NULL, init = NULL,
 \item{disabled}{String. The radio button should be disabled?}
 
 \item{color}{String. The color of the switch. Leave empty for the default color. Visit \url{http://materializecss.com/color.html} for a list of available colors.}
+
+\item{session}{Shiny default reactive domain.}
 }
 \description{
 Build a materialize switch. The value is a boolean (TRUE if 'on', FALSE if 'off').

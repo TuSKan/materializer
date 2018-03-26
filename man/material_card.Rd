@@ -5,7 +5,8 @@
 \title{Create a card that will contain UI content}
 \usage{
 material_card(..., title = NULL, img = NULL, footer = NULL,
-  class = "stacked", header = TRUE, depth = NULL, horizontal = FALSE)
+  class = "stacked", header = TRUE, tabs = NULL, depth = NULL,
+  horizontal = FALSE, hoverable = TRUE, background_color = NULL)
 }
 \arguments{
 \item{...}{The UI elements to place in the card}
@@ -20,9 +21,13 @@ material_card(..., title = NULL, img = NULL, footer = NULL,
 
 \item{header}{Option to include a header in the card.}
 
+\item{tabs}{A material_tabs object to insert inside the card}
+
 \item{depth}{Integer. The amount of depth of the card. The value should be between 0 and 5. Leave empty for the default depth.}
 
-\item{horizontal}{Should the card be on horizontal orientation?}
+\item{horizontal}{Should the card be on horizontal orientation?'}
+
+\item{background_color}{String. The hex codes background color of the card. Leave empty for the default color. Visit \url{http://materializecss.com/color.html} for a list of available colors.}
 }
 \description{
 UI content can be placed in cards to organize items on a page.
