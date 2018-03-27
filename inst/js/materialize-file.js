@@ -6,8 +6,7 @@ $(document).ready(function () {
             return $(scope).find(".materialize-file-input");
         },
         getValue: function (el) {
-
-            function () {
+           function () {
                 var file = el.files[0];
                 if (file) {
                     read = new FileReader();
@@ -28,4 +27,4 @@ $(document).ready(function () {
     });
 
     Shiny.inputBindings.register(materializeFileInput);
-});
+  });

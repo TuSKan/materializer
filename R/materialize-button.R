@@ -22,7 +22,7 @@ material_button <- function(inputId, label, icon = NULL, class = NULL, depth = N
     class =
       paste(
         "waves-effect waves-light btn materialize-button",
-        ifDef(class),
+        ifDef(class, "btn-"),
         ifDef(depth, "z-depth-"),
         ifDef(material_colormap(color))
       ),
