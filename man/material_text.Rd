@@ -2,15 +2,60 @@
 % Please edit documentation in R/materialize-text.R
 \name{material_text}
 \alias{material_text}
+\alias{material_number}
+\alias{material_email}
+\alias{material_password}
+\alias{material_date}
+\alias{material_time}
 \alias{update_material_text}
+\alias{update_material_number}
+\alias{update_material_email}
+\alias{update_material_password}
+\alias{update_material_date}
 \title{Create a materialize text box}
 \usage{
 material_text(inputId, label, placeholder = NULL, inline = FALSE,
-  readonly = FALSE, help = NULL, type = "text", icon = NULL,
+  readonly = FALSE, help = NULL, type = "text", class = NULL,
+  icon = NULL, color = NULL)
+
+material_number(inputId, label, placeholder = NULL, inline = FALSE,
+  readonly = FALSE, help = NULL, class = NULL, icon = NULL,
   color = NULL)
 
-update_material_text(inputId, label = NULL, placeholder = NULL,
-  readonly = NULL, help = NULL,
+material_email(inputId, label, placeholder = NULL, inline = FALSE,
+  readonly = FALSE, help = NULL, class = NULL, icon = NULL,
+  color = NULL)
+
+material_password(inputId, label, placeholder = NULL, inline = FALSE,
+  readonly = FALSE, help = NULL, class = NULL, icon = NULL,
+  color = NULL)
+
+material_date(inputId, label, placeholder = NULL, inline = FALSE,
+  readonly = FALSE, help = NULL, class = NULL, icon = NULL,
+  color = NULL)
+
+material_time(inputId, label, placeholder = NULL, inline = FALSE,
+  readonly = FALSE, help = NULL, class = NULL, icon = NULL,
+  color = NULL)
+
+update_material_text(inputId, value = NULL, label = NULL,
+  placeholder = NULL, readonly = NULL, help = NULL,
+  session = shiny::getDefaultReactiveDomain())
+
+update_material_number(inputId, value = NULL, label = NULL,
+  placeholder = NULL, readonly = FALSE, help = NULL,
+  session = shiny::getDefaultReactiveDomain())
+
+update_material_email(inputId, value = NULL, label = NULL,
+  placeholder = NULL, readonly = FALSE, help = NULL,
+  session = shiny::getDefaultReactiveDomain())
+
+update_material_password(inputId, value = NULL, label = NULL,
+  placeholder = NULL, readonly = FALSE, help = NULL,
+  session = shiny::getDefaultReactiveDomain())
+
+update_material_date(inputId, value = NULL, label = NULL,
+  placeholder = NULL, readonly = FALSE, help = NULL,
   session = shiny::getDefaultReactiveDomain())
 }
 \arguments{
@@ -26,11 +71,15 @@ update_material_text(inputId, label = NULL, placeholder = NULL,
 
 \item{help}{String. The helper text below text input.}
 
-\item{type}{String. The type of the text input. Valiue should be text, email, password.}
+\item{type}{String. The type of the text input. Valiue should be text, number, email, password, time, date}
+
+\item{class}{String. Additional class for text input.}
 
 \item{icon}{String. The name of the icon. Leave empty for no icon. Visit \url{http://materializecss.com/icons.html} for a list of available icons.}
 
 \item{color}{String. The hex code color of the text box. Leave empty for the default color. Visit \url{http://materializecss.com/color.html} for a list of available colors. \emph{This input requires using color hex codes, rather than the word form. E.g., "#ef5350", rather than "red lighten-1".}}
+
+\item{value}{String or Numeric. The value to update the input.}
 
 \item{session}{Shiny default reactive domain.}
 }

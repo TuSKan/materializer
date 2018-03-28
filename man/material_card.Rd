@@ -9,23 +9,25 @@ material_card(..., title = NULL, img = NULL, footer = NULL,
   horizontal = FALSE, hoverable = TRUE, background_color = NULL)
 }
 \arguments{
-\item{...}{The UI elements to place in the card}
+\item{...}{tagList. The UI elements to place in the card}
 
 \item{title}{String. The title of the card}
 
 \item{img}{String. The filepath of a image of the card}
 
-\item{footer}{The UI elements to place in the card footer}
+\item{footer}{tagList. The UI elements to place in the card footer}
 
-\item{class}{The aditional class to the card. Values shound be stacked or panel.}
+\item{class}{String. The aditional class to the card. Values shound be stacked or panel.}
 
-\item{header}{Option to include a header in the card.}
+\item{header}{Logical. Option to include a header in the card.}
 
-\item{tabs}{A material_tabs object to insert inside the card}
+\item{tabs}{tgList. A material_tabs object to insert inside the card}
 
 \item{depth}{Integer. The amount of depth of the card. The value should be between 0 and 5. Leave empty for the default depth.}
 
-\item{horizontal}{Should the card be on horizontal orientation?'}
+\item{horizontal}{Logical. Should the card be on horizontal orientation?'}
+
+\item{hoverable}{Loginal. Enable/disable hover effect.}
 
 \item{background_color}{String. The hex codes background color of the card. Leave empty for the default color. Visit \url{http://materializecss.com/color.html} for a list of available colors.}
 }

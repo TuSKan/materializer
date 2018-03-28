@@ -1,0 +1,19 @@
+/* label focus color */
+.datepicker-date-display {
+  background-color: #3f51b5 !important;
+}
+
+.datepicker-cancel,
+.datepicker-clear,
+.datepicker-today,
+.datepicker-done{
+  color: #3f51b5 !important;
+}
+
+td .is-today {
+  color: #3f51b5;
+}
+
+td .is-selected {
+  background-color: #3f51b5;
+}

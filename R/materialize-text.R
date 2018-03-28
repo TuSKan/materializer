@@ -7,9 +7,11 @@
 #' @param inline Logical. The text input should be inline with others elements?. Value should be TRUE or FALSE
 #' @param readonly Logical. The text input should be read-only?. Value should be TRUE or FALSE
 #' @param help String. The helper text below text input.
-#' @param type String. The type of the text input. Valiue should be text, email, password.
+#' @param type String. The type of the text input. Valiue should be text, number, email, password, time, date
+#' @param class String. Additional class for text input.
 #' @param icon String. The name of the icon. Leave empty for no icon. Visit \url{http://materializecss.com/icons.html} for a list of available icons.
 #' @param color String. The hex code color of the text box. Leave empty for the default color. Visit \url{http://materializecss.com/color.html} for a list of available colors. \emph{This input requires using color hex codes, rather than the word form. E.g., "#ef5350", rather than "red lighten-1".}
+#' @param value String or Numeric. The value to update the input.
 #' @param session Shiny default reactive domain.
 #' @examples
 #' material_text(
@@ -18,14 +20,21 @@
 #'   color = "#ef5350"
 #' )
 #' @export
-material_text <- function(inputId, label, placeholder = NULL, inline = FALSE, readonly = FALSE, help = NULL, type = "text", icon = NULL, color = NULL) {
+material_text <- function(inputId, label, placeholder = NULL, inline = FALSE, readonly = FALSE, help = NULL, type = "text", class = NULL, icon = NULL, color = NULL) {
 
   if (is.null(color)) color <- default_color
   colornm <- css.names(material_colormap(color))
 
+  fileIncl <- "text"
+  typeInput <- type
+  if (type %in% c("date","time")) {
+    fileIncl <- type
+    class <- c(class,paste0(type, "picker"))
+    typeInput <- "text"
+  }
+
   shiny::tags$div(
-    id = paste0("inputField",inputId),
-    class = paste("input-field", if (inline) "inline", paste0("textinput-", colornm) ,"materialize-text"),
+    class = paste("input-field", if (inline) "inline", paste0("text-", colornm)),
     if (!is.null(icon)) {
       shiny::tags$i(
         class = "material-icons prefix",
@@ -36,8 +45,8 @@ material_text <- function(inputId, label, placeholder = NULL, inline = FALSE, re
       disable = if (readonly) NA,
       id = inputId,
       placeholder = placeholder,
-      type = type,
-      class = "validate"
+      type = typeInput,
+      class = paste("validate", class, paste0("materialize-",type))
     ),
     shiny::tags$label(
       "for" = inputId,
@@ -52,26 +61,66 @@ material_text <- function(inputId, label, placeholder = NULL, inline = FALSE, re
       )
     },
     includeInHead(
-      "materialize-text.js",
-      "materialize-text.css",
+      paste0("materialize-",fileIncl,".js"),
+      paste0("materialize-text.css"),
       style = paste0(
       '/* label focus color */
-        .textinput-', colornm,' input[type=',type,']:not(.browser-default):focus:not([readonly]) + label {
+        .text-', colornm,' input[type=',typeInput,']:not(.browser-default):focus:not([readonly]) + label {
           color: ', color,';
         }
       /* label underline focus color */
-        .textinput-', colornm,' input[type=',type,']:not(.browser-default):focus:not([readonly]) {
+        .text-', colornm,' input[type=',typeInput,']:not(.browser-default):focus:not([readonly]) {
           border-bottom: 1px solid ', color,';
           box-shadow: 0 1px 0 0 ', color,';
         }
       /* label underline valid color */
-          .textinput-', colornm,' input[type=',type,'].valid:not(.browser-default) {
+          .text-', colornm,' input[type=',typeInput,'].valid:not(.browser-default) {
           border-bottom: 1px solid ', color,';
           box-shadow: 0 1px 0 0 ', color,';
       }
       /* icon prefix focus color */
-        .textinput-', colornm,' .prefix.active {
+        .text-', colornm,' .prefix.active {
           color: ', color,';
+        }
+        /* time modal */
+        .timepicker-digital-display {
+          background-color: ', color,' !important;
+        }
+        .timepicker-close {
+          color: ', color,' !important;
+        }
+        .timepicker-tick.active, .timepicker-tick:hover {
+          background-color: rgba(', paste(hex2rgb(color),collapse = ","),',0.25) !important;
+        }
+        .timepicker-tick.active, .timepicker-tick:hover {
+         background-color: rgba(', paste(hex2rgb(color),collapse = ","),',0.25) !important;
+        }
+        .timepicker-canvas line {
+         stroke: ', color,' !important;
+        }
+        .timepicker-canvas-bearing {
+         fill: ', color,' !important;
+        }
+        .timepicker-canvas-bg {
+         fill: ', color,' !important;
+        }
+        .datepicker-date-display {
+         background-color: ', color,' !important;
+        }
+        .datepicker-cancel,
+        .datepicker-clear,
+        .datepicker-today,
+        .datepicker-done{
+          color: ', color,' !important;
+        }
+        .datepicker-table td.is-today {
+          color: ', color,' !important;
+        }
+        .datepicker-table td.is-selected {
+         background-color: ', color,' !important;
+        }
+        .datepicker-day-button:focus {
+          background-color: rgba(', paste(hex2rgb(color),collapse = ","),',0.25) !important;
         }'
       )
     )
@@ -82,14 +131,73 @@ material_text <- function(inputId, label, placeholder = NULL, inline = FALSE, re
 
 #' @rdname material_text
 #' @export
-update_material_text <- function(inputId, label = NULL, placeholder = NULL, readonly = NULL, help = NULL, session = shiny::getDefaultReactiveDomain()) {
+material_number <- function(inputId, label, placeholder = NULL, inline = FALSE, readonly = FALSE, help = NULL, class = NULL, icon = NULL, color = NULL) {
+  material_text(inputId = inputId, label = label, placeholder = placeholder, inline = inline, readonly = readonly, help = help, type = "number", class = class, icon = icon, color = color)
+}
+
+#' @rdname material_text
+#' @export
+material_email <- function(inputId, label, placeholder = NULL, inline = FALSE, readonly = FALSE, help = NULL, class = NULL, icon = NULL, color = NULL) {
+  material_text(inputId = inputId, label = label, placeholder = placeholder, inline = inline, readonly = readonly, help = help, type = "email", class = class, icon = icon, color = color)
+}
+
+#' @rdname material_text
+#' @export
+material_password <- function(inputId, label, placeholder = NULL, inline = FALSE, readonly = FALSE, help = NULL, class = NULL, icon = NULL, color = NULL) {
+  material_text(inputId = inputId, label = label, placeholder = placeholder, inline = inline, readonly = readonly, help = help, type = "password", class = class, icon = icon, color = color)
+}
+
+#' @rdname material_text
+#' @export
+material_date <- function(inputId, label, placeholder = NULL, inline = FALSE, readonly = FALSE, help = NULL, class = NULL, icon = NULL, color = NULL) {
+  material_text(inputId = inputId, label = label, placeholder = placeholder, inline = inline, readonly = readonly, help = help, type = "date", class = class, icon = icon, color = color)
+}
+
+#' @rdname material_text
+#' @export
+material_time <- function(inputId, label, placeholder = NULL, inline = FALSE, readonly = FALSE, help = NULL, class = NULL, icon = NULL, color = NULL) {
+  material_text(inputId = inputId, label = label, placeholder = placeholder, inline = inline, readonly = readonly, help = help, type = "time", class = class, icon = icon, color = color)
+}
+
+#
+# update
+#
+
+#' @rdname material_text
+#' @export
+update_material_text <- function(inputId, value = NULL, label = NULL, placeholder = NULL, readonly = NULL, help = NULL, session = shiny::getDefaultReactiveDomain()) {
   session$sendInputMessage(
-    paste0("inputField",inputId),
+      inputId,
     cleanList(
+      value = value,
       label = label,
       placeholder = placeholder,
       readonly = readonly,
       help = help
     )
   )
+}
+
+#' @rdname material_text
+#' @export
+update_material_number <- function(inputId, value = NULL, label = NULL, placeholder = NULL, readonly = FALSE, help = NULL, session = shiny::getDefaultReactiveDomain()) {
+  update_material_text(inputId = inputId, value = value, label = label, placeholder = placeholder, readonly = readonly, help = help, session = session)
+}
+
+#' @rdname material_text
+#' @export
+update_material_email <- function(inputId, value = NULL, label = NULL, placeholder = NULL, readonly = FALSE, help = NULL, session = shiny::getDefaultReactiveDomain()) {
+  update_material_text(inputId = inputId, value = value,label = label, placeholder = placeholder, readonly = readonly, help = help, session = session)
+}
+
+#' @rdname material_text
+#' @export
+update_material_password <- function(inputId, value = NULL, label = NULL, placeholder = NULL, readonly = FALSE, help = NULL, session = shiny::getDefaultReactiveDomain()) {
+  update_material_text(inputId = inputId, value = value,label = label, placeholder = placeholder, readonly = readonly, help = help, session = session)
+}
+
+#' @rdname material_text
+#' @export
+update_material_date <- function(inputId, value = NULL, label = NULL, placeholder = NULL, readonly = FALSE, help = NULL, session = shiny::getDefaultReactiveDomain()) {
+  update_material_text(inputId = inputId, value = value,label = label, placeholder = placeholder, readonly = readonly, help = help, session = session)
 }

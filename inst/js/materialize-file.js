@@ -8,10 +8,10 @@ $(document).ready(function () {
         getValue: function (el) {
            function () {
                 var file = el.files[0];
-                if (file) {
+         //       if (file) {
                     read = new FileReader();
-                    read.readAsDataURL(file);
-                }
+        //            read.readAsDataURL(file);
+         //       }
 
                 return read.result;
             }

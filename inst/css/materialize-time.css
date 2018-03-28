@@ -1,0 +1,24 @@
+/* label focus color */
+.timepicker-digital-display {
+  background-color: #3f51b5 !important;
+}
+
+.timepicker-close {
+  color: #3f51b5 !important;
+}
+
+.timepicker-tick.active, .timepicker-tick:hover {
+  background-color: rgba(63,81,181,0.25) !important;
+}
+
+.timepicker-canvas line {
+  stroke: #3f51b5 !important;
+}
+
+.timepicker-canvas-bearing {
+  fill: #3f51b5 !important;
+}
+
+.timepicker-canvas-bg {
+  fill: #3f51b5 !important;
+}

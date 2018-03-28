@@ -1,12 +1,12 @@
 $(document).ready(function () {
 
-    var materializeTextBox = new Shiny.InputBinding();
-    $.extend(materializeTextBox, {
+    var materializeText = new Shiny.InputBinding();
+    $.extend(materializeText, {
         find: function (scope) {
             return $(scope).find(".materialize-text");
         },
         getValue: function (el) {
-            return $(el).find("input").val();
+            return $(el).val();
         },
         subscribe: function (el, callback) {
             $(el).on("change.materialize-text", function (e) {
@@ -19,29 +19,31 @@ $(document).ready(function () {
         receiveMessage: function(el, data) {
            var $el = $(el);
 
+            if (data.value !== undefined) {
+              $el.val(data.value).change();
+              return;
+            }
             if (data.label !== undefined) {
-              $el.find("label")
+              $el.parent().find("label")
               .text(data.label).change();
               return;
             }
             if (data.placeholder !== undefined) {
-              $el.find("input")
-              .prop("placeholder", data.placeholder).change();
+              $el.prop("placeholder", data.placeholder).change();
               M.updateTextFields();
               return;
             }
             if (data.readonly !== undefined) {
-              $el.find("input")
-              .prop("disabled", data.readonly).change();
+              $el.prop("disabled", data.readonly).change();
               return;
             }
             if (data.help !== undefined) {
-              $el.find("span")
+              $el.parent().find("span")
               .text(data.help).change();
               return;
             }
          }
     });
 
-    Shiny.inputBindings.register(materializeTextBox);
+    Shiny.inputBindings.register(materializeText);
 });

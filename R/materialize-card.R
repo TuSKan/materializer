@@ -1,15 +1,16 @@
 #' Create a card that will contain UI content
 #'
 #' UI content can be placed in cards to organize items on a page.
-#' @param ... The UI elements to place in the card
+#' @param ... tagList. The UI elements to place in the card
 #' @param title String. The title of the card
 #' @param img String. The filepath of a image of the card
-#' @param footer The UI elements to place in the card footer
-#' @param class The aditional class to the card. Values shound be stacked or panel.
-#' @param header Option to include a header in the card.
-#' @param tabs A material_tabs object to insert inside the card
+#' @param footer tagList. The UI elements to place in the card footer
+#' @param class String. The aditional class to the card. Values shound be stacked or panel.
+#' @param header Logical. Option to include a header in the card.
+#' @param tabs tgList. A material_tabs object to insert inside the card
 #' @param depth Integer. The amount of depth of the card. The value should be between 0 and 5. Leave empty for the default depth.
-#' @param horizontal Should the card be on horizontal orientation?'
+#' @param horizontal Logical. Should the card be on horizontal orientation?'
+#' @param hoverable Loginal. Enable/disable hover effect.
 #' @param background_color String. The hex codes background color of the card. Leave empty for the default color. Visit \url{http://materializecss.com/color.html} for a list of available colors.
 #' @examples
 #' material_card(
