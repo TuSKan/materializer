@@ -16,7 +16,7 @@
 #'   color = "blue lighten-2"
 #' )
 #' @export
-material_button <- function(inputId, label, icon = NULL, class = NULL, depth = NULL, color = NULL) {
+material_button <- function(inputId, label, icon = NULL, class = NULL, target = NULL, depth = NULL, color = NULL) {
   shiny::tags$button(
     id = inputId,
     class =
