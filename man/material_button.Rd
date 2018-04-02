@@ -4,7 +4,7 @@
 \alias{material_button}
 \title{Create a materialize button}
 \usage{
-material_button(inputId, label, icon = NULL, class = NULL, target = NULL,
+material_button(inputId, label = NULL, icon = NULL, class = NULL,
   depth = NULL, color = NULL)
 }
 \arguments{
@@ -15,8 +15,6 @@ material_button(inputId, label, icon = NULL, class = NULL, target = NULL,
 \item{icon}{String. The name of the icon. Leave empty for no icon. Visit \url{http://materializecss.com/icons.html} for a list of available icons.}
 
 \item{class}{String. Aditional class for button. Value should be round, floating, large and small.}
-
-\item{target}{String. A  id for button to target on.}
 
 \item{depth}{Integer. The amount of depth of the button. The value should be between 0 and 5. Leave empty for the default depth.}
 

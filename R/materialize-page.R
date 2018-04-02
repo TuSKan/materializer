@@ -20,11 +20,19 @@ material_page <- function(..., title = "", footer = NULL, background_color = "gr
 
   if (include_fonts) fontsCopy()
 
-  material_nav_bar <- NULL
-
   shiny::tags$html(
     # Head --------------------------------------------------------------------
     shiny::tags$head(
+      if (include_fonts) {
+        shiny::includeCSS(
+          system.file("fonts/material-icons/material-icons.css",
+                      package = "materializer")
+        )
+      } else {
+        shiny::includeCSS(
+          "https://fonts.googleapis.com/icon?family=Material+Icons"
+        )
+      },
       shiny::includeCSS(
         system.file("materialize/css/materialize.min.css",
                     package = "materializer")
@@ -40,8 +48,7 @@ material_page <- function(..., title = "", footer = NULL, background_color = "gr
     ),
     # Body --------------------------------------------------------------------
     shiny::tags$body(
-      class = background_color,
-      material_nav_bar,
+      class = paste(background_color, ifDef(font_color, "-text")),
       ...
     ),
     if (!is.null(footer)) {

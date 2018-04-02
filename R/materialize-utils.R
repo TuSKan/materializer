@@ -74,13 +74,13 @@ includeInHead <- function(..., style = NULL, script = NULL, package = "materiali
 }
 
 fontsCopy <- function() {
-  font_dirs <- file.path("www/fonts", list.dirs(system.file("materialize/fonts", package = "materialize"), full.names = FALSE, recursive = TRUE))
+  font_dirs <- file.path("www/fonts", list.dirs(system.file("fonts", package = "materializer"), full.names = FALSE, recursive = TRUE))
 
   for (d in font_dirs) {
     if (!dir.exists(d)) {
       message(
         paste0(
-          "[materialize] Creating directory: ",
+          "[materializer] Creating directory: ",
           file.path(getwd(), d)
         )
       )
@@ -88,11 +88,11 @@ fontsCopy <- function() {
     }
   }
 
-  font_files <- list.files(system.file("materialize/fonts", package = "materialize"), recursive = TRUE)
+  font_files <- list.files(system.file("fonts", package = "materializer"), recursive = TRUE)
 
   for (f in font_files) {
     file.copy(
-      from = file.path(system.file("materialize/fonts", package = "materialize"), f),
+      from = file.path(system.file("fonts", package = "materializer"), f),
       to = file.path("www/fonts", f),
       overwrite = TRUE
     )
@@ -101,7 +101,7 @@ fontsCopy <- function() {
 
 material_colormap <- function(c) {
   if (is.null(c)) return("")
-  switch(c,
+  switch(as.character(c),
     "#ffebee" = "red lighten-5",
     "#ffcdd2" = "red lighten-4",
     "#ef9a9a" = "red lighten-3",

@@ -5,7 +5,7 @@
 #' @param title String. The title of the card
 #' @param img String. The filepath of a image of the card
 #' @param footer tagList. The UI elements to place in the card footer
-#' @param class String. The aditional class to the card. Values shound be stacked or panel.
+#' @param class String. The aditional class to the card. Values should be stacked or panel.
 #' @param header Logical. Option to include a header in the card.
 #' @param tabs tgList. A material_tabs object to insert inside the card
 #' @param depth Integer. The amount of depth of the card. The value should be between 0 and 5. Leave empty for the default depth.

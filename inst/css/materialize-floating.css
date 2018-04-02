@@ -1,0 +1,63 @@
+.bottom-right-action-btn {
+  right: 23px ;
+  bottom: 23px ;
+  padding-top: 15px ;
+  margin-bottom: 0;
+  z-index: 997 ;
+}
+
+.top-right-action-btn {
+  right: 23px ;
+  top: 23px ;
+  padding-top: 15px ;
+  margin-top: 0;
+  z-index: 997 ;
+}
+
+.bottom-left-action-btn {
+  left: 23px ;
+  bottom: 23px ;
+  padding-top: 15px ;
+  margin-bottom: 0;
+  z-index: 997 ;
+}
+
+.top-left-action-btn {
+  left: 23px ;
+  top: 23px ;
+  padding-top: 15px ;
+  margin-top: 0;
+  z-index: 997 ;
+}
+
+.small-action-btn.direction-top ul {
+  bottom: 34px !important;
+}
+
+.small-action-btn.direction-right ul {
+  left: 34px !important;
+}
+
+.small-action-btn.direction-bottom ul {
+  top: 34px !important;
+}
+
+.small-action-btn.direction-left ul {
+  right: 34px !important;
+}
+
+.medium-action-btn.direction-top ul {
+  bottom: 44px !important;
+}
+
+.medium-action-btn.direction-right ul {
+  left: 44px !important;
+}
+
+.medium-action-btn.direction-bottom ul {
+  top: 44px !important;
+}
+
+.medium-action-btn.direction-left ul {
+  right: 44px !important;
+}

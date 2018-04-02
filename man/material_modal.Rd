@@ -5,7 +5,7 @@
 \title{Place UI content in a modal}
 \usage{
 material_modal(inputId, ..., btnShow = material_button(paste0(inputId,
-  "btnShw"), "Show"), btnClose = material_button(paste0(inputId, "btnCls"),
+  "_show"), "Show"), btnClose = material_button(paste0(inputId, "_close"),
   "Close", class = "flat"), fixedFooter = FALSE)
 }
 \arguments{
@@ -17,7 +17,7 @@ material_modal(inputId, ..., btnShow = material_button(paste0(inputId,
 
 \item{btnClose}{Button. The modal close button tag.}
 
-\item{fixedFooter}{String. The name of the icon. Visit \url{http://materializecss.com/icons.html} for a list of available icons.}
+\item{fixedFooter}{Logical. Should the footerbe fixed?}
 }
 \description{
 Put any UI object inside of a modal. The modal will open when the button is pressed.
