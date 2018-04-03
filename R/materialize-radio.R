@@ -7,7 +7,7 @@
 #' @param disabled String. The radio button should be disabled?
 #' @param class String. Aditional class for checkbox. Values should be with-gap or NULL
 #' @param inline Logical. The option to create the radio buttons inline.
-#' @param color String. The hex code color of the radio buttons. Leave empty for the default color. Visit \url{http://materializecss.com/color.html} for a list of available colors.
+#' @param color String. The color name of the radio buttons. Leave empty for 'teal lighten-1' color. Visit \url{http://materializecss.com/color.html} for a list of available colors.
 #' @param session Shiny default reactive domain.
 #' @examples
 #' material_radio(
@@ -17,12 +17,13 @@
 #'     "Pie" = "p",
 #'     "Brownie" = "b"
 #'   ),
-#'   color = "#ef5350"
+#'   color = 'teal lighten-1'
 #' )
 #' @export
 material_radio <- function(inputId, choices, selected = NULL, disabled = NULL, class = "with-gap", inline = FALSE, color = NULL) {
   if (is.null(color)) color <- default_color
-  colornm <- css.names(material_colormap(color))
+  colornm <- css.names(color)
+  colorhex <- material_colormap(color)
 
   values <- unname(choices)
   choices <- names(choices)
@@ -61,12 +62,12 @@ material_radio <- function(inputId, choices, selected = NULL, disabled = NULL, c
         '.radio-', colornm,' input[type="radio"]:checked + span:after,
         .radio-', colornm,' input[type="radio"].with-gap:checked + span:before,
         .radio-', colornm,' input[type="radio"].with-gap:checked + span:after {
-          border: 2px solid ', color,';
+          border: 2px solid ', colorhex,';
         }
         .radio-', colornm,' input[type="radio"]:checked + span:after,
         .radio-', colornm,' input[type="radio"].with-gap:checked + span:after {
-          border: 2px solid ', color,';
-          background-color: ', color,';
+          border: 2px solid ', colorhex,';
+          background-color: ', colorhex,';
         }'
       )
     )

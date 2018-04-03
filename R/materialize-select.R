@@ -6,7 +6,7 @@
 #' @param choices Named vector. The option names and underyling values.
 #' @param selected String. The initially selected underyling value.
 #' @param multiple Boolean. Can multiple items be selected?
-#' @param color String. The hex codes color of the select Leave empty for the default color. Visit \url{http://materializecss.com/color.html} for a list of available colors. \emph{This input requires using color hex codes, rather than the word form. E.g., "#ef5350", rather than "red lighten-1".}
+#' @param color String. The color name of the select input. Leave empty for 'teal lighten-1' color. Visit \url{http://materializecss.com/color.html} for a list of available colors.
 #' @param session Shiny default reactive domain
 #' @examples
 #' material_select(
@@ -19,13 +19,14 @@
 #'   ),
 #'   selected = c("c"),
 #'   multiple = FALSE,
-#'   color = "#ef5350"
+#'   color = 'teal lighten-1'
 #' )
 #' @export
 material_select <- function(inputId, label, choices = NULL, selected = NULL, multiple = FALSE, color = NULL) {
 
   if (is.null(color)) color <- default_color
-  colornm <- css.names(material_colormap(color))
+  colornm <- css.names(color)
+  colorhex <- material_colormap(color)
 
   values <- unname(choices)
   choices <- names(choices)
@@ -59,10 +60,10 @@ material_select <- function(inputId, label, choices = NULL, selected = NULL, mul
       "materialize-select.css",
       style = paste0(
         ".select-", colornm, " ul.dropdown-content.select-dropdown li span {
-          color: ", color, ";
+          color: ", colorhex, ";
         }
         .select-", colornm, " .select-wrapper input.select-dropdown:focus {
-          border-bottom: 1px solid ", color, ";
+          border-bottom: 1px solid ", colorhex, ";
         }"
       )
     )

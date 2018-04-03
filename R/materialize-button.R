@@ -6,7 +6,7 @@
 #' @param icon String. The name of the icon. Leave empty for no icon. Visit \url{http://materializecss.com/icons.html} for a list of available icons.
 #' @param class String. Aditional class for button. Value should be round, floating, large and small.
 #' @param depth Integer. The amount of depth of the button. The value should be between 0 and 5. Leave empty for the default depth.
-#' @param color String. The hex codes color of the check. Leave empty for the default color. Visit \url{http://materializecss.com/color.html} for a list of available colors.
+#' @param color String. The color name of the button. Leave empty for 'teal lighten-1' color. Visit \url{http://materializecss.com/color.html} for a list of available colors.
 #' @examples
 #' material_button(
 #'   inputId = "example_button",
@@ -24,7 +24,7 @@ material_button <- function(inputId, label = NULL, icon = NULL, class = NULL, de
         "waves-effect waves-light btn materialize-button",
         ifDef(class, "btn-"),
         ifDef(depth, "z-depth-"),
-        ifDef(material_colormap(color))
+        ifDef(color)
       ),
     value = 0,
     if (!is.null(icon)) shiny::tags$i(class = "material-icons left", icon),

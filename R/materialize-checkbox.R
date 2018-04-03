@@ -5,20 +5,21 @@
 #' @param label String. The checkbox label.
 #' @param checked Boolean. Is the checkbox initially checked?
 #' @param class String. Aditional class for checkbox. Values should be filled-in or NULL
-#' @param color String. The hex codes color of the check. Leave empty for the default color. Visit \url{http://materializecss.com/color.html} for a list of available colors. \emph{This input requires using color hex codes, rather than the word form. E.g., "#ef5350", rather than "red lighten-1".}
+#' @param color String. The color name of the Checkbox. Leave empty for the 'teal lighten-1' color. Visit \url{http://materializecss.com/color.html} for a list of available colors.
 #' @param session Shiny default reactive domain.
 #' @examples
 #' material_checkbox(
 #'   inputId = "example_checkbox",
 #'   label = "Checkbox",
 #'   checked = TRUE,
-#'   color = "#ef5350"
+#'   color = 'teal lighten-1'
 #' )
 #' @export
 material_checkbox <- function(inputId, label, checked = FALSE, class = "filled-in", color = NULL) {
 
   if (is.null(color)) color <- default_color
-  colornm <- css.names(material_colormap(color))
+  colornm <- css.names(color)
+  colorhex <- material_colormap(color)
 
   shiny::tags$p(
     class = paste0("checkbox-", colornm),
@@ -38,8 +39,8 @@ material_checkbox <- function(inputId, label, checked = FALSE, class = "filled-i
       "materialize-checkbox.css",
       style = paste0(
         '.checkbox-', colornm,' input[type="checkbox"]:checked:not(:disabled) + span:not(.lever):after {
-            border: 2px solid ', color,';
-            background-color: ', color,';
+            border: 2px solid ', colorhex,';
+            background-color: ', colorhex,';
         }'
       )
     )

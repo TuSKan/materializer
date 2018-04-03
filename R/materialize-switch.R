@@ -6,7 +6,7 @@
 #' @param off String. The label for the 'off' position of the switch.
 #' @param init Boolean. Is the switch initially on?
 #' @param disabled String. The radio button should be disabled?
-#' @param color String. The color of the switch. Leave empty for the default color. Visit \url{http://materializecss.com/color.html} for a list of available colors.
+#' @param color String. The color name of the Switch. Leave empty for 'teal lighten-1' color. Visit \url{http://materializecss.com/color.html} for a list of available colors.
 #' @param session Shiny default reactive domain.
 #' @examples
 #' material_switch(
@@ -14,17 +14,22 @@
 #'   off = "Off",
 #'   on = "On",
 #'   init = TRUE,
-#'   color = "#ef5350"
+#'   color = 'teal lighten-1'
 #' )
 #' @export
 material_switch <- function(inputId, on = "On", off = "Off", init = FALSE, disabled = FALSE, color = NULL) {
 
   if (is.null(color)) color <- default_color
-  colornm <- css.names(material_colormap(color))
+  colornm <- css.names(color)
+  colorhex <- material_colormap(color)
 
   shiny::div(
     id = inputId,
-    class = paste(paste0("switch-",colornm), "switch","materialize-switch"),
+    class = paste(
+      paste0("switch-",colornm),
+      "switch",
+      "materialize-switch"
+    ),
     shiny::tags$label(
       off,
       shiny::tags$input(
@@ -42,10 +47,10 @@ material_switch <- function(inputId, on = "On", off = "Off", init = FALSE, disab
       "materialize-switch.css",
       style = paste0(
         '.switch-', colornm,' input[type="checkbox"]:checked+.lever {
-          background-color: rgba(', paste(hex2rgb(color),collapse = ","),',0.6) !important;
+          background-color: rgba(', paste(hex2rgb(colorhex),collapse = ","),',0.6) !important;
         }
         .switch-', colornm,' input[type="checkbox"]:checked+.lever:after {
-          background-color: rgba(', paste(hex2rgb(color),collapse = ","),',1) !important;
+          background-color: rgba(', paste(hex2rgb(colorhex),collapse = ","),',1) !important;
         }'
       )
     )

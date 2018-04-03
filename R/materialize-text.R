@@ -10,20 +10,21 @@
 #' @param type String. The type of the text input. Valiue should be text, number, email, password, time, date
 #' @param class String. Additional class for text input.
 #' @param icon String. The name of the icon. Leave empty for no icon. Visit \url{http://materializecss.com/icons.html} for a list of available icons.
-#' @param color String. The hex code color of the text box. Leave empty for the default color. Visit \url{http://materializecss.com/color.html} for a list of available colors. \emph{This input requires using color hex codes, rather than the word form. E.g., "#ef5350", rather than "red lighten-1".}
+#' @param color String. The color name of the text input Leave empty for 'teal lighten-1' color. Visit \url{http://materializecss.com/color.html} for a list of available colors.
 #' @param value String or Numeric. The value to update the input.
 #' @param session Shiny default reactive domain.
 #' @examples
 #' material_text(
 #'   inputId = "example_text",
 #'   label = "Label",
-#'   color = "#ef5350"
+#'   color = 'teal lighten-1'
 #' )
 #' @export
 material_text <- function(inputId, label, placeholder = NULL, inline = FALSE, readonly = FALSE, help = NULL, type = "text", class = NULL, icon = NULL, color = NULL) {
 
   if (is.null(color)) color <- default_color
-  colornm <- css.names(material_colormap(color))
+  colornm <- css.names(color)
+  colorhex <- material_colormap(color)
 
   fileIncl <- "text"
   typeInput <- type
@@ -66,61 +67,61 @@ material_text <- function(inputId, label, placeholder = NULL, inline = FALSE, re
       style = paste0(
       '/* label focus color */
         .text-', colornm,' input[type=',typeInput,']:not(.browser-default):focus:not([readonly]) + label {
-          color: ', color,';
+          color: ', colorhex,';
         }
       /* label underline focus color */
         .text-', colornm,' input[type=',typeInput,']:not(.browser-default):focus:not([readonly]) {
-          border-bottom: 1px solid ', color,';
-          box-shadow: 0 1px 0 0 ', color,';
+          border-bottom: 1px solid ', colorhex,';
+          box-shadow: 0 1px 0 0 ', colorhex,';
         }
       /* label underline valid color */
           .text-', colornm,' input[type=',typeInput,'].valid:not(.browser-default) {
-          border-bottom: 1px solid ', color,';
-          box-shadow: 0 1px 0 0 ', color,';
+          border-bottom: 1px solid ', colorhex,';
+          box-shadow: 0 1px 0 0 ', colorhex,';
       }
       /* icon prefix focus color */
         .text-', colornm,' .prefix.active {
-          color: ', color,';
+          color: ', colorhex,';
         }
         /* time modal */
         .timepicker-digital-display {
-          background-color: ', color,' !important;
+          background-color: ', colorhex,' !important;
         }
         .timepicker-close {
-          color: ', color,' !important;
+          color: ', colorhex,' !important;
         }
         .timepicker-tick.active, .timepicker-tick:hover {
-          background-color: rgba(', paste(hex2rgb(color),collapse = ","),',0.25) !important;
+          background-color: rgba(', paste(hex2rgb(colorhex),collapse = ","),',0.25) !important;
         }
         .timepicker-tick.active, .timepicker-tick:hover {
-         background-color: rgba(', paste(hex2rgb(color),collapse = ","),',0.25) !important;
+         background-color: rgba(', paste(hex2rgb(colorhex),collapse = ","),',0.25) !important;
         }
         .timepicker-canvas line {
-         stroke: ', color,' !important;
+         stroke: ', colorhex,' !important;
         }
         .timepicker-canvas-bearing {
-         fill: ', color,' !important;
+         fill: ', colorhex,' !important;
         }
         .timepicker-canvas-bg {
-         fill: ', color,' !important;
+         fill: ', colorhex,' !important;
         }
         .datepicker-date-display {
-         background-color: ', color,' !important;
+         background-color: ', colorhex,' !important;
         }
         .datepicker-cancel,
         .datepicker-clear,
         .datepicker-today,
         .datepicker-done{
-          color: ', color,' !important;
+          color: ', colorhex,' !important;
         }
         .datepicker-table td.is-today {
-          color: ', color,' !important;
+          color: ', colorhex,' !important;
         }
         .datepicker-table td.is-selected {
-         background-color: ', color,' !important;
+         background-color: ', colorhex,' !important;
         }
         .datepicker-day-button:focus {
-          background-color: rgba(', paste(hex2rgb(color),collapse = ","),',0.25) !important;
+          background-color: rgba(', paste(hex2rgb(colorhex),collapse = ","),',0.25) !important;
         }'
       )
     )
@@ -159,9 +160,7 @@ material_time <- function(inputId, label, placeholder = NULL, inline = FALSE, re
   material_text(inputId = inputId, label = label, placeholder = placeholder, inline = inline, readonly = readonly, help = help, type = "time", class = class, icon = icon, color = color)
 }
 
-#
-# update
-#
+#### Update ####
 
 #' @rdname material_text
 #' @export

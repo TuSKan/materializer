@@ -3,77 +3,79 @@
 #' Build a materialize slider.
 #' @param inputId String. The input identifier used to access the value.
 #' @param label String. The slider label.
-#' @param min_value Number. The minimum value on the slider.
-#' @param max_value Number. The maximum value on the slider.
-#' @param initial_value Number. The initial value of the slider.
-#' @param color String. The slider color hex codes. Leave empty for the default color. Visit \url{http://materializecss.com/color.html} for a list of available colors. \emph{This input requires using color hex codes, rather than the word form. E.g., "#ef5350", rather than "red lighten-1".}
+#' @param minval Number. The minimum value on the slider.
+#' @param maxval Number. The maximum value on the slider.
+#' @param initval Number. The initial value of the slider.
+#' @param color String. The color name of the slider Leave empty for the 'teal lighten-1' color. Visit \url{http://materializecss.com/color.html} for a list of available colors.
 #' @examples
 #' material_slider(
 #'   inputId = "example_slider",
 #'   label = "slider",
-#'   min_value = 5,
-#'   max_value = 15,
-#'   initial_value = 10,
-#'   color = "#ef5350"
+#'   minval = 5,
+#'   maxval = 15,
+#'   initval = 10,
+#'   color = 'teal lighten-1'
 #' )
 #' @export
-material_slider <- function(inputId, label, min_value = 0, max_value = 100, initial_value = min_value, color = NULL) {
-  if (is.null(color)) color <- default_color
+material_slider <- function(inputId, label, minval = 0, maxval = 100, initval = minval, color = NULL) {
 
-  shiny::tagList(
-    shiny::tags$head(
-      shiny::includeScript(
-        system.file(
-          file.path("js", "materialize-slider.js"),
-          package = "materialize"
-        )
-      ),
-      shiny::includeCSS(
-        system.file(
-          file.path("css", "materialize-slider.css"),
-          package = "materialize"
-        )
-      ),
-      shiny::tags$style(
-        paste0(
-          "input[type=range].slider-", css.names(material_colormap(color)), "::-webkit-slider-thumb {
-              background-color: ", color, ";
-            }
-            input[type=range].slider-", css.names(material_colormap(color)), "::-moz-range-thumb {
-              background-color: ", color, ";
-            }
-            input[type=range].slider-", css.names(material_colormap(color)), "::-ms-thumb {
-              background-color: ", color, ";
-            }
-            input[type=range].slider-", css.names(material_colormap(color)), " + .thumb {
-              background-color: ", color, ";
-            }
-            input[type=range].slider-", css.names(material_colormap(color)), " + .thumb.active .value {
-              color: white;
-            }"
-        )
-      )
+  if (is.null(color)) color <- default_color
+  colornm <- css.names(color)
+  colorhex <- material_colormap(color)
+
+  shiny::tags$p(
+    class = "range-field",
+    id = paste0(inputId, "Range"),
+    shiny::tags$label(
+      "for" = paste0(inputId, "Range"),
+      label
     ),
-    shiny::tagList(
-      shiny::tags$form(
-        action = "#",
-        shiny::tags$p(
-          class = "range-field",
-          id = paste0(inputId, "_range"),
-          shiny::tags$label(
-            `for` = paste0(inputId, "_range"),
-            label
-          ),
-          shiny::tags$input(
-            type = "range",
-            id = inputId,
-            class = paste("materialize-slider", paste0("slider-", css.names(material_colormap(color)))),
-            min = min_value,
-            max = max_value,
-            value = initial_value
-          )
-        )
+    shiny::tags$input(
+      type = "range",
+      id = inputId,
+      class = paste(
+        "materialize-slider",
+        paste0("slider-", colornm)
+        ),
+      min = minval,
+      max = maxval,
+      value = initval
+    ),
+    includeInHead(
+      "materialize-slider.js",
+      "materialize-slider.css",
+      style = paste0(
+        "input[type=range].slider-", colornm, "::-webkit-slider-thumb {
+          background-color: ", colorhex, ";
+        }
+        input[type=range].slider-", colornm, "::-moz-range-thumb {
+          background-color: ", colorhex, ";
+        }
+        input[type=range].slider-", colornm, "::-ms-thumb {
+          background-color: ", colorhex, ";
+        }
+        input[type=range].slider-", colornm, " + .thumb {
+          background-color: ", colorhex, ";
+        }
+        input[type=range].slider-", colornm, " + .thumb.active .value {
+          color: white;
+        }"
       )
+    )
+  )
+}
+
+
+#' @rdname material_slider
+#' @export
+update_material_slider <- function(inputId, label = NULL, minval = NULL, maxval = NULL, initval = NULL, session = shiny::getDefaultReactiveDomain()) {
+  session$sendInputMessage(
+    inputId,
+    cleanList(
+      label = label,
+      minval = minval,
+      maxval = maxval,
+      initval = initval
     )
   )
 }

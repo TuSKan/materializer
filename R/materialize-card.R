@@ -11,7 +11,7 @@
 #' @param depth Integer. The amount of depth of the card. The value should be between 0 and 5. Leave empty for the default depth.
 #' @param horizontal Logical. Should the card be on horizontal orientation?'
 #' @param hoverable Loginal. Enable/disable hover effect.
-#' @param background_color String. The hex codes background color of the card. Leave empty for the default color. Visit \url{http://materializecss.com/color.html} for a list of available colors.
+#' @param bgcolor String. The background color name of the card. Leave empty for the 'teal lighten-1' color. Visit \url{http://materializecss.com/color.html} for a list of available colors.
 #' @examples
 #' material_card(
 #'   title = "Example Card",
@@ -19,15 +19,16 @@
 #'   footer = shiny::hr()
 #' )
 #' @export
-material_card <- function(..., title = NULL, img = NULL, footer = NULL, class = "stacked", header = TRUE, tabs = NULL, depth = NULL, horizontal = FALSE, hoverable = TRUE, background_color = NULL) {
+material_card <- function(..., title = NULL, img = NULL, footer = NULL, class = "stacked", header = TRUE, tabs = NULL, depth = NULL, horizontal = FALSE, hoverable = TRUE, bgcolor = NULL) {
 
     shiny::div(
-      class = paste("card",
-                    if (hoverable) "hoverable",
-                    ifDef(depth, "z-depth-"),
-                    ifDef(horizontal, "horizontal"),
-                    if (!is.null(background_color)) material_colormap(background_color)
-              ),
+      class = paste(
+        "card",
+        if (hoverable) "hoverable",
+        ifDef(depth, "z-depth-"),
+        if (horizontal) "horizontal",
+        ifDef(bgcolor)
+      ),
       if (header) {
         shiny::div(
           class = ifelse(is.null(img), "card-header", "card-image"),

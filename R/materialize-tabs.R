@@ -6,8 +6,8 @@
 #' @param ... tagList. The material_tab_content elements
 #' @param active logical Which tab should be actived
 #' @param incard Logical. This tabs willinsert in a card ?
-#' @param color String. The hex code color of the tabs. Leave blank for the default color. Visit \url{http://materializecss.com/color.html} for a list of available colors.
-#' @param background_color String. The hex code background color of the tabs. Leave blank for the default color. Visit \url{http://materializecss.com/color.html} for a list of available colors.
+#' @param color String. The color name of the tabs. Leave blank for 'teal lighten-1' color. Visit \url{http://materializecss.com/color.html} for a list of available colors.
+#' @param bgcolor String. The hex code background color of the tabs. Leave blank for the default color. Visit \url{http://materializecss.com/color.html} for a list of available colors.
 #' @param session Shiny default reactive domain.
 #'
 #' @examples
@@ -26,9 +26,11 @@
 #'   )
 #' )
 #' @export
-material_tabs <- function(inputId, tabs, ..., active = NULL, incard = FALSE, color = NULL, background_color = NULL) {
+material_tabs <- function(inputId, tabs, ..., active = NULL, incard = FALSE, color = NULL, bgcolor = NULL) {
+
   if (is.null(color)) color <- default_color
-  colornm <- css.names(material_colormap(color))
+  colornm <- css.names(color)
+  colorhex <- material_colormap(color)
 
   nmtabs <- names(tabs)
   hftabs <- unname(tabs)
@@ -45,7 +47,7 @@ material_tabs <- function(inputId, tabs, ..., active = NULL, incard = FALSE, col
         class = paste(
           "tabs tabs-fixed-width",
           paste0("tabs-",colornm),
-          if (!is.null(background_color)) material_colormap(background_color)
+          ifDef(bgcolor)
         ),
         lapply(
           seq_along(tabs),
@@ -63,7 +65,7 @@ material_tabs <- function(inputId, tabs, ..., active = NULL, incard = FALSE, col
       )
     ),
     shiny::tags$div(
-      class = paste(if (incard) "card-content", if (!is.null(background_color)) material_colormap(background_color)),
+      class = paste(if (incard) "card-content", ifDef(bgcolor)),
       ...
     ),
     includeInHead(
@@ -71,17 +73,17 @@ material_tabs <- function(inputId, tabs, ..., active = NULL, incard = FALSE, col
       "materialize-tabs.css",
       style = paste0(
         '.tabs-', colornm, ' .indicator {
-            background-color: ', color, ';
+            background-color: ', colorhex, ';
           }
         .tabs-', colornm, ' .tab a,
         .tabs-', colornm, ' .tab.disabled a,
         .tabs-', colornm, ' .tab.disabled a:hover {
-          color: rgba(', paste(hex2rgb(color),collapse = ","),',0.6)
+          color: rgba(', paste(hex2rgb(colorhex),collapse = ","),',0.6)
         }
 
         .tabs-', colornm, ' .tab a:hover,
         .tabs-', colornm, ' .tab a.active {
-          color: ', color, ';
+          color: ', colorhex, ';
         }'
       )
     )

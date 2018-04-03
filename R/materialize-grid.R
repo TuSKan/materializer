@@ -11,7 +11,7 @@
 #'   shiny::h1("Column Content")
 #' )
 #' @export
-material_column <- function(..., width = 6, type = "s", offset = NULL){
+material_column <- function(..., width = 6, type = "s", offset = NULL) {
 
   shiny::div(
     class = paste(
@@ -23,6 +23,22 @@ material_column <- function(..., width = 6, type = "s", offset = NULL){
   )
 }
 
+
+#' Create a row to organize UI content
+#'
+#' UI content can be placed in a row to organize items on a page.
+#' @param ... The UI elements to place in the row.
+#' @examples
+#' material_row(
+#'   shiny::tags$h1("Row Content")
+#' )
+#' @export
+material_row <- function(...){
+  shiny::tags$div(
+    class = "row",
+    ...
+  )
+}
 
 
 #' Create a section to organize UI content
@@ -36,7 +52,7 @@ material_column <- function(..., width = 6, type = "s", offset = NULL){
 #'   shiny::h1("Content goes here")
 #' )
 #' @export
-material_section <- function(..., title = NULL){
+material_section <- function(..., title = NULL) {
   shiny::div(
     class = "section",
     if (!is.null(title)) shiny::tags$h5(title),
@@ -63,7 +79,7 @@ material_divider <- function(){
 #' @examples
 #' material_container()
 #' @export
-material_container <- function(...){
+material_container <- function(...) {
   shiny::div(
     class = "container",
     ...

@@ -3,9 +3,9 @@
 #' Put any UI object inside of a modal. The modal will open when the button is pressed.
 #' @param inputId String. The ID for the modal. Must be unique per application.
 #' @param ... The UI elements to place in the modal
-#' @param btnShow Button. The modal show button tag.
-#' @param btnClose Button. The modal close button tag.
-#' @param fixedFooter Logical. Should the footerbe fixed?
+#' @param btnShow Button. The modal's show button tag.
+#' @param btnClose Button. The modal's close button tag.
+#' @param fixedFooter Logical. Should the footer be fixed?
 #' @examples
 #' material_modal(
 #'   inputId = "example_modal",
