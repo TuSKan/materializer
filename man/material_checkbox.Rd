@@ -20,7 +20,7 @@ update_material_checkbox(inputId, label = NULL, checked = FALSE,
 
 \item{class}{String. Aditional class for checkbox. Values should be filled-in or NULL}
 
-\item{color}{String. The hex codes color of the check. Leave empty for the default color. Visit \url{http://materializecss.com/color.html} for a list of available colors. \emph{This input requires using color hex codes, rather than the word form. E.g., "#ef5350", rather than "red lighten-1".}}
+\item{color}{String. The color name of the Checkbox. Leave empty for the 'teal lighten-1' color. Visit \url{http://materializecss.com/color.html} for a list of available colors.}
 
 \item{session}{Shiny default reactive domain.}
 }
@@ -32,6 +32,6 @@ material_checkbox(
   inputId = "example_checkbox",
   label = "Checkbox",
   checked = TRUE,
-  color = "#ef5350"
+  color = 'teal lighten-1'
 )
 }

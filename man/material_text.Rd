@@ -77,7 +77,7 @@ update_material_date(inputId, value = NULL, label = NULL,
 
 \item{icon}{String. The name of the icon. Leave empty for no icon. Visit \url{http://materializecss.com/icons.html} for a list of available icons.}
 
-\item{color}{String. The hex code color of the text box. Leave empty for the default color. Visit \url{http://materializecss.com/color.html} for a list of available colors. \emph{This input requires using color hex codes, rather than the word form. E.g., "#ef5350", rather than "red lighten-1".}}
+\item{color}{String. The color name of the text input Leave empty for 'teal lighten-1' color. Visit \url{http://materializecss.com/color.html} for a list of available colors.}
 
 \item{value}{String or Numeric. The value to update the input.}
 
@@ -90,6 +90,6 @@ Build a materialize text input
 material_text(
   inputId = "example_text",
   label = "Label",
-  color = "#ef5350"
+  color = 'teal lighten-1'
 )
 }

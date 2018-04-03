@@ -13,11 +13,11 @@ material_modal(inputId, ..., btnShow = material_button(paste0(inputId,
 
 \item{...}{The UI elements to place in the modal}
 
-\item{btnShow}{Button. The modal show button tag.}
+\item{btnShow}{Button. The modal's show button tag.}
 
-\item{btnClose}{Button. The modal close button tag.}
+\item{btnClose}{Button. The modal's close button tag.}
 
-\item{fixedFooter}{Logical. Should the footerbe fixed?}
+\item{fixedFooter}{Logical. Should the footer be fixed?}
 }
 \description{
 Put any UI object inside of a modal. The modal will open when the button is pressed.

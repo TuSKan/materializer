@@ -6,7 +6,7 @@
 \usage{
 material_card(..., title = NULL, img = NULL, footer = NULL,
   class = "stacked", header = TRUE, tabs = NULL, depth = NULL,
-  horizontal = FALSE, hoverable = TRUE, background_color = NULL)
+  horizontal = FALSE, hoverable = TRUE, bgcolor = NULL)
 }
 \arguments{
 \item{...}{tagList. The UI elements to place in the card}
@@ -17,7 +17,7 @@ material_card(..., title = NULL, img = NULL, footer = NULL,
 
 \item{footer}{tagList. The UI elements to place in the card footer}
 
-\item{class}{String. The aditional class to the card. Values shound be stacked or panel.}
+\item{class}{String. The aditional class to the card. Values should be stacked or panel.}
 
 \item{header}{Logical. Option to include a header in the card.}
 
@@ -29,7 +29,7 @@ material_card(..., title = NULL, img = NULL, footer = NULL,
 
 \item{hoverable}{Loginal. Enable/disable hover effect.}
 
-\item{background_color}{String. The hex codes background color of the card. Leave empty for the default color. Visit \url{http://materializecss.com/color.html} for a list of available colors.}
+\item{bgcolor}{String. The background color name of the card. Leave empty for the 'teal lighten-1' color. Visit \url{http://materializecss.com/color.html} for a list of available colors.}
 }
 \description{
 UI content can be placed in cards to organize items on a page.

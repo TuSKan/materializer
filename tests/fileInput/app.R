@@ -5,9 +5,8 @@ if (interactive()) {
   # Wrap materialize apps in material_page
   ui <- material_page(
     title = "Basic Page",
-    include_fonts = TRUE,
     tags$h1("Page Content"),
-    material_file(inputId = "example_file_input", label = "ok", class = "round", color = "#ffd600")
+    material_file(inputId = "example_file_input", label = "ok", class = "round", color = "yellow accent-4")
   )
 
   server <- function(input, output, session) {
@@ -18,7 +17,6 @@ if (interactive()) {
       if (length(inFile) == 0) {
         return(NULL)
       }
-      browser()
       x <- read.csv(inFile$datapath)
       message(head(x))
     },ignoreInit = TRUE)

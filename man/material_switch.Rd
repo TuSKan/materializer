@@ -22,7 +22,7 @@ update_material_switch(inputId, on = NULL, off = NULL, init = NULL,
 
 \item{disabled}{String. The radio button should be disabled?}
 
-\item{color}{String. The color of the switch. Leave empty for the default color. Visit \url{http://materializecss.com/color.html} for a list of available colors.}
+\item{color}{String. The color name of the Switch. Leave empty for 'teal lighten-1' color. Visit \url{http://materializecss.com/color.html} for a list of available colors.}
 
 \item{session}{Shiny default reactive domain.}
 }
@@ -35,6 +35,6 @@ material_switch(
   off = "Off",
   on = "On",
   init = TRUE,
-  color = "#ef5350"
+  color = 'teal lighten-1'
 )
 }

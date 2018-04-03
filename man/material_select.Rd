@@ -22,7 +22,7 @@ update_material_select(inputId, choices = NULL, selected = NULL,
 
 \item{multiple}{Boolean. Can multiple items be selected?}
 
-\item{color}{String. The hex codes color of the select Leave empty for the default color. Visit \url{http://materializecss.com/color.html} for a list of available colors. \emph{This input requires using color hex codes, rather than the word form. E.g., "#ef5350", rather than "red lighten-1".}}
+\item{color}{String. The color name of the select input. Leave empty for 'teal lighten-1' color. Visit \url{http://materializecss.com/color.html} for a list of available colors.}
 
 \item{session}{Shiny default reactive domain}
 }
@@ -40,6 +40,6 @@ material_select(
   ),
   selected = c("c"),
   multiple = FALSE,
-  color = "#ef5350"
+  color = 'teal lighten-1'
 )
 }

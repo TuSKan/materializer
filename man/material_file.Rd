@@ -20,7 +20,7 @@ material_file(inputId, label, multiple = FALSE, icon = NULL, class = NULL,
 
 \item{depth}{Integer. The amount of depth of the button. The value should be between 0 and 5. Leave empty for the default depth.}
 
-\item{color}{String. The hex codes color of the check. Leave empty for the default color. Visit \url{http://materializecss.com/color.html} for a list of available colors.}
+\item{color}{String. The color name of the fileinput. Leave empty for the 'teal lighten-1' color. Visit \url{http://materializecss.com/color.html} for a list of available colors.}
 }
 \description{
 Build a materialize file input.

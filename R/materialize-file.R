@@ -36,37 +36,54 @@
 #' }
 #' @export
 material_file <- function(inputId, label, multiple = FALSE, icon = NULL, class = NULL, depth = NULL, color = NULL) {
-  shiny::tags$form(
-    action = "#",
+  if (is.null(color)) color <- default_color
+  colornm <- css.names(color)
+  colorhex <- material_colormap(color)
+
+  shiny::div(
+    class = "file-field input-field materialize-file",
     shiny::div(
-      class = "file-field input-field materialize-file",
-      shiny::div(
-        class = paste(
-          "waves-effect waves-light btn",
-          ifDef(class, "btn-"),
-          ifDef(depth, "z-depth-"),
-          ifDef(color)
-        ),
-        shiny::tags$span(
-          label
-        ),
-        shiny::tags$input(
-          id = inputId,
-          type = "file",
-          multiple = if (multiple) NA,
-          class = "materialize-file-input"
-        )
+      class = paste(
+        "waves-effect waves-light btn",
+        ifDef(class, "btn-"),
+        ifDef(depth, "z-depth-"),
+        ifDef(color)
       ),
-      shiny::div(
-        class = "file-path-wrapper",
-        shiny::tags$input(
-          class = "file-path validate",
-          type = "text"
-        )
+      shiny::tags$span(
+        label
       ),
-      includeInHead(
-        "materialize-file.js",
-        "materialize-file.css"
+      shiny::tags$input(
+        id = inputId,
+        type = "file",
+        multiple = if (multiple) NA,
+        class = "materialize-file-input"
+      )
+    ),
+    shiny::div(
+      class = paste("file-path-wrapper", paste0("text-", colornm)),
+      shiny::tags$input(
+        class = "file-path validate",
+        type = "text"
+      )
+    ),
+    includeInHead(
+      "materialize-file.js",
+      "materialize-file.css",
+      style = paste0(
+        '/* label focus color */
+        .text-', colornm,' input[type=text]:not(.browser-default):focus:not([readonly]) + label {
+          color: ', colorhex,';
+        }
+        /* label underline focus color */
+        .text-', colornm,' input[type=text]:not(.browser-default):focus:not([readonly]) {
+          border-bottom: 1px solid ', colorhex,';
+          box-shadow: 0 1px 0 0 ', colorhex,';
+        }
+        /* label underline valid color */
+        .text-', colornm,' input[type=text].valid:not(.browser-default) {
+          border-bottom: 1px solid ', colorhex,';
+          box-shadow: 0 1px 0 0 ', colorhex,';
+        }'
       )
     )
   )

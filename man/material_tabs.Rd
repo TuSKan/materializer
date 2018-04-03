@@ -6,7 +6,7 @@
 \title{Place UI content within a tab}
 \usage{
 material_tabs(inputId, tabs, ..., active = NULL, incard = FALSE,
-  color = NULL, background_color = NULL)
+  color = NULL, bgcolor = NULL)
 
 update_material_tabs(inputId, active = NULL,
   session = shiny::getDefaultReactiveDomain())
@@ -22,9 +22,9 @@ update_material_tabs(inputId, active = NULL,
 
 \item{incard}{Logical. This tabs willinsert in a card ?}
 
-\item{color}{String. The hex code color of the tabs. Leave blank for the default color. Visit \url{http://materializecss.com/color.html} for a list of available colors.}
+\item{color}{String. The color name of the tabs. Leave blank for 'teal lighten-1' color. Visit \url{http://materializecss.com/color.html} for a list of available colors.}
 
-\item{background_color}{String. The hex code background color of the tabs. Leave blank for the default color. Visit \url{http://materializecss.com/color.html} for a list of available colors.}
+\item{bgcolor}{String. The hex code background color of the tabs. Leave blank for the default color. Visit \url{http://materializecss.com/color.html} for a list of available colors.}
 
 \item{session}{Shiny default reactive domain.}
 }
@@ -39,11 +39,11 @@ material_tabs(
   ),
   material_tab_content(
     inputId = "example_tab_1",
-    h5("Content of Example Tab 1")
+    shiny::h5("Content of Example Tab 1")
   ),
   material_tab_content(
     inputId = "example_tab_2",
-    h5("Content of Example Tab 2")
+    shiny::h5("Content of Example Tab 2")
   )
 )
 }

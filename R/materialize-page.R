@@ -16,7 +16,7 @@
 #' @export
 material_page <- function(..., title = "", footer = NULL, bgcolor = "grey lighten-4", fontcolor = NULL, localfonts = FALSE){
 
-  if (include_fonts) fontsCopy()
+  if (localfonts) fontsCopy()
 
   shiny::tags$html(
     # Head --------------------------------------------------------------------

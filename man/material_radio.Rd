@@ -24,7 +24,7 @@ update_material_radio(inputId, choices = NULL, selected = NULL,
 
 \item{inline}{Logical. The option to create the radio buttons inline.}
 
-\item{color}{String. The hex code color of the radio buttons. Leave empty for the default color. Visit \url{http://materializecss.com/color.html} for a list of available colors.}
+\item{color}{String. The color name of the radio buttons. Leave empty for 'teal lighten-1' color. Visit \url{http://materializecss.com/color.html} for a list of available colors.}
 
 \item{session}{Shiny default reactive domain.}
 }
@@ -39,6 +39,6 @@ material_radio(
     "Pie" = "p",
     "Brownie" = "b"
   ),
-  color = "#ef5350"
+  color = 'teal lighten-1'
 )
 }

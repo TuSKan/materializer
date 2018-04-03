@@ -7,10 +7,11 @@
 #' @param color String. The color name of the floating action button. Leave empty for the 'teal lighten-1' color. Visit \url{http://materializecss.com/color.html} for a list of available colors.
 #' @param direction String. The direction of the floating action button when open. values should be 'top', 'right', 'buttom', 'left'.
 #' @param fixed Logical. The floating action button should be fixed?
+#' @param hover Logical. Should the floating action button be hoveable ?
 #' @param position String. The position of the floating action button. Values should be 'bottom-left', 'bottom-right', 'top-left' and 'top-right'.
 #' @param action List. A list of action attributes such as target, icon, size and color.
 #' @examples
-#' material_floating(
+#' material_fab(
 #'   inputId = "example_flt_action",
 #'   icon = "add",
 #'   color = 'teal lighten-1',

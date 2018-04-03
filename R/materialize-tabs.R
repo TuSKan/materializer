@@ -18,11 +18,11 @@
 #'   ),
 #'   material_tab_content(
 #'     inputId = "example_tab_1",
-#'     h5("Content of Example Tab 1")
+#'     shiny::h5("Content of Example Tab 1")
 #'   ),
 #'   material_tab_content(
 #'     inputId = "example_tab_2",
-#'     h5("Content of Example Tab 2")
+#'     shiny::h5("Content of Example Tab 2")
 #'   )
 #' )
 #' @export

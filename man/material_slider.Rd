@@ -2,23 +2,30 @@
 % Please edit documentation in R/materialize-slider.R
 \name{material_slider}
 \alias{material_slider}
+\alias{update_material_slider}
 \title{Create a materialize slider}
 \usage{
-material_slider(inputId, label, min_value = 0, max_value = 100,
-  initial_value = min_value, color = NULL)
+material_slider(inputId, label, minval = 0, maxval = 100,
+  initval = minval, color = NULL)
+
+update_material_slider(inputId, label = NULL, minval = NULL,
+  maxval = NULL, initval = NULL,
+  session = shiny::getDefaultReactiveDomain())
 }
 \arguments{
 \item{inputId}{String. The input identifier used to access the value.}
 
 \item{label}{String. The slider label.}
 
-\item{min_value}{Number. The minimum value on the slider.}
+\item{minval}{Number. The minimum value on the slider.}
 
-\item{max_value}{Number. The maximum value on the slider.}
+\item{maxval}{Number. The maximum value on the slider.}
 
-\item{initial_value}{Number. The initial value of the slider.}
+\item{initval}{Number. The initial value of the slider.}
 
-\item{color}{String. The slider color hex codes. Leave empty for the default color. Visit \url{http://materializecss.com/color.html} for a list of available colors. \emph{This input requires using color hex codes, rather than the word form. E.g., "#ef5350", rather than "red lighten-1".}}
+\item{color}{String. The color name of the slider Leave empty for the 'teal lighten-1' color. Visit \url{http://materializecss.com/color.html} for a list of available colors.}
+
+\item{session}{Shiny default reactive domain.}
 }
 \description{
 Build a materialize slider.
@@ -27,9 +34,9 @@ Build a materialize slider.
 material_slider(
   inputId = "example_slider",
   label = "slider",
-  min_value = 5,
-  max_value = 15,
-  initial_value = 10,
-  color = "#ef5350"
+  minval = 5,
+  maxval = 15,
+  initval = 10,
+  color = 'teal lighten-1'
 )
 }

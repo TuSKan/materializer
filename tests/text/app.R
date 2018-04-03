@@ -5,7 +5,6 @@ if (interactive()) {
   isEmpty <- function(x) ifelse(length(x) == 0 || x == "" || is.na(x), TRUE, FALSE)
   empty2NA <- function(x) ifelse(isEmpty(x), NA, x)
 
-  # Wrap materialize apps in material_page
   ui <- material_page(
     title = "Basic Page",
     include_fonts = TRUE,
@@ -13,31 +12,31 @@ if (interactive()) {
     material_row(
       material_column(
         width = 4,
-        material_text(inputId = "textInput", label = "Text", color = "#ffd600")
+        material_text(inputId = "textInput", label = "Text", color = "yellow accent-4")
       ),
       material_column(
         width = 4,
-        material_number(inputId = "numbInput", label = "Number", color = "#ffd600")
+        material_number(inputId = "numbInput", label = "Number", color = "yellow accent-4")
       ),
       material_column(
         width = 4,
-        material_password(inputId = "passInput", label = "Password", color = "#ffd600")
+        material_password(inputId = "passInput", label = "Password", color = "yellow accent-4")
       ),
       material_column(
         width = 4,
-        material_email(inputId = "emailInput", label = "Email", color = "#ffd600")
+        material_email(inputId = "emailInput", label = "Email", color = "yellow accent-4")
       ),
       material_column(
         width = 4,
-        material_date(inputId = "dateInput", label = "Date", color = "#ffd600")
+        material_date(inputId = "dateInput", label = "Date", color = "yellow accent-4")
       ),
       material_column(
         width = 4,
-        material_time(inputId = "timeInput", label = "time", color = "#ffd600")
+        material_time(inputId = "timeInput", label = "time", color = "yellow accent-4")
       ),
       material_column(
         width = 4,
-        material_button(inputId = "btnSet", label = "SetValue", color = "#ffd600")
+        material_button(inputId = "btnSet", label = "SetValue", color = "yellow accent-4")
       ),
       material_column(
         width = 8,

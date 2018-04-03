@@ -7,6 +7,7 @@
 #' @param maxval Number. The maximum value on the slider.
 #' @param initval Number. The initial value of the slider.
 #' @param color String. The color name of the slider Leave empty for the 'teal lighten-1' color. Visit \url{http://materializecss.com/color.html} for a list of available colors.
+#' @param session Shiny default reactive domain.
 #' @examples
 #' material_slider(
 #'   inputId = "example_slider",

@@ -10,7 +10,7 @@
 #' @param type String. The type of the text input. Valiue should be text, number, email, password, time, date
 #' @param class String. Additional class for text input.
 #' @param icon String. The name of the icon. Leave empty for no icon. Visit \url{http://materializecss.com/icons.html} for a list of available icons.
-#' @param color String. The color name of the text input Leave empty for 'teal lighten-1' color. Visit \url{http://materializecss.com/color.html} for a list of available colors.
+#' @param color String. The color name of the text input. Leave empty for 'teal lighten-1' color. Visit \url{http://materializecss.com/color.html} for a list of available colors.
 #' @param value String or Numeric. The value to update the input.
 #' @param session Shiny default reactive domain.
 #' @examples

@@ -9,10 +9,9 @@ if (interactive()) {
       material_row(
         material_column(
           width = 4,
-          material_floating(
+          material_fab(
             inputId = "example_flt_top",
             icon = "menu",
-            color = "#f44336",
             position = "top-right",
             hover = FALSE,
             action = list(
@@ -25,10 +24,10 @@ if (interactive()) {
           width = 4,
           material_card(
             title = "Floating in a card",
-            material_floating(
+            material_fab(
               inputId = "example_flt_card",
               icon = "add",
-              color = "#4db6ac",
+              color = "red",
               size = "small",
               direction = "bottom",
               position = "top-right",
@@ -36,16 +35,16 @@ if (interactive()) {
               action = list(
                 target = c("id1", "id2", "id3", "id4", "id5"),
                 icon = c("mode_edit", "insert_chart", "attach_file", "publish", "format_quote"),
-                color = c("#2196f3", "#ffd600", "#cddc39", "#4caf50", "#ff9800"),
+                color = c("yellow accent-4", "lime accent-4", "green lighten-3", "cyan accent-2", "light-blue lighten-4"),
                 size = "small"
               )
             ),
             br(),br(),br(),br(),br(),br(),br(),br(),
             footer =
-              material_floating(
+              material_fab(
                 inputId = "example_flt_bottom",
                 icon = "add",
-                color = "#ffd600",
+                color = "blue",
                 direction = "top",
                 size = "medium",
                 action = list(
