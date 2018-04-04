@@ -2,7 +2,7 @@
 #'
 #' Build a materialize button. The initial value is zero, and increases by one on each press.
 #' @param inputId String. The input identifier used to access the value.
-#' @param icon String list. The name of the icon. Leave empty for no icon. Visit \url{http://materializecss.com/icons.html} for a list of available icons.
+#' @param icon String The name of the icon. Leave empty for no icon. Visit \url{http://materializecss.com/icons.html} for a list of available icons.
 #' @param size String. The size of the icon. Values should be 'large', 'medium' or 'small'.
 #' @param color String. The color name of the floating action button. Leave empty for the 'teal lighten-1' color. Visit \url{http://materializecss.com/color.html} for a list of available colors.
 #' @param direction String. The direction of the floating action button when open. values should be 'top', 'right', 'buttom', 'left'.

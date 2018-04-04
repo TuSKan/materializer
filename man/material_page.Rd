@@ -5,7 +5,7 @@
 \title{Create a materialize page}
 \usage{
 material_page(..., title = "", footer = NULL, bgcolor = "grey lighten-4",
-  fontcolor = NULL, localfonts = FALSE)
+  fontcolor = NULL, fontoffline = FALSE)
 }
 \arguments{
 \item{...}{The UI elements to place in the page.}
@@ -18,7 +18,7 @@ material_page(..., title = "", footer = NULL, bgcolor = "grey lighten-4",
 
 \item{fontcolor}{String. The title font color. Leave blank for the default color. Visit \url{http://materializecss.com/color.html} for a list of available colors.}
 
-\item{localfonts}{Boolean. Should the material font files be included? (This will place the font sources in a directory 'www', at the same location as the app code.)}
+\item{fontoffline}{Boolean. Should the material font files be offline? (This will place the font sources in a directory 'www', at the same location as the app code.)}
 }
 \description{
 Build a materialize page.

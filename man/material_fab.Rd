@@ -12,7 +12,7 @@ material_fab(inputId, icon, size = "large", color = NULL,
 \arguments{
 \item{inputId}{String. The input identifier used to access the value.}
 
-\item{icon}{String list. The name of the icon. Leave empty for no icon. Visit \url{http://materializecss.com/icons.html} for a list of available icons.}
+\item{icon}{String The name of the icon. Leave empty for no icon. Visit \url{http://materializecss.com/icons.html} for a list of available icons.}
 
 \item{size}{String. The size of the icon. Values should be 'large', 'medium' or 'small'.}
 

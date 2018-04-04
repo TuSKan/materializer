@@ -20,56 +20,58 @@ hex2rgb <- function(hexcol) {
 
 includeInHead <- function(..., style = NULL, script = NULL, package = "materializer") {
   files <- list(...)
-  shiny::tagList(
-    if (!isEmpty(files)) {
-      shiny::singleton(
-        shiny::tags$head(
-          lapply(files, function(f) {
-            switch(
-              tolower(tools::file_ext(f)),
-              "css" = shiny::includeCSS(
-                system.file(
-                  file.path("css", f),
-                  package = package
-                )
-              ),
-              "js" = shiny::includeScript(
-                system.file(
-                  file.path("js", f),
-                  package = package
-                )
-              ),
-              "html" = shiny::includeHTML(
-                system.file(
-                  file.path("html", f),
-                  package = package
-                )
-              ),
-              "txt" = shiny::includeText(
-                system.file(
-                  file.path("txt", f),
-                  package = package
+  clean(
+    shiny::tagList(
+      if (!isEmpty(files)) {
+        shiny::singleton(
+          shiny::tags$head(
+            lapply(files, function(f) {
+              switch(
+                tolower(tools::file_ext(f)),
+                "css" = shiny::includeCSS(
+                  system.file(
+                    file.path("css", f),
+                    package = package
+                  )
+                ),
+                "js" = shiny::includeScript(
+                  system.file(
+                    file.path("js", f),
+                    package = package
+                  )
+                ),
+                "html" = shiny::includeHTML(
+                  system.file(
+                    file.path("html", f),
+                    package = package
+                  )
+                ),
+                "txt" = shiny::includeText(
+                  system.file(
+                    file.path("txt", f),
+                    package = package
+                  )
                 )
               )
-            )
-          })
+            })
+          )
         )
-      )
-    },
-    if (!is.null(style)) {
-      shiny::tags$head(
-        shiny::tags$style(
-          style
+      },
+      if (!is.null(style)) {
+        shiny::tags$head(
+          shiny::tags$style(
+            style
+          )
         )
-      )
-    },
-    if (!is.null(script)) {
-      shiny::tags$head(
-        shiny::tags$script(
-          script
+      },
+      if (!is.null(script)) {
+        shiny::tags$head(
+          shiny::tags$script(
+            script
+          )
         )
-      )
-    }
+      }
+    )
   )
 }
 

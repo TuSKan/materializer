@@ -4,7 +4,7 @@ if (interactive()) {
 
   # Wrap materialize apps in material_page
   ui <- material_page(
-    localfonts = TRUE,
+    fontoffline = TRUE,
     title = "Basic Page",
     tags$h1("Page Content"),
     material_button("btn", icon = "add", color = "red", class = "floating")

@@ -1,3 +1,7 @@
+.materialize-card {
+  position: relative;
+}
+
 .card .card-body.table-full-width {
     padding-left: 0;
     padding-right: 0;

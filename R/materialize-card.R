@@ -23,6 +23,7 @@ material_card <- function(..., title = NULL, img = NULL, footer = NULL, class = 
 
     shiny::div(
       class = paste(
+        "materialize-card",
         "card",
         if (hoverable) "hoverable",
         ifDef(depth, "z-depth-"),
