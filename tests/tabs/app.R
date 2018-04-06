@@ -53,7 +53,7 @@ if (interactive()) {
                     material_card(
                       title = "Example Card",
                       shiny::tags$h5("Card Content"),
-                      background_color = "#4db6ac",
+                      bgcolor = "teal lighten-2",
                       tabs = material_tabs(
                         inputId = "tabs_card_2",
                         tabs = c(
@@ -62,7 +62,7 @@ if (interactive()) {
                           "Example Tab 23" = "example_tab_23"
                         ),
                         incard = TRUE,
-                        background_color = "#e0f2f1",
+                        bgcolor = "teal lighten-5",
                         material_tab_content(
                           inputId = "example_tab_21",
                           h1("Example Tab 21")

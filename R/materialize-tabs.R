@@ -39,7 +39,7 @@ material_tabs <- function(inputId, tabs, ..., active = NULL, incard = FALSE, col
   active <- hftabs %in% active
 
   shiny::tags$div(
-    class = "materialize-tabs",
+    class = paste("materialize-tabs", bgcolor),
     id = inputId,
     shiny::tags$div(
       class = if (incard) "cards-tabs",
@@ -47,7 +47,7 @@ material_tabs <- function(inputId, tabs, ..., active = NULL, incard = FALSE, col
         class = paste(
           "tabs tabs-fixed-width",
           paste0("tabs-",colornm),
-          ifDef(bgcolor)
+          if (is.null(bgcolor)) "tabs-transparent"
         ),
         lapply(
           seq_along(tabs),
@@ -65,25 +65,28 @@ material_tabs <- function(inputId, tabs, ..., active = NULL, incard = FALSE, col
       )
     ),
     shiny::tags$div(
-      class = paste(if (incard) "card-content", ifDef(bgcolor)),
+      class = paste(if (incard) "card-content", if (!is.null(bgcolor)) bgcolor),
       ...
     ),
     includeInHead(
       "materialize-tabs.js",
       "materialize-tabs.css",
       style = paste0(
-        '.tabs-', colornm, ' .indicator {
-            background-color: ', colorhex, ';
+        '.tabs {
+          background-color: transparent !important;
+        }
+        .tabs-', colornm, ' .indicator {
+            background-color: ', colorhex, ' !important;
           }
         .tabs-', colornm, ' .tab a,
         .tabs-', colornm, ' .tab.disabled a,
         .tabs-', colornm, ' .tab.disabled a:hover {
-          color: rgba(', paste(hex2rgb(colorhex),collapse = ","),',0.6)
+          color: rgba(', paste(hex2rgb(colorhex),collapse = ","),',0.6) !important;
         }
 
         .tabs-', colornm, ' .tab a:hover,
         .tabs-', colornm, ' .tab a.active {
-          color: ', colorhex, ';
+          color: ', colorhex, ' !important;
         }'
       )
     )
