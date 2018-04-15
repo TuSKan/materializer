@@ -30,6 +30,7 @@ update_material_switch(inputId, on = NULL, off = NULL, init = NULL,
 Build a materialize switch. The value is a boolean (TRUE if 'on', FALSE if 'off').
 }
 \examples{
+require(materializer)
 material_switch(
   inputId = "example_switch",
   off = "Off",

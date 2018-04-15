@@ -28,6 +28,7 @@ update_material_checkbox(inputId, label = NULL, checked = FALSE,
 Build a materialize checkbox. The value is a boolean (TRUE if checked, FALSE if not checked).
 }
 \examples{
+require(materializer)
 material_checkbox(
   inputId = "example_checkbox",
   label = "Checkbox",

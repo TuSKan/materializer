@@ -11,6 +11,7 @@
 #' @param session Shiny default reactive domain.
 #'
 #' @examples
+#' require(materializer)
 #' material_tabs(
 #'   tabs = c(
 #'     "Example Tab 1" = "example_tab_1",

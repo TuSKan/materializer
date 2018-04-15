@@ -10,6 +10,7 @@
 #' @param color String. The color name of the radio buttons. Leave empty for 'teal lighten-1' color. Visit \url{http://materializecss.com/color.html} for a list of available colors.
 #' @param session Shiny default reactive domain.
 #' @examples
+#' require(materializer)
 #' material_radio(
 #'   inputId = "example_radio_button",
 #'   choices = c(

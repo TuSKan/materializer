@@ -19,6 +19,7 @@ material_column(..., width = 6, type = "s", offset = NULL)
 UI content can be placed in columns to organize items on a page.
 }
 \examples{
+require(materializer)
 material_column(
   width = 4,
   shiny::h1("Column Content")

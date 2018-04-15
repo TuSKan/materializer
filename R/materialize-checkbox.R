@@ -8,6 +8,7 @@
 #' @param color String. The color name of the Checkbox. Leave empty for the 'teal lighten-1' color. Visit \url{http://materializecss.com/color.html} for a list of available colors.
 #' @param session Shiny default reactive domain.
 #' @examples
+#' require(materializer)
 #' material_checkbox(
 #'   inputId = "example_checkbox",
 #'   label = "Checkbox",

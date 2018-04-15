@@ -7,6 +7,7 @@
 #' @param btnClose Button. The modal's close button tag.
 #' @param fixedFooter Logical. Should the footer be fixed?
 #' @examples
+#' require(materializer)
 #' material_modal(
 #'   inputId = "example_modal",
 #'   shiny::tags$p("Modal Content")

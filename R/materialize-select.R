@@ -9,6 +9,7 @@
 #' @param color String. The color name of the select input. Leave empty for 'teal lighten-1' color. Visit \url{http://materializecss.com/color.html} for a list of available colors.
 #' @param session Shiny default reactive domain
 #' @examples
+#' require(materializer)
 #' material_select(
 #'   inputId = "example_dropdown",
 #'   label = "Drop down",

@@ -10,5 +10,6 @@ material_divider()
 UI content can be divide to organize items on a page.
 }
 \examples{
+require(materializer)
 material_divider()
 }

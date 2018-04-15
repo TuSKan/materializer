@@ -4,35 +4,38 @@
 \alias{material_navbar}
 \title{The material Nav bar}
 \usage{
-material_navbar(inputId, navlist, logo = NULL, position = "right",
-  tabs = NULL, fixed = FALSE, color = NULL)
+material_navbar(inputId, navlist, logo = NULL, logoPosition = "left",
+  tabs = NULL, sidenav = TRUE, bgcolor = "white", color = NULL)
 }
 \arguments{
 \item{inputId}{String. The input identifier used to access the value.}
 
-\item{navlist}{list. The nav bar element list. The list need to contain a 'target' element and in adition could contain 'name' (string), 'icon' (string), 'active' (logical)  or any tagList elements.}
+\item{navlist}{list. The nav bar element list. The list need to contain a 'target' element and in adition could contain 'name' (string), 'icon' (string), 'active' (logical).}
 
 \item{logo}{list. The nav bar logo element list. The list need to contain a 'target' element and in adition could contain 'name' (string), 'icon' (string) or any tagList elements.}
 
-\item{position}{String. The position of the nav bar. Values should be "left", "right".}
+\item{logoPosition}{String. The logo position in the nav bar. Values should be "left", "right".}
 
 \item{tabs}{material_tabs. A material tabs could be included in nav bar.}
 
-\item{fixed}{Logical, Should the nav bar be fixed?}
+\item{sidenav}{Logical. A sidebar should be created when collapsed?}
 
-\item{color}{String. The color name of the Checkbox. Leave empty for the 'teal lighten-1' color. Visit \url{http://materializecss.com/color.html} for a list of available colors.}
+\item{bgcolor}{String. The color name for Navbar backgroud. Leave empty for 'white' color. Visit \url{http://materializecss.com/color.html} for a list of available colors.}
+
+\item{color}{String. The color name for links and icons in Navbar. Leave empty for the 'teal lighten-1' color. Visit \url{http://materializecss.com/color.html} for a list of available colors.}
 }
 \description{
 The material Nav bar UI Element
 }
 \examples{
+require(materializer)
 material_navbar(
   inputId = "example_navbar",
   navlist = list(
     c(target = "lisk_1.html", name = "One"),
     c(target = "lisk_2.html", name = "Two"),
     c(target = "lisk_3.html", name = "Three", icon = "cloud"),
-    c(target = "lisk_4.html", icon = "alarm", acive = TRUE)
+    c(target = "lisk_4.html", icon = "alarm", active = TRUE)
   ),
   logo = c(target = "index.html", name = "Logo", icon = "accessibility"),
 )

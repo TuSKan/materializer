@@ -8,6 +8,7 @@
 #' @param fontcolor String. The title font color. Leave blank for the default color. Visit \url{http://materializecss.com/color.html} for a list of available colors.
 #' @param fontoffline Boolean. Should the material font files be offline? (This will place the font sources in a directory 'www', at the same location as the app code.)
 #' @examples
+#' require(materializer)
 #' material_page(
 #'   title = "Example Title",
 #'   bgcolor = "blue lighten-4",

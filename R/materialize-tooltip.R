@@ -6,6 +6,7 @@
 #' @param position String. The position of the tooltip. Values should be 'top', 'right', 'bottom', 'left'.
 #' @param delay Integer. The delay time before tooltip desappears.
 #' @examples
+#' require(materializer)
 #' material_tooltip(
 #'   material_button(
 #'     inputId = "example_button",

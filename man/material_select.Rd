@@ -30,6 +30,7 @@ update_material_select(inputId, choices = NULL, selected = NULL,
 Build a materialize select
 }
 \examples{
+require(materializer)
 material_select(
   inputId = "example_dropdown",
   label = "Drop down",

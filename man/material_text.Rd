@@ -87,6 +87,7 @@ update_material_date(inputId, value = NULL, label = NULL,
 Build a materialize text input
 }
 \examples{
+require(materializer)
 material_text(
   inputId = "example_text",
   label = "Label",

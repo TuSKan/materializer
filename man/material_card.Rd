@@ -35,6 +35,7 @@ material_card(..., title = NULL, img = NULL, footer = NULL,
 UI content can be placed in cards to organize items on a page.
 }
 \examples{
+require(materializer)
 material_card(
   title = "Example Card",
   shiny::h5("Card Content"),

@@ -14,6 +14,7 @@
 #' @param value String or Numeric. The value to update the input.
 #' @param session Shiny default reactive domain.
 #' @examples
+#' require(materializer)
 #' material_text(
 #'   inputId = "example_text",
 #'   label = "Label",

@@ -31,6 +31,7 @@ update_material_slider(inputId, label = NULL, minval = NULL,
 Build a materialize slider.
 }
 \examples{
+require(materializer)
 material_slider(
   inputId = "example_slider",
   label = "slider",

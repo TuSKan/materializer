@@ -32,6 +32,7 @@ update_material_tabs(inputId, active = NULL,
 Use this function to create tabs in your application.
 }
 \examples{
+require(materializer)
 material_tabs(
   tabs = c(
     "Example Tab 1" = "example_tab_1",

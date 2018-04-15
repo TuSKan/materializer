@@ -32,6 +32,7 @@ material_fab(inputId, icon, size = "large", color = NULL,
 Build a materialize button. The initial value is zero, and increases by one on each press.
 }
 \examples{
+require(materializer)
 material_fab(
   inputId = "example_flt_action",
   icon = "add",

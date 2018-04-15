@@ -24,6 +24,7 @@ material_button(inputId, label = NULL, icon = NULL, class = NULL,
 Build a materialize button. The initial value is zero, and increases by one on each press.
 }
 \examples{
+require(materializer)
 material_button(
   inputId = "example_button",
   label = "Button",

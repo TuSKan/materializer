@@ -23,6 +23,7 @@ material_modal(inputId, ..., btnShow = material_button(paste0(inputId,
 Put any UI object inside of a modal. The modal will open when the button is pressed.
 }
 \examples{
+require(materializer)
 material_modal(
   inputId = "example_modal",
   shiny::tags$p("Modal Content")

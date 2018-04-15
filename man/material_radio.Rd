@@ -32,6 +32,7 @@ update_material_radio(inputId, choices = NULL, selected = NULL,
 Build a materialize radio button.
 }
 \examples{
+require(materializer)
 material_radio(
   inputId = "example_radio_button",
   choices = c(

@@ -5,7 +5,7 @@
 \alias{update_material_dropdown}
 \title{The material Dropdown Menu UI Element}
 \usage{
-material_dropdown(inputId, button, ddlist, color = NULL)
+material_dropdown(inputId, button, ddlist, bgcolor = "white", color = NULL)
 
 update_material_dropdown(inputId, ddlist,
   session = shiny::getDefaultReactiveDomain())
@@ -17,6 +17,8 @@ update_material_dropdown(inputId, ddlist,
 
 \item{ddlist}{List. The dropdown element list.The list need to contain a 'target' element and in adition could contain 'name' and 'icon' elements.}
 
+\item{bgcolor}{String. The color name for Dropdown backgroud. Leave empty for 'white' color. Visit \url{http://materializecss.com/color.html} for a list of available colors.}
+
 \item{color}{String. The color name of the Checkbox. Leave empty for the 'teal lighten-1' color. Visit \url{http://materializecss.com/color.html} for a list of available colors.}
 
 \item{session}{Shiny default reactive domain.}
@@ -25,6 +27,7 @@ update_material_dropdown(inputId, ddlist,
 The material Dropdown Menu UI Element
 }
 \examples{
+require(materializer)
 material_dropdown(
 inputId = "example_dropdown_menu",
   button = material_button(

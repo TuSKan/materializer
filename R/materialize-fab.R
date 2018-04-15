@@ -11,6 +11,7 @@
 #' @param position String. The position of the floating action button. Values should be 'bottom-left', 'bottom-right', 'top-left' and 'top-right'.
 #' @param action List. A list of action attributes such as target, icon, size and color.
 #' @examples
+#' require(materializer)
 #' material_fab(
 #'   inputId = "example_flt_action",
 #'   icon = "add",

@@ -28,7 +28,7 @@ Build a materialize file input.
 \examples{
 if (interactive()) {
 library(shiny)
-library(materialize)
+library(materializer)
 # Wrap materialize apps in material_page
 ui <- material_page(
   title = "Basic Page",

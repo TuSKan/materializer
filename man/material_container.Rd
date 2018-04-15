@@ -13,5 +13,6 @@ material_container(...)
 UI content can be insert in a container to organize items on a page.
 }
 \examples{
+require(materializer)
 material_container()
 }

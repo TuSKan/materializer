@@ -19,6 +19,7 @@ material_tooltip(tagList, tooltip, position = "bottom", delay = 50)
 Include a tooltip in any taglist
 }
 \examples{
+require(materializer)
 material_tooltip(
   material_button(
     inputId = "example_button",

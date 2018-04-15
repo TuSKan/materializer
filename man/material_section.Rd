@@ -15,6 +15,7 @@ material_section(..., title = NULL)
 UI content can be insert in section to organize items on a page.
 }
 \examples{
+require(materializer)
 material_section(
   title = "Section",
   shiny::h1("Content goes here")

@@ -6,6 +6,7 @@
 #' @param type Char. Type of column responsive. The value should be s (default), m or l.
 #' @param offset Integer. The offset to the left of the column. The value should be between 0 and 11.
 #' @examples
+#' require(materializer)
 #' material_column(
 #'   width = 4,
 #'   shiny::h1("Column Content")
@@ -29,6 +30,7 @@ material_column <- function(..., width = 6, type = "s", offset = NULL) {
 #' UI content can be placed in a row to organize items on a page.
 #' @param ... The UI elements to place in the row.
 #' @examples
+#' require(materializer)
 #' material_row(
 #'   shiny::tags$h1("Row Content")
 #' )
@@ -47,6 +49,7 @@ material_row <- function(...){
 #' @param ... The UI elements to place in the column.
 #' @param title Integer. The width of the column. The value should be between 1 and 12.
 #' @examples
+#' require(materializer)
 #' material_section(
 #'   title = "Section",
 #'   shiny::h1("Content goes here")
@@ -64,6 +67,7 @@ material_section <- function(..., title = NULL) {
 #'
 #' UI content can be divide to organize items on a page.
 #' @examples
+#' require(materializer)
 #' material_divider()
 #' @export
 material_divider <- function(){
@@ -77,6 +81,7 @@ material_divider <- function(){
 #' UI content can be insert in a container to organize items on a page.
 #' @param ... tagList. UI content list
 #' @examples
+#' require(materializer)
 #' material_container()
 #' @export
 material_container <- function(...) {

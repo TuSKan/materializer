@@ -24,6 +24,7 @@ material_page(..., title = "", footer = NULL, bgcolor = "grey lighten-4",
 Build a materialize page.
 }
 \examples{
+require(materializer)
 material_page(
   title = "Example Title",
   bgcolor = "blue lighten-4",

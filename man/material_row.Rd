@@ -13,6 +13,7 @@ material_row(...)
 UI content can be placed in a row to organize items on a page.
 }
 \examples{
+require(materializer)
 material_row(
   shiny::tags$h1("Row Content")
 )

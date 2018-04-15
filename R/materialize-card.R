@@ -13,6 +13,7 @@
 #' @param hoverable Loginal. Enable/disable hover effect.
 #' @param bgcolor String. The background color name of the card. Leave empty for the 'teal lighten-1' color. Visit \url{http://materializecss.com/color.html} for a list of available colors.
 #' @examples
+#' require(materializer)
 #' material_card(
 #'   title = "Example Card",
 #'   shiny::h5("Card Content"),
