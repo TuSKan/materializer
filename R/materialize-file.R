@@ -14,7 +14,7 @@
 #' library(materializer)
 
 #' # Wrap materialize apps in material_page
-#' ui <- material_page(
+#' ui <- material_body(
 #'   title = "Basic Page",
 #'   include_fonts = TRUE,
 #'   tags$h1("Page Content"),

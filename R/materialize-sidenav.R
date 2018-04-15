@@ -130,7 +130,7 @@ material_sidenav <- function(inputId, navlist, logo = NULL, fixed = TRUE, width 
       )
     ),
     includeInHead(
-      "materialize-sidebar.js",
+      "materialize-sidenav.js",
       style = paste0(
         '.materialize-sidenav .sidenav {
           width: ', width ,'px;

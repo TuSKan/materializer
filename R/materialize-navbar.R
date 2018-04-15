@@ -117,7 +117,7 @@ material_navbar <- function(inputId, navlist, logo = NULL, logoPosition = "left"
       )
     },
     includeInHead(
-      "materialize-sidebar.js",
+      "materialize-navbar.js",
       style = paste0(
         '.materialize-navbar nav {
          background-color: ', bgcolorhex, ' ;

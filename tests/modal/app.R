@@ -3,7 +3,7 @@ if (interactive()) {
   library(materializer)
 
   # Wrap materialize apps in material_page
-  ui <- material_page(
+  ui <- material_body(
     title = "Basic Page",
     material_container(
       material_row(

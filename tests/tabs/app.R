@@ -3,7 +3,7 @@ if (interactive()) {
   library(materializer)
 
   ui <-
-    material_page(
+    material_body(
       title = "Testing",
       background_color = "white",
       material_section(

@@ -1,9 +1,11 @@
 $(document).ready(function () {
     function initmaterializeCollapsible(callback) {
         $('.collapsible').collapsible();
-        var elem = document.querySelector('.collapsible.expandable');
-        var instance = M.Collapsible.init(elem, {
+        var elCollExp = document.querySelectorAll('.collapsible.expandable');
+        elCollExp.forEach( function(elem) {
+          M.Collapsible.init(elem, {
           accordion: false
+          });
         });
         callback();
     }

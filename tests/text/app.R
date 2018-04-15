@@ -5,7 +5,7 @@ if (interactive()) {
   isEmpty <- function(x) ifelse(length(x) == 0 || x == "" || is.na(x), TRUE, FALSE)
   empty2NA <- function(x) ifelse(isEmpty(x), NA, x)
 
-  ui <- material_page(
+  ui <- material_body(
     title = "Basic Page",
     include_fonts = TRUE,
     tags$h1("Page Content"),

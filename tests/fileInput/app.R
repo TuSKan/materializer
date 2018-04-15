@@ -3,7 +3,7 @@ if (interactive()) {
   library(materializer)
 
   # Wrap materialize apps in material_page
-  ui <- material_page(
+  ui <- material_body(
     title = "Basic Page",
     tags$h1("Page Content"),
     material_file(inputId = "example_file_input", label = "ok", class = "round", color = "yellow accent-4")

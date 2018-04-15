@@ -113,6 +113,7 @@ update_material_tabs <- function(inputId, active = NULL, session = shiny::getDef
 #' @export
 material_tab_content <- function(inputId, ...) {
   shiny::tags$div(
+    class = "materialize-tab-content",
     id = inputId,
     ...
   )

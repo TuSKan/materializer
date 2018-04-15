@@ -3,18 +3,15 @@ if (interactive()) {
   library(materializer)
 
   # Wrap materialize apps in material_page
-  ui <- material_page(
+  ui <- material_body(
     title = "Basic Page",
     material_navbar(
       inputId = "example_navbar",
       #sidenav = FALSE,
       navlist = list(
-        c(target = "lisk_1.html", name = "One"),
-        c(target = "lisk_2.html", name = "Two"),
-        c(target = "lisk_3.html", name = "Three", icon = "cloud"),
-        c(target = "lisk_4.html", icon = "alarm", active = TRUE),
-        c(target = "lisk_5.html", icon = "archive", class = "waves-effect waves-light btn red lighten-5 round", type = "button"),
-        c(target = "#!", name = "DropMe!", icon = "arrow_drop_down", class = "dropdown-trigger", "data-target" = "dropnav")
+        c(target = "#", icon = "archive", class = "waves-effect waves-light btn red lighten-5 round", type = "button", name = "Download"),
+        c(target = "#example_tab_1", name = "DropMe 1!", icon = "arrow_drop_down", class = "dropdown-trigger", "data-target" = "dropnav1"),
+        c(target = "#example_tab_2", name = "DropMe 2!", icon = "arrow_drop_down", class = "dropdown-trigger", "data-target" = "dropnav2")
       ),
       #logo = c(target = "index.html", name = "Logo", icon = "accessibility"),
       logo = shiny::tags$object(
@@ -35,28 +32,48 @@ if (interactive()) {
       bgcolor = "red lighten-5"
     ),
     material_dropdown(
-      inputId = "dropnav",
+      inputId = "dropnav1",
       button = NULL,
       ddlist = list(
-        c(target = "lisk_1.html", name = "One"),
-        c(target = "lisk_2.html", name = "Two"),
-        NULL,
-        c(target = "lisk_3.html", name = "Three", icon = "cloud"),
-        c(target = "lisk_4.html", icon = "alarm")
+        c(target = "#page_teal", name = "Teal"),
+        c(target = "#page_orange", name = "Orange"),
+        c(target = "#page_green", name = "Green", icon = "cloud"),
+        c(target = "#", icon = "alarm")
       ),
       color = "red",
       bgcolor = "red lighten-5"
     ),
-    material_container(
-      material_row(
-        material_tab_content(
-          inputId = "example_tab_1",
-          h3("Content 1")
-        ),
-        material_tab_content(
-          inputId = "example_tab_2",
-          h3("Content 2")
-        )
+    material_dropdown(
+      inputId = "dropnav2",
+      button = NULL,
+      ddlist = list(
+        c(target = "#page_teal", name = "Teal"),
+        c(target = "#page_orange", name = "Orange"),
+        c(target = "#page_green", name = "Green", icon = "cloud"),
+        c(target = "#", icon = "alarm")
+      ),
+      color = "red",
+      bgcolor = "red lighten-5"
+    ),
+    material_tab_content(
+      inputId = "example_tab_1",
+      material_page(
+        inputId = "page_teal",
+        h1("Page Content Teal"),
+        color = "teal"
+      ),
+      material_page(
+        inputId = "page_orange",
+        h1("Page Content Orange"),
+        color = "deep-orange"
+      )
+    ),
+    material_tab_content(
+      inputId = "example_tab_2",
+      material_page(
+        inputId = "page_green",
+        h1("Page Content Green"),
+        color = "green"
       )
     )
   )

@@ -1,8 +1,8 @@
 default_color <- "teal lighten-1"
 
-ifDef <- function(param, prefix = "") {
-  if (is.null(param) || param == FALSE) return("")
-  sapply(param, function(x) paste0(prefix, x))
+ifDef <- function(param, prefix = "", suffix = "") {
+  if (is.null(param) || param == FALSE || is.na(param)) return("")
+  sapply(param, function(x) paste0(prefix, x, suffix))
 }
 
 css.names <- function(x) gsub("[ ]|[.]|[_]", "-", x)
