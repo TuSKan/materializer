@@ -119,23 +119,44 @@ material_navbar <- function(inputId, navlist, logo = NULL, logoPosition = "left"
     includeInHead(
       "materialize-navbar.js",
       style = paste0(
-        '.materialize-navbar nav {
-         background-color: ', bgcolorhex, ' ;
+        '.materialize-page {
+          height: ', 100 - 10, 'vmin !important;
         }
-        .materialize-navbar nav a {
-          color: ', colorhex, ';
+        .materialize-navbar a {
+         color: ', colorhex, ' !important;
         }
-        .materialize-navbar nav i {
-          color: ', colorhex, ';
+        .materialize-navbar i {
+         color: ', colorhex, ' !important;
+        }
+        .materialize-navbar nav {
+          background-color: ', bgcolorhex, ';
+        }
+        .materialize-navbar nav ul li.active {
+          background-color: rgba(', paste(hex2rgb(colorhex),collapse = ","),',0.3) !important;
+        }
+        .materialize-navbar nav a:hover {
+          background-color: rgba(', paste(hex2rgb(colorhex),collapse = ","),',0.1) !important;
+        }
+        .materialize-navbar nav .dropdown-content li:hover {
+          background-color: rgba(', paste(hex2rgb(colorhex),collapse = ","),',0.1) !important;
+        }
+        .materialize-navbar nav .dropdown-content li.active {
+          background-color: rgba(', paste(hex2rgb(colorhex),collapse = ","),',0.3) !important;
         }
         .materialize-navbar .sidenav {
           background-color: ', bgcolorhex, ';
         }
-        .materialize-navbar .sidenav a {
-          color: ', colorhex, ';
+        .materialize-navbar .sidenav li a:hover {
+          background-color: rgba(', paste(hex2rgb(colorhex),collapse = ","),',0.1) !important;
         }
-        .materialize-navbar .sidenav i {
-          color: ', colorhex, ' !important;
+        .materialize-navbar .sidenav .dropdown-content li:hover {
+          background-color: rgba(', paste(hex2rgb(colorhex),collapse = ","),',0.1) !important;
+        }
+        .materialize-navbar .sidenav .dropdown-content li.active {
+          background-color: rgba(', paste(hex2rgb(colorhex),collapse = ","),',0.3) !important;
+        }
+        .materialize-navbar .sidenav li.active {
+          background-color: rgba(', paste(hex2rgb(colorhex),collapse = ","),',0.3) !important;
         }'
       )
     )

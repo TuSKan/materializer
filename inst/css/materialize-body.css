@@ -21,6 +21,7 @@
 
 
 .materialize-page {
+  height: 100vmin;
   position: relative;
 }
 

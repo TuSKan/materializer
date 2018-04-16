@@ -9,6 +9,7 @@ if (interactive()) {
       inputId = "example_navbar",
       #sidenav = FALSE,
       navlist = list(
+        c(target = "#", icon = "cloud", name = "Cloud"),
         c(target = "#", icon = "archive", class = "waves-effect waves-light btn red lighten-5 round", type = "button", name = "Download"),
         c(target = "#example_tab_1", name = "DropMe 1!", icon = "arrow_drop_down", class = "dropdown-trigger", "data-target" = "dropnav1"),
         c(target = "#example_tab_2", name = "DropMe 2!", icon = "arrow_drop_down", class = "dropdown-trigger", "data-target" = "dropnav2")

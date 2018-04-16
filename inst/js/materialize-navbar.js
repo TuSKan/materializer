@@ -30,9 +30,9 @@ $(document).ready(function() {
   var elemSNav = document.querySelector('.materialize-navbar .sidenav');
   var sidenav = M.Sidenav.init(elemSNav);
 
-  var pages = document.querySelectorAll('.materialize-page, .materialize-tab-content');
+  var pages = document.querySelectorAll('.materialize-page');
 
-  var list = document.querySelectorAll('.materialize-navbar li a[href] , .materialize-dropdown li a[href]');
+  var list = document.querySelectorAll('.materialize-navbar ul li a[href] , .materialize-dropdown ul li a[href]');
 
 // Init
   var liactive = findActive(list);
