@@ -35,7 +35,7 @@
 #' shinyApp(ui = ui, server = server)
 #' }
 #' @export
-material_file <- function(inputId, label, multiple = FALSE, icon = NULL, class = NULL, depth = NULL, color = NULL) {
+material_file <- function(inputId, label, multiple = FALSE, icon = "file_upload", class = NULL, depth = NULL, color = NULL) {
   if (is.null(color)) color <- default_color
   colornm <- css.names(color)
   colorhex <- material_colormap(color)
@@ -48,6 +48,11 @@ material_file <- function(inputId, label, multiple = FALSE, icon = NULL, class =
         ifDef(class, "btn-"),
         ifDef(depth, "z-depth-"),
         ifDef(color)
+      ),
+      shiny::tags$i(
+        class =
+          "material-icons left",
+        icon
       ),
       shiny::tags$span(
         label

@@ -138,9 +138,6 @@ material_sidenav <- function(inputId, navlist, logo = NULL, fixed = TRUE, width 
         header, body, footer {
           padding-left: ', fixed*width ,'px;
         }
-        a {
-            color: ', colorhex, ' !important;
-        }
         .materialize-sidenav a {
           color: ', colorhex, ' !important;
         }
@@ -154,6 +151,15 @@ material_sidenav <- function(inputId, navlist, logo = NULL, fixed = TRUE, width 
           header, body, footer {
             padding-left: 0;
           }
+        }
+        .materialize-sidenav .sidenav li a:hover {
+          background-color: rgba(', paste(hex2rgb(colorhex),collapse = ","),',0.1) !important;
+        }
+        .materialize-sidenav .sidenav .collapsible-header:hover {
+          background-color: rgba(', paste(hex2rgb(colorhex),collapse = ","),',0.1) !important;
+        }
+        .materialize-sidenav .sidenav li.active {
+           background-color: rgba(', paste(hex2rgb(colorhex),collapse = ","),',0.3) !important;
         }'
       )
     )

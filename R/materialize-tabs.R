@@ -88,6 +88,12 @@ material_tabs <- function(inputId, tabs, ..., active = NULL, incard = FALSE, col
         .tabs-', colornm, ' .tab a:hover,
         .tabs-', colornm, ' .tab a.active {
           color: ', colorhex, ' !important;
+        }
+        .tabs-', colornm, ' .tab a:focus {
+           background-color: transparent !important;
+        }
+        .tabs-', colornm, ' .tab a:focus.active {
+          background-color: rgba(', paste(hex2rgb(colorhex),collapse = ","),',0.1) !important;
         }'
       )
     )

@@ -12,7 +12,7 @@ if (interactive()) {
         c(target = "#page_orange", name = "Orange"),
         c(target = "#page_green", name = "Green", icon = "cloud"),
         c(target = "#", icon = "alarm"),
-        c(target = "#", icon = "archive", class = "waves-effect waves-light btn red lighten-3 round", name = "Download"),
+        c(target = "#", icon = "archive", class = "waves-effect waves-light btn transparent round", name = "Download"),
         list(
           name = "Collapsible", icon = "add_box", class = "accordion",
           collapsible = list(

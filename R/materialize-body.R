@@ -15,14 +15,14 @@
 #'   shiny::tags$h1("Body Content")
 #' )
 #' @export
-material_body <- function(..., title = "", footer = NULL, bgcolor = "grey lighten-4", fontcolor = NULL, fontoffline = FALSE){
+material_body <- function(..., title = "", footer = NULL, bgcolor = "grey lighten-4", fontColor = NULL, offline = FALSE){
 
-  if (fontoffline) fontsCopy()
+  if (offline) fontsCopy()
 
   shiny::tags$html(
     # Head --------------------------------------------------------------------
     shiny::tags$head(
-      if (fontoffline) {
+      if (offline) {
         shiny::includeCSS(
           system.file("fonts/material-icons/material-icons.css",
                       package = "materializer")
@@ -47,12 +47,13 @@ material_body <- function(..., title = "", footer = NULL, bgcolor = "grey lighte
       shiny::tags$meta(
         name = "viewport",
         content = "width=device-width, initial-scale=1.0"
-      )
+      ),
+      shiny::tags$title(title)
     ),
     # Body --------------------------------------------------------------------
     shiny::tags$body(
       shiny::div(
-        class = paste(bgcolor, ifDef(fontcolor, "-text"), "materialize-body"),
+        class = paste(bgcolor, ifDef(fontColor, "-text"), "materialize-body"),
         ...
       )
     ),

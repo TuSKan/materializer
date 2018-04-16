@@ -103,7 +103,7 @@ material_container <- function(...) {
 #' material_page(inputId = "expage", shiny::h1("Page Content"))
 #' @export
 material_page <- function(inputId, ..., bgcolor = "transparent", color = NULL) {
-  color = strsplit(trimws(color), " ")[[1]]
+  if (!is.null(color)) color = strsplit(trimws(color), " ")[[1]]
   shiny::div(
     id = inputId,
     class = paste(

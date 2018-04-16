@@ -1,3 +1,25 @@
+.materialize-body {
+  height: 100vmin;
+  position: relative;
+}
+
+.container {
+  width: 95% !important;
+}
+
+@media only screen and (min-width: 601px) {
+  .container {
+    width: 95% !important;
+  }
+}
+
+@media only screen and (min-width: 993px) {
+  .container {
+    width: 95% !important;
+  }
+}
+
+
 .materialize-page {
   position: relative;
 }
