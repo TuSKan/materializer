@@ -5,7 +5,7 @@
 \title{Create a materialize body}
 \usage{
 material_body(..., title = "", footer = NULL, bgcolor = "grey lighten-4",
-  fontcolor = NULL, fontoffline = FALSE)
+  fontColor = NULL, offline = FALSE)
 }
 \arguments{
 \item{...}{The UI elements to place in the body}
@@ -16,9 +16,9 @@ material_body(..., title = "", footer = NULL, bgcolor = "grey lighten-4",
 
 \item{bgcolor}{Body background color. Leave blank for "grey lighten-4" color. Visit \url{http://materializecss.com/color.html} for a list of available colors.}
 
-\item{fontcolor}{String. The title font color. Leave blank for the default color. Visit \url{http://materializecss.com/color.html} for a list of available colors.}
+\item{fontColor}{String. The title font color. Leave blank for the default color. Visit \url{http://materializecss.com/color.html} for a list of available colors.}
 
-\item{fontoffline}{Boolean. Should the material font files be offline? (This will place the font sources in a directory 'www', at the same location as the app code.)}
+\item{offline}{Boolean. Should the material font files be offline? (This will place the font sources in a directory 'www', at the same location as the app code.)}
 }
 \description{
 Build a materialize body

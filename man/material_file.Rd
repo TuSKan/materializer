@@ -4,8 +4,8 @@
 \alias{material_file}
 \title{Create a materialize file input}
 \usage{
-material_file(inputId, label, multiple = FALSE, icon = NULL, class = NULL,
-  depth = NULL, color = NULL)
+material_file(inputId, label, multiple = FALSE, icon = "file_upload",
+  class = NULL, depth = NULL, color = NULL)
 }
 \arguments{
 \item{inputId}{String. The input identifier used to access the value.}

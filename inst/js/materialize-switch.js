@@ -21,19 +21,15 @@ $.extend(materializeSwitch, {
 
     if (data.on !== undefined) {
       $el.find("label").text(data.on).change();
-      return;
     }
     if (data.off !== undefined) {
       $el.find("label").text(data.off).change();
-      return;
     }
     if (data.init !== undefined) {
       $el.find('input').prop('checked', data.init).change();
-      return;
     }
     if (data.disabled !== undefined) {
       $el.find('input').prop('disabled', data.disabled).change();
-      return;
     }
  }
 });

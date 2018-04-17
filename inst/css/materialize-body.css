@@ -19,17 +19,12 @@
   }
 }
 
-
 .materialize-page {
   height: 100vmin;
   position: relative;
 }
 
-
-.show {
-  display: block;
-}
-
-.hide {
-  display: none;
+.container {
+  max-width: none !important;
+   width: 95% !important;;
 }

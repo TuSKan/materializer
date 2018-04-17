@@ -34,7 +34,6 @@ $(document).ready(function () {
               var $el = $(el);
               if (data.active !== undefined) {
                 this.setValue(el, data.active);
-                return;
               }
             }
         });

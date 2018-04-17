@@ -36,22 +36,16 @@ $(document).ready(function () {
                     text: item
                   }));
                 });
-                $('select').not('.disabled').formSelect();
-                return;
               }
 
               if (data.selected !== undefined) {
-                $el.val(data.selected).change();
-                $('select').not('.disabled').formSelect();
-                return;
+                $el.find('option[value="' + data.selected + '"]').prop('selected', true);
               }
 
               if (data.label !== undefined) {
                 $el.closest(".input-field").find("label").text(data.label);
-                $('select').not('.disabled').formSelect();
-                return;
               }
-
+              $el.change();
               $('select').not('.disabled').formSelect();
             }
         });

@@ -5,8 +5,8 @@
 #' @param title String. The title of the body
 #' @param footer tagList. The footer of the body
 #' @param bgcolor Body background color. Leave blank for "grey lighten-4" color. Visit \url{http://materializecss.com/color.html} for a list of available colors.
-#' @param fontcolor String. The title font color. Leave blank for the default color. Visit \url{http://materializecss.com/color.html} for a list of available colors.
-#' @param fontoffline Boolean. Should the material font files be offline? (This will place the font sources in a directory 'www', at the same location as the app code.)
+#' @param fontColor String. The title font color. Leave blank for the default color. Visit \url{http://materializecss.com/color.html} for a list of available colors.
+#' @param offline Boolean. Should the material font files be offline? (This will place the font sources in a directory 'www', at the same location as the app code.)
 #' @examples
 #' require(materializer)
 #' material_body(

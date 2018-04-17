@@ -34,17 +34,14 @@ $(document).ready(function () {
                 '</p>'
               ).change();
             });
-            return;
           }
 
           if (data.selected !== undefined) {
             $el.find('input:eq('+ (data.selected -1) + ')').prop('checked', true).change();
-            return;
           }
 
           if (data.disabled !== undefined) {
             $el.find('input:eq('+ (data.disabled -1) + ')').prop('disabled', true).change();
-            return;
           }
         }
     });

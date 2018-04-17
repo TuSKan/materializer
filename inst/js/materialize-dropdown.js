@@ -40,7 +40,6 @@ $(document).ready(function () {
                     '</li>'
                   );
                 }).change();
-                return;
               }
 
             }

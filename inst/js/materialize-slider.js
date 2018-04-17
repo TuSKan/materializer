@@ -23,19 +23,15 @@ $(document).ready(function () {
             if (data.label !== undefined) {
               $el.closest("label")
               .text(data.label).change();
-              return;
             }
             if (data.minval !== undefined) {
               $el.prop('min', data.minval).change();
-              return;
             }
             if (data.maxval !== undefined) {
               $el.prop('max', data.maxval).change();
-              return;
             }
             if (data.initval !== undefined) {
               $el.prop('value', data.initval).change();
-              return;
             }
          }
     });

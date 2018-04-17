@@ -36,26 +36,21 @@ $(document).ready(function () {
                 var instance = M.Datepicker.getInstance(el);
                 instance.setDate(new Date(data.value));
                 $el.prop('value', instance.date.toLocaleDateString("en-US", {month: 'short', day: "2-digit", year: "numeric"})).change();
-                return;
               }
               if (data.label !== undefined) {
                 $el.parent().find("label")
                 .text(data.label).change();
-                return;
               }
               if (data.placeholder !== undefined) {
                 $el.prop("placeholder", data.placeholder).change();
                 M.updateTextFields();
-                return;
               }
               if (data.readonly !== undefined) {
                 $el.prop("disabled", data.readonly).change();
-                return;
               }
               if (data.help !== undefined) {
                 $el.parent().find("span")
                 .text(data.help).change();
-                return;
               }
             }
         });

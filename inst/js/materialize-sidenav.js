@@ -3,8 +3,9 @@ $(document).ready(function() {
 // functions
   var hidePages = function(pages) {
       pages.forEach( function(page) {
-      page.classList.remove("show");
-      page.classList.add("hide");
+        $(page).trigger('hide');
+        $(page).hide();
+        $(page).trigger('hidden');
       });
   };
 
@@ -12,8 +13,9 @@ $(document).ready(function() {
     hidePages(pages);
     pages.forEach( function(page) {
       if (page.id === pageId) {
-        page.classList.remove("hide");
-        page.classList.add("show");
+        $(page).trigger('show');
+        $(page).show();
+        $(page).trigger('shown');
       }
     });
   };
@@ -23,7 +25,7 @@ $(document).ready(function() {
       if (li.parentNode.classList.contains("active"))
         return li.getAttribute("href").replace(/#/g, '');
     });
-    return null;
+    return undefined;
   };
 
   // elements
@@ -40,7 +42,7 @@ $(document).ready(function() {
 
 // Init
   var liactive = findActive(list);
-  if (liactive === null) {
+  if (liactive === undefined) {
     list[0].parentNode.classList.add("active");
     showPage(pages, list[0].getAttribute("href").replace(/#/g, ''));
   } else {

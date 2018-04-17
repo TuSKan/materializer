@@ -22,12 +22,11 @@ $(document).ready(function () {
             if (data.label !== undefined) {
               $el.closest("label").find("span")
               .text(data.label).change();
-              return;
+
             }
 
             if (data.checked !== undefined) {
               $el.prop('checked', data.checked).change();
-              return;
             }
          }
 

@@ -31,6 +31,7 @@ material_select <- function(inputId, label, choices = NULL, selected = NULL, mul
 
   values <- unname(choices)
   choices <- names(choices)
+  selected <- unname(selected)
   if (is.null(choices)) choices <- values
   selected <- values %in% selected
 
@@ -77,6 +78,7 @@ material_select <- function(inputId, label, choices = NULL, selected = NULL, mul
 update_material_select <- function(inputId, choices = NULL, selected = NULL, label = NULL, session = shiny::getDefaultReactiveDomain()) {
   values <- unname(choices)
   choices <- names(choices)
+  selected <- unname(selected)
   if (is.null(choices)) choices <- values
   session$sendInputMessage(
     inputId,
