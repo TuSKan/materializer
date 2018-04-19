@@ -6,7 +6,7 @@
 \title{The material Collapsible UI Element}
 \usage{
 material_collapsible(inputId, cllist, class = "accordion",
-  headercolor = "white", color = NULL)
+  headercolor = "white", bodycolor = "white", color = NULL)
 
 update_material_collapsible(inputId, cllist,
   session = shiny::getDefaultReactiveDomain())
@@ -18,7 +18,9 @@ update_material_collapsible(inputId, cllist,
 
 \item{class}{String. A class type for UI Collapsible. Values should be 'accordion', 'expandable' or 'popout'.}
 
-\item{headercolor}{String. The color name of header. Leave empty for the 'teal lighten-1' color. Visit \url{http://materializecss.com/color.html} for a list of available colors.}
+\item{headercolor}{String. The color name of header. Leave empty for 'white' color. Visit \url{http://materializecss.com/color.html} for a list of available colors.}
+
+\item{bodycolor}{String. The color name of body. Leave empty for 'white' color. Visit \url{http://materializecss.com/color.html} for a list of available colors.}
 
 \item{color}{String. The color name of the text and icons. Leave empty for the 'teal lighten-1' color. Visit \url{http://materializecss.com/color.html} for a list of available colors.}
 

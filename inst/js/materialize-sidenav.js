@@ -29,8 +29,31 @@ $(document).ready(function() {
   };
 
   // elements
-  var elemSNav = document.querySelector('.materialize-sidenav .sidenav');
-  var sidenav = M.Sidenav.init(elemSNav);
+ var elemSNav = document.querySelector('.materialize-sidenav .sidenav');
+ var sidenav = M.Sidenav.init(elemSNav, {});
+ //   onOpenStart: function () {
+//      var width = this.el.getAttribute("data-width");
+//      this.el.style.width = width + 'px';
+//      document.body.style.paddingLeft = this.isFixed * width + 'px';
+//      var header = document.querySelector('header');
+//      if (header !== null) heaser.style.paddingLeft = this.isFixed * width + 'px';
+//      var footer = document.querySelector('footer');
+//      if (footer !== null) footer.style.paddingLeft = this.isFixed * width + 'px';
+//      $('sidenav-trigger').trigger('show');
+//      $('sidenav-trigger').show();
+//      $('sidenav-trigger').trigger('shown');
+//    },
+//    onCloseEnd: function () {
+//      document.body.style.paddingLeft = 0;
+//      var header = document.querySelector('header');
+//      if (header !== null) heaser.style.paddingLeft = 0;
+//      var footer = document.querySelector('footer');
+//      if (footer !== null) footer.style.paddingLeft = 0;
+//      $('sidenav-trigger').trigger('hide');
+//      $('sidenav-trigger').hide();
+//      $('sidenav-trigger').trigger('hidden');
+//    }
+//  });
 
   // Initialize collapsible
   var elemColl = document.querySelectorAll('.materialize-sidenav .collapsible');

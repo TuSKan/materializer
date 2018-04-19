@@ -30,7 +30,19 @@ material_sidenav <- function(inputId, navlist, logo = NULL, fixed = TRUE, width 
     class = "materialize-sidenav",
     shiny::tags$ul(
       id = inputId,
+      "data-width" = width,
       class = paste("sidenav", if (fixed) "sidenav-fixed"),
+      # shiny::tags$a(
+      #   href = "#!",
+      #   "data-target" = inputId,
+      #   style = "position: flex; padding: 16px 0 0 16px;",
+      #   class = "sidenav-close",
+      #   onclick = "M.Sidenav.getInstance(this.parentNode).isFixed = !M.Sidenav.getInstance(this.parentNode).isFixed;",
+      #   shiny::tags$i(
+      #     class = "material-icons",
+      #     "menu"
+      #   )
+      #),
       if (!isEmpty(logo)) {
         shiny::tags$li(
           class = "logo",
@@ -123,6 +135,7 @@ material_sidenav <- function(inputId, navlist, logo = NULL, fixed = TRUE, width 
     shiny::tags$a(
       href = "#!",
       "data-target" = inputId,
+      #style = "position: flex; padding: 16px 0 0 16px;",
       class = paste("sidenav-trigger", "hide-on-large-only"),
       shiny::tags$i(
         class = "material-icons",
@@ -135,8 +148,16 @@ material_sidenav <- function(inputId, navlist, logo = NULL, fixed = TRUE, width 
         '.materialize-sidenav .sidenav {
           width: ', width ,'px;
         }
+        header, main, footer {
+              padding-left: 300px;
+        }
         header, body, footer {
           padding-left: ', fixed*width ,'px;
+        }
+        @media only screen and (max-width : 992px) {
+          header, main, footer {
+            padding-left: 0;
+          }
         }
         .materialize-sidenav a {
           color: ', colorhex, ' !important;
