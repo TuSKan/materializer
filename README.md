@@ -21,10 +21,10 @@ Status](https://travis-ci.org/TuSKan/materializer.svg?branch=master)](https://tr
 ## Overview
 
 The **materializer** is a new package to make your shiny applications
-modern, responsive and with the design of Material Design.
+modern, responsive and designed with Material Design.
 
 If you’d like to know more about materialize css framework, visit here
-[materialize](http://materializecss.com/).
+[materializecss.com](http://materializecss.com/).
 
 ## Installation
 

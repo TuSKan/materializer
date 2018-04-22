@@ -29,9 +29,9 @@ knitr::opts_chunk$set(
 
 ## Overview
 
-The __materializer__ is a new package to make your shiny applications modern, responsive and with the design of Material Design.
+The __materializer__ is a new package to make your shiny applications modern, responsive and designed with Material Design.
 
-If you'd like to know more about materialize css framework, visit here [materialize](http://materializecss.com/).
+If you'd like to know more about materialize css framework, visit here [materializecss.com](http://materializecss.com/).
 
 ## Installation
 
