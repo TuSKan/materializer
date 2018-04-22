@@ -1,62 +1,29 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
+<!--
 <ul style="display:inline-block; list-style:none; vertical-align:center;">
-
-<li style="display:inline-block; list-style:none; vertical-align:center;">
-
-<h1>
-
-MaterializeR
-
-</h1>
-
-</li>
-
-<li style="display:inline-block; list-style:none; vertical-align:center;">
-
-<h1>
-
-  =
- 
-
-</h1>
-
-</li>
-
-<li style="display:inline-block; list-style:none; vertical-align:center;">
-
-<img src="http://materializecss.com/res/materialize.svg" width="150">
-
-</li>
-
-<li style="display:inline-block; list-style:none; vertical-align:center;">
-
-<h1>
-
-  +
- 
-
-</h1>
-
-</li>
-
-<li style="display:inline-block; list-style:none; vertical-align:center;">
-
-<img src="https://www.rstudio.com/wp-content/uploads/2014/04/shiny-400x464.png" height="100">
-
-</li>
-
+  <li style="display:inline-block; list-style:none; vertical-align:center;"><h1>MaterializeR</h1></li>
+  <li style="display:inline-block; list-style:none; vertical-align:center;"><h1>&ensp; &#61; &ensp;</h1></li>
+  <li style="display:inline-block; list-style:none; vertical-align:center;"><img src="http://materializecss.com/res/materialize.svg" width="150"></li>
+  <li style="display:inline-block; list-style:none; vertical-align:center;"><h1>&ensp; &#43; &ensp;</h1></li>
+  <li style="display:inline-block; list-style:none; vertical-align:center;"><img src="https://www.rstudio.com/wp-content/uploads/2014/04/shiny-400x464.png" height="100"></li>
 </ul>
 
 <a style="position:fixed; top:20px; right:20px;" href = "https://travis-ci.org/TuSKan/materializer"><img src = "https://travis-ci.org/TuSKan/materializer.svg?branch=master" alt = "Travis-CI Build Status"></a>
+-->
+
+# MaterializeR = <img src="http://materializecss.com/res/materialize.svg" width="150"> + <img src="https://www.rstudio.com/wp-content/uploads/2014/04/shiny-400x464.png" height="100">
+
+[![Travis-CI Build
+Status](https://travis-ci.org/TuSKan/materializer.svg?branch=master)](https://travis-ci.org/TuSKan/materializer)
 
 ## Overview
 
 The **materializer** is a new package to make your shiny applications
 modern, responsive and with the design of Material Design.
 
-If you’d like to know more about materialize, visit here
+If you’d like to know more about materialize css framework, visit here
 [materialize](http://materializecss.com/).
 
 ## Installation
