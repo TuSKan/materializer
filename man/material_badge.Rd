@@ -7,7 +7,7 @@
 \usage{
 material_badge(inputId, label = NULL, color = NULL)
 
-update_material_badge(inputId, label = NULL, class = "new",
+update_material_badge(inputId, label = NULL,
   session = shiny::getDefaultReactiveDomain())
 }
 \arguments{
