@@ -5,7 +5,7 @@
 #' @param label String. The file input button text.
 #' @param multiple logical. Should select multiples files?
 #' @param icon String. The name of the icon. Leave empty for no icon. Visit \url{http://materializecss.com/icons.html} for a list of available icons.
-#' @param class String. Aditional class for button. Value should be round, floating, large and small.
+#' @param class String. Aditional class for button. Value should be 'btn-round', 'btn-large' or 'btn-small'.
 #' @param depth Integer. The amount of depth of the button. The value should be between 0 and 5. Leave empty for the default depth.
 #' @param color String. The color name of the fileinput. Leave empty for the 'teal lighten-1' color. Visit \url{http://materializecss.com/color.html} for a list of available colors.
 #' @examples
@@ -45,7 +45,7 @@ material_file <- function(inputId, label, multiple = FALSE, icon = "file_upload"
     shiny::div(
       class = paste(
         "waves-effect waves-light btn",
-        ifDef(class, "btn-"),
+        ifDef(class),
         ifDef(depth, "z-depth-"),
         ifDef(color)
       ),

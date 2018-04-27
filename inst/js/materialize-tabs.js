@@ -28,7 +28,7 @@ $(document).ready(function () {
                 });
             },
             unsubscribe: function (el) {
-              M.Tabs.getInstance($(el).find('.tabs')).destroy();
+              $(el).off(".materialize-tabs");
             },
             receiveMessage: function(el, data) {
               var $el = $(el);

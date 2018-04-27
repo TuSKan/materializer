@@ -23,7 +23,7 @@ $(document).ready(function () {
                 });
             },
             unsubscribe: function (el) {
-                $(el).destroy();
+                $(el).off(".materialize-select");
             },
             receiveMessage: function(el, data) {
               var $el = $(el);

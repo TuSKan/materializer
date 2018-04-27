@@ -1,10 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# MaterializeR
-
-<img src="http://materializecss.com/res/materialize.svg" width="150"> +
-<img src="https://www.rstudio.com/wp-content/uploads/2014/04/shiny-400x464.png" height="100">
+# MaterializeR = <img src="http://materializecss.com/res/materialize.svg" width="150"> + <img src="https://www.rstudio.com/wp-content/uploads/2014/04/shiny-400x464.png" height="100">
 
 [![Travis-CI Build
 Status](https://travis-ci.org/TuSKan/materializer.svg?branch=master)](https://travis-ci.org/TuSKan/materializer)

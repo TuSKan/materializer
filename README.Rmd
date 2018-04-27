@@ -15,6 +15,9 @@ knitr::opts_chunk$set(
 
 [![Travis-CI Build Status](https://travis-ci.org/TuSKan/materializer.svg?branch=master)](https://travis-ci.org/TuSKan/materializer)
 
+<!-- [![CRAN\_Release\_Badge](http://www.r-pkg.org/badges/version-ago/materializer)](https://CRAN.R-project.org/package=materializer) [![CRAN\_Download\_Badge](http://cranlogs.r-pkg.org/badges/materializer)](https://CRAN.R-project.org/package=materializer)
+-->
+
 ## Overview
 
 The __materializer__ is a new package to make your shiny applications modern, responsive and designed with Material Design.
