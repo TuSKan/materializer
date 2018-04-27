@@ -14,7 +14,7 @@ update_material_collapsible(inputId, cllist,
 \arguments{
 \item{inputId}{String. The input identifier used to access the value.}
 
-\item{cllist}{List. The collapsible element list. The list need to contain a 'name' and 'content' element, in adition could contain 'icon' and 'active' (logical) elements.}
+\item{cllist}{List. The collapsible element list. The list need to contain a 'name' and 'content' element, in adition could contain 'icon', 'badge' and 'active' (logical) elements.}
 
 \item{class}{String. A class type for UI Collapsible. Values should be 'accordion', 'expandable' or 'popout'.}
 

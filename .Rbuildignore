@@ -1,4 +1,5 @@
+.travis.yml
+README.Rmd
+materializer.Rproj
 ^.*\.Rproj$
 ^\.Rproj\.user$
-^.*\.git$
-README.md

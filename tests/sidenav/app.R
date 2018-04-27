@@ -10,7 +10,7 @@ if (interactive()) {
       navlist = list(
         c(target = "#page_teal", name = "Teal"),
         c(target = "#page_orange", name = "Orange"),
-        c(target = "#page_green", name = "Green", icon = "cloud"),
+        c(target = "#page_green", name = "Green", icon = "cloud", badge = "try it"),
         c(target = "#", icon = "alarm"),
         c(target = "#", icon = "archive", class = "waves-effect waves-light btn transparent round", name = "Download"),
         list(
@@ -18,7 +18,7 @@ if (interactive()) {
           collapsible = list(
             c(target = "#page_teal", name = "Teal"),
             c(target = "#page_orange", name = "Orange"),
-            c(target = "#page_green", name = "Green", icon = "cloud"),
+            c(target = "#page_green", name = "Green", icon = "cloud", badge = "try it"),
             c(target = "#", icon = "alarm")
           )
         ),
@@ -27,7 +27,7 @@ if (interactive()) {
           collapsible = list(
             c(target = "#page_teal", name = "Teal"),
             c(target = "#page_orange", name = "Orange"),
-            c(target = "#page_green", name = "Green", icon = "cloud"),
+            c(target = "#page_green", name = "Green", icon = "cloud", badge = "try it"),
             c(target = "lisk_4.html", icon = "alarm")
           )
         ),
@@ -36,7 +36,7 @@ if (interactive()) {
           collapsible = list(
             c(target = "#page_teal", name = "Teal"),
             c(target = "#page_orange", name = "Orange"),
-            c(target = "#page_green", name = "Green", icon = "cloud"),
+            c(target = "#page_green", name = "Green", icon = "cloud", badge = "try it"),
             c(target = "lisk_4.html", icon = "alarm")
           )
         )
@@ -62,7 +62,7 @@ if (interactive()) {
         "ex_collapse",
         list(
           c(name = "First", icon = "cloud", content = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."),
-          c(name = "Second", icon = "place", content = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."),
+          c(name = "Second", icon = "place", content = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", badge = "try it"),
           c(name = "Third", icon = "whatshot", content = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.")
         ),
         headercolor = "teal lighten-5"
@@ -74,7 +74,7 @@ if (interactive()) {
         "ex_collapse_2",
         list(
           c(name = "First", icon = "cloud", content = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."),
-          c(name = "Second", icon = "place", content = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."),
+          c(name = "Second", icon = "place", content = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", badge = "try it"),
           c(name = "Third", icon = "whatshot", content = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.")
         ),
         class = "expandable",
@@ -88,7 +88,7 @@ if (interactive()) {
         "ex_collapse_3",
         list(
           c(name = "First", icon = "cloud", content = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."),
-          c(name = "Second", icon = "place", content = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."),
+          c(name = "Second", icon = "place", content = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", badge = "try it"),
           c(name = "Third", icon = "whatshot", content = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.")
         ),
         class = "popout",

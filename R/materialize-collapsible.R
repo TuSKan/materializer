@@ -2,7 +2,7 @@
 #'
 #' The material Collapsible UI Element
 #' @param inputId String. The input identifier used to access the value.
-#' @param cllist List. The collapsible element list. The list need to contain a 'name' and 'content' element, in adition could contain 'icon' and 'active' (logical) elements.
+#' @param cllist List. The collapsible element list. The list need to contain a 'name' and 'content' element, in adition could contain 'icon', 'badge' and 'active' (logical) elements.
 #' @param class String. A class type for UI Collapsible. Values should be 'accordion', 'expandable' or 'popout'.
 #' @param headercolor String. The color name of header. Leave empty for 'white' color. Visit \url{http://materializecss.com/color.html} for a list of available colors.
 #' @param bodycolor String. The color name of body. Leave empty for 'white' color. Visit \url{http://materializecss.com/color.html} for a list of available colors.
@@ -50,7 +50,14 @@ material_collapsible <- function(inputId, cllist, class = "accordion", headercol
                 li[["icon"]]
               )
             },
-            li[["name"]]
+            li[["name"]],
+            if (!is.null(li[["badge"]])) {
+              material_badge(
+                inputId = paste0(inputId,"_badge"),
+                label = li[["badge"]],
+                color = color
+              )
+            }
           ),
           shiny::tags$div(
             class = "collapsible-body",

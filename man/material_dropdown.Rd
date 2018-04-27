@@ -15,7 +15,7 @@ update_material_dropdown(inputId, ddlist,
 
 \item{button}{String. The tooltip message.}
 
-\item{ddlist}{List. The dropdown element list.The list need to contain a 'target' element and in adition could contain 'name' and 'icon' elements.}
+\item{ddlist}{List. The dropdown element list.The list need to contain a 'target' element and in adition could contain 'name', 'badge' and 'icon' elements.}
 
 \item{bgcolor}{String. The color name for Dropdown backgroud. Leave empty for 'white' color. Visit \url{http://materializecss.com/color.html} for a list of available colors.}
 

@@ -3,7 +3,7 @@
 #' The material Dropdown Menu UI Element
 #' @param inputId String. The input identifier used to access the value.
 #' @param button String. The tooltip message.
-#' @param ddlist List. The dropdown element list.The list need to contain a 'target' element and in adition could contain 'name' and 'icon' elements.
+#' @param ddlist List. The dropdown element list.The list need to contain a 'target' element and in adition could contain 'name', 'badge' and 'icon' elements.
 #' @param bgcolor String. The color name for Dropdown backgroud. Leave empty for 'white' color. Visit \url{http://materializecss.com/color.html} for a list of available colors.
 #' @param color String. The color name of the Checkbox. Leave empty for the 'teal lighten-1' color. Visit \url{http://materializecss.com/color.html} for a list of available colors.
 #' @param session Shiny default reactive domain.
@@ -60,7 +60,14 @@ material_dropdown <- function(inputId, button, ddlist, bgcolor = "white", color 
                   li[["icon"]]
                 )
               },
-              li[["name"]]
+              li[["name"]],
+              if (!is.null(li[["badge"]])) {
+                material_badge(
+                  inputId = paste0(inputId,"_badge"),
+                  label = li[["badge"]],
+                  color = color
+                )
+              }
             )
           )
         }

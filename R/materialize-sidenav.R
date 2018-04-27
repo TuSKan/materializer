@@ -2,7 +2,7 @@
 #'
 #' The material SideNav bar UI Element
 #' @param inputId String. The input identifier used to access the value.
-#' @param navlist list. The nav bar element list. The list need to contain a 'target' element and in adition could contain 'name' (string), 'icon' (string), 'active' (logical).
+#' @param navlist list. The nav bar element list. The list need to contain a 'target' element and in adition could contain 'name' (string), 'icon' (string), 'active' (logical) and 'badge' (string).
 #' @param logo list. The nav bar logo element list. The list need to contain a 'target' element and in adition could contain 'name' (string), 'icon' (string) or any tagList elements.
 #' @param fixed Logical Should the sidenav be fixed?
 #' @param width Integer. The width size of the sizebar
@@ -80,7 +80,14 @@ material_sidenav <- function(inputId, navlist, logo = NULL, fixed = TRUE, width 
                       li[["icon"]]
                     )
                   },
-                  li[["name"]]
+                  li[["name"]],
+                  if (!is.null(li[["badge"]])) {
+                    material_badge(
+                      inputId = paste0(inputId,"_badge"),
+                      label = li[["badge"]],
+                      color = color
+                    )
+                  }
                 ),
                 shiny::tags$div(
                   class = paste("collapsible-body", bgcolor),
@@ -103,7 +110,14 @@ material_sidenav <- function(inputId, navlist, logo = NULL, fixed = TRUE, width 
                                 lisub[["icon"]]
                               )
                             },
-                            lisub[["name"]]
+                            lisub[["name"]],
+                            if (!is.null(lisub[["badge"]])) {
+                              material_badge(
+                                inputId = paste0(inputId,"_badge"),
+                                label = lisub[["badge"]],
+                                color = color
+                              )
+                            }
                           )
                         )
                       }
@@ -126,7 +140,14 @@ material_sidenav <- function(inputId, navlist, logo = NULL, fixed = TRUE, width 
                   li[["icon"]]
                 )
               },
-              li[["name"]]
+              li[["name"]],
+              if (!is.null(li[["badge"]])) {
+                material_badge(
+                  inputId = paste0(inputId,"_badge"),
+                  label = li[["badge"]],
+                  color = color
+                )
+              }
             )
           )
         }
