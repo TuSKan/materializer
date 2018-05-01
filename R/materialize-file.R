@@ -51,7 +51,7 @@ material_file <- function(inputId, label, multiple = FALSE, icon = "file_upload"
       ),
       shiny::tags$i(
         class =
-          "material-icons left",
+          "material-icons",
         icon
       ),
       shiny::tags$span(

@@ -5,7 +5,7 @@
 \alias{update_material_dropdown}
 \title{The material Dropdown Menu UI Element}
 \usage{
-material_dropdown(inputId, button, ddlist, bgcolor = "white", color = NULL)
+material_dropdown(inputId, trigger, ddlist, bgcolor = "white", color = NULL)
 
 update_material_dropdown(inputId, ddlist,
   session = shiny::getDefaultReactiveDomain())
@@ -13,7 +13,7 @@ update_material_dropdown(inputId, ddlist,
 \arguments{
 \item{inputId}{String. The input identifier used to access the value.}
 
-\item{button}{String. The tooltip message.}
+\item{trigger}{tagList. The trigger element for the dropdown. Could be any tagList element, for exemple a'material_button'.}
 
 \item{ddlist}{List. The dropdown element list.The list need to contain a 'target' element and in adition could contain 'name', 'badge' and 'icon' elements.}
 
@@ -29,8 +29,8 @@ The material Dropdown Menu UI Element
 \examples{
 require(materializer)
 material_dropdown(
-inputId = "example_dropdown_menu",
-  button = material_button(
+  inputId = "example_dropdown_menu",
+  trigger = material_button(
     inputId = "example_button",
     label = "Drop me",
     icon = "arrow_drop_down"

@@ -2,7 +2,7 @@
 #'
 #' The material Dropdown Menu UI Element
 #' @param inputId String. The input identifier used to access the value.
-#' @param button String. The tooltip message.
+#' @param trigger tagList. The trigger element for the dropdown. Could be any tagList element, for exemple a'material_button'.
 #' @param ddlist List. The dropdown element list.The list need to contain a 'target' element and in adition could contain 'name', 'badge' and 'icon' elements.
 #' @param bgcolor String. The color name for Dropdown backgroud. Leave empty for 'white' color. Visit \url{http://materializecss.com/color.html} for a list of available colors.
 #' @param color String. The color name of the Checkbox. Leave empty for the 'teal lighten-1' color. Visit \url{http://materializecss.com/color.html} for a list of available colors.
@@ -10,8 +10,8 @@
 #' @examples
 #' require(materializer)
 #' material_dropdown(
-#' inputId = "example_dropdown_menu",
-#'   button = material_button(
+#'   inputId = "example_dropdown_menu",
+#'   trigger = material_button(
 #'     inputId = "example_button",
 #'     label = "Drop me",
 #'     icon = "arrow_drop_down"
@@ -25,7 +25,7 @@
 #'  )
 #' )
 #' @export
-material_dropdown <- function(inputId, button, ddlist, bgcolor = "white", color = NULL) {
+material_dropdown <- function(inputId, trigger, ddlist, bgcolor = "white", color = NULL) {
 
   if (is.null(color)) color <- default_color
   colornm <- css.names(color)
@@ -33,9 +33,9 @@ material_dropdown <- function(inputId, button, ddlist, bgcolor = "white", color 
   bgcolorhex <- material_colormap(bgcolor)
 
   shiny::tagList(
-    if (!is.null(button)) {
+    if (!is.null(trigger)) {
       shiny::tagAppendAttributes(
-        button,
+        trigger,
         class = 'dropdown-trigger',
         "data-target" = inputId
       )

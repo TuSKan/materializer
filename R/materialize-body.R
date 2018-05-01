@@ -23,26 +23,41 @@ material_body <- function(..., title = "", footer = NULL, bgcolor = "grey lighte
     # Head --------------------------------------------------------------------
     shiny::tags$head(
       if (offline) {
-        shiny::includeCSS(
-          system.file("fonts/material-icons/material-icons.css",
-                      package = "materializer")
+        shiny::tags$link(
+          href = "www/fonts/material-icons/material-icons.css",
+          rel = 'stylesheet',
+          type = 'text/css'
         )
       } else {
-        shiny::includeCSS(
-          "https://fonts.googleapis.com/icon?family=Material+Icons"
+        shiny::tags$link(
+          href = "https://fonts.googleapis.com/icon?family=Material+Icons",
+          rel = 'stylesheet',
+          type = 'text/css'
         )
       },
-      shiny::includeCSS(
-        system.file("materialize/css/materialize.min.css",
-                    package = "materializer")
+      shiny::tags$link(
+        href = "www/materialize/css/materialize.min.css",
+        rel = 'stylesheet',
+        type = 'text/css'
+      ),
+      shiny::tags$link(
+        href = "www/nautilus/nautilus.css",
+        rel = 'stylesheet',
+        type = 'text/css'
+      ),
+      shiny::tags$link(
+        href = "www/nautilus/fatcow.css",
+        rel = 'stylesheet',
+        type = 'text/css'
       ),
       shiny::includeCSS(
         system.file("css/materialize-body.css",
                     package = "materializer")
       ),
-      shiny::includeCSS(
-        system.file("plugins/perfect-scrollbar.css",
-                    package = "materializer")
+      shiny::tags$link(
+        href = "www/plugins/perfect-scrollbar.css",
+        rel = 'stylesheet',
+        type = 'text/css'
       ),
       shiny::tags$meta(
         name = "viewport",
@@ -63,13 +78,11 @@ material_body <- function(..., title = "", footer = NULL, bgcolor = "grey lighte
         footer
       )
     },
-    shiny::includeScript(
-      system.file("materialize/js/materialize.min.js",
-                  package = "materializer")
+    shiny::tags$script(
+      src = "www/materialize/js/materialize.min.js"
     ),
-    shiny::includeScript(
-      system.file("plugins/perfect-scrollbar.min.js",
-                  package = "materializer")
+    shiny::tags$script(
+      src = "www/plugins/perfect-scrollbar.min.js"
     ),
     shiny::includeScript(
       system.file("js/materialize-body.js",

@@ -28,7 +28,7 @@ material_button <- function(inputId, label = NULL, icon = NULL, class = NULL, de
         ifDef(color)
       ),
     value = 0,
-    if (!is.null(icon)) shiny::tags$i(class = "material-icons left", icon),
+    if (!is.null(icon)) shiny::tags$i(class = "material-icons", icon),
     label,
     includeInHead(
       "materialize-button.js",

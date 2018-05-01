@@ -1,4 +1,11 @@
+
+
+
 default_color <- "teal lighten-1"
+
+.onLoad <- function(...) {
+  shiny::addResourcePath('www', system.file('www', package = 'materializer'))
+}
 
 ifDef <- function(param, prefix = "", suffix = "") {
   if (is.null(param) || param == FALSE || is.na(param)) return("")
