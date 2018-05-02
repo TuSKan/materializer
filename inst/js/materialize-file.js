@@ -1,30 +1,41 @@
 $(document).ready(function () {
 
-    var materializeFileInput = new Shiny.InputBinding();
-    $.extend(materializeFileInput, {
+    var materializeFile = new Shiny.InputBinding();
+    $.extend(materializeFile, {
         find: function (scope) {
-            return $(scope).find(".materialize-file-input");
+            return $(scope).find(".materialize-file");
         },
         getValue: function (el) {
-           function () {
-                var file = el.files[0];
-         //       if (file) {
-                    read = new FileReader();
-        //            read.readAsDataURL(file);
-         //       }
 
-                return read.result;
-            }
+          $el = $(el);
+
+          if ($el.prop("data-side") === "server") {
+
+            return $('cuteFileBrowser').prop("datapath");
+
+          } else {
+
+             function () {
+                  var file = el.files[0];
+           //       if (file) {
+                      read = new FileReader();
+          //            read.readAsDataURL(file);
+           //       }
+
+                  return read.result;
+              }
+          }
+
         },
         subscribe: function (el, callback) {
-            $(el).on("change.materialize-file-input", function (e) {
+            $(el).on("change.materialize-file", function (e) {
                 callback();
             });
         },
         unsubscribe: function (el) {
-            $(el).off(".materialize-file-input");
+            $(el).off(".materialize-file");
         }
     });
 
-    Shiny.inputBindings.register(materializeFileInput);
+    Shiny.inputBindings.register(materializeFile);
   });

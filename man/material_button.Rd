@@ -12,7 +12,7 @@ material_button(inputId, label = NULL, icon = NULL, class = NULL,
 
 \item{label}{String. The button text.}
 
-\item{icon}{String. The name of the icon. Leave empty for no icon. Visit \url{http://materializecss.com/icons.html} for a list of available icons.}
+\item{icon}{String or shiny.tag The name of the icon or a material_icon element. Leave empty for no icon. Visit \url{http://materializecss.com/icons.html} for a list of available icons.}
 
 \item{class}{String. Aditional class for button. Value should be 'btn-round', 'btn-large' or 'btn-small'.}
 

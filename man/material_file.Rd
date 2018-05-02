@@ -2,15 +2,21 @@
 % Please edit documentation in R/materialize-file.R
 \name{material_file}
 \alias{material_file}
+\alias{update_material_file}
 \title{Create a materialize file input}
 \usage{
-material_file(inputId, label, multiple = FALSE, icon = "file_upload",
-  class = NULL, depth = NULL, color = NULL)
+material_file(inputId, label, server = FALSE, multiple = FALSE,
+  icon = "file_upload", class = NULL, depth = NULL, color = NULL)
+
+update_material_file(input, inputId, rootDirectory,
+  session = shiny::getDefaultReactiveDomain())
 }
 \arguments{
 \item{inputId}{String. The input identifier used to access the value.}
 
 \item{label}{String. The file input button text.}
+
+\item{server}{Logical. Should the file be selected on server-side rather than client-side?}
 
 \item{multiple}{logical. Should select multiples files?}
 
@@ -21,6 +27,12 @@ material_file(inputId, label, multiple = FALSE, icon = "file_upload",
 \item{depth}{Integer. The amount of depth of the button. The value should be between 0 and 5. Leave empty for the default depth.}
 
 \item{color}{String. The color name of the fileinput. Leave empty for the 'teal lighten-1' color. Visit \url{http://materializecss.com/color.html} for a list of available colors.}
+
+\item{input}{Shiny server input.}
+
+\item{rootDirectory}{String. The begin directory to browser. Read-only access needed.}
+
+\item{session}{Shiny default reactive domain.}
 }
 \description{
 Build a materialize file input.

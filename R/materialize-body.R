@@ -1,3 +1,6 @@
+#' @include materialize-utils.R
+NULL
+
 #' Create a materialize body
 #'
 #' Build a materialize body
@@ -24,7 +27,7 @@ material_body <- function(..., title = "", footer = NULL, bgcolor = "grey lighte
     shiny::tags$head(
       if (offline) {
         shiny::tags$link(
-          href = "www/fonts/material-icons/material-icons.css",
+          href = "materializer/fonts/material-icons/material-icons.css",
           rel = 'stylesheet',
           type = 'text/css'
         )
@@ -36,17 +39,7 @@ material_body <- function(..., title = "", footer = NULL, bgcolor = "grey lighte
         )
       },
       shiny::tags$link(
-        href = "www/materialize/css/materialize.min.css",
-        rel = 'stylesheet',
-        type = 'text/css'
-      ),
-      shiny::tags$link(
-        href = "www/nautilus/nautilus.css",
-        rel = 'stylesheet',
-        type = 'text/css'
-      ),
-      shiny::tags$link(
-        href = "www/nautilus/fatcow.css",
+        href = "materializer/materialize/css/materialize.min.css",
         rel = 'stylesheet',
         type = 'text/css'
       ),
@@ -55,7 +48,7 @@ material_body <- function(..., title = "", footer = NULL, bgcolor = "grey lighte
                     package = "materializer")
       ),
       shiny::tags$link(
-        href = "www/plugins/perfect-scrollbar.css",
+        href = "materializer/plugins/perfect-scrollbar.css",
         rel = 'stylesheet',
         type = 'text/css'
       ),
@@ -79,10 +72,10 @@ material_body <- function(..., title = "", footer = NULL, bgcolor = "grey lighte
       )
     },
     shiny::tags$script(
-      src = "www/materialize/js/materialize.min.js"
+      src = "materializer/materialize/js/materialize.min.js"
     ),
     shiny::tags$script(
-      src = "www/plugins/perfect-scrollbar.min.js"
+      src = "materializer/plugins/perfect-scrollbar.min.js"
     ),
     shiny::includeScript(
       system.file("js/materialize-body.js",

@@ -1,10 +1,9 @@
 
 
-
 default_color <- "teal lighten-1"
 
 .onLoad <- function(...) {
-  shiny::addResourcePath('www', system.file('www', package = 'materializer'))
+  shiny::addResourcePath('materializer', system.file('materializer', package = 'materializer'))
 }
 
 ifDef <- function(param, prefix = "", suffix = "") {
@@ -26,7 +25,7 @@ hex2rgb <- function(hexcol) {
 }
 
 includeInHead <- function(..., style = NULL, script = NULL, package = "materializer") {
-  files <- list(...)
+  files <- clean(list(...))
   clean(
     shiny::tagList(
       if (!isEmpty(files)) {

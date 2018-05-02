@@ -3,7 +3,7 @@
 #' Build a materialize button. The initial value is zero, and increases by one on each press.
 #' @param inputId String. The input identifier used to access the value.
 #' @param label String. The button text.
-#' @param icon String. The name of the icon. Leave empty for no icon. Visit \url{http://materializecss.com/icons.html} for a list of available icons.
+#' @param icon String or shiny.tag The name of the icon or a material_icon element. Leave empty for no icon. Visit \url{http://materializecss.com/icons.html} for a list of available icons.
 #' @param class String. Aditional class for button. Value should be 'btn-round', 'btn-large' or 'btn-small'.
 #' @param depth Integer. The amount of depth of the button. The value should be between 0 and 5. Leave empty for the default depth.
 #' @param color String. The color name of the button. Leave empty for 'teal lighten-1' color. Visit \url{http://materializecss.com/color.html} for a list of available colors.
@@ -18,6 +18,7 @@
 #' )
 #' @export
 material_button <- function(inputId, label = NULL, icon = NULL, class = NULL, depth = NULL, color = NULL) {
+  if (is.character(icon)) icon <- material_icon(icon, ifelse(is.null(label), "center", "left"))
   shiny::tags$button(
     id = inputId,
     class =
@@ -28,7 +29,7 @@ material_button <- function(inputId, label = NULL, icon = NULL, class = NULL, de
         ifDef(color)
       ),
     value = 0,
-    if (!is.null(icon)) shiny::tags$i(class = "material-icons", icon),
+    icon,
     label,
     includeInHead(
       "materialize-button.js",

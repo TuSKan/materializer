@@ -14,8 +14,32 @@ Description: Allows shiny developers to incorporate UI elements based on Google'
 URL: 
 License: GPL-3 | file LICENSE
 Depends: R (>= 3.0.0)
-Imports: shiny
+Imports: shiny, cuteFileBrowser
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 6.0.1
+Collate: 
+    'materialize-badge.R'
+    'materialize-utils.R'
+    'materialize-body.R'
+    'materialize-button.R'
+    'materialize-card.R'
+    'materialize-checkbox.R'
+    'materialize-collapsible.R'
+    'materialize-colormap.R'
+    'materialize-dropdown.R'
+    'materialize-fab.R'
+    'materialize-file.R'
+    'materialize-grid.R'
+    'materialize-modal.R'
+    'materialize-navbar.R'
+    'materialize-page.R'
+    'materialize-radio.R'
+    'materialize-select.R'
+    'materialize-sidenav.R'
+    'materialize-slider.R'
+    'materialize-switch.R'
+    'materialize-tabs.R'
+    'materialize-text.R'
+    'materialize-tooltip.R'
