@@ -4,7 +4,7 @@
 \alias{material_page}
 \title{Create a container to organize UI content}
 \usage{
-material_page(inputId, ..., bgcolor = "transparent", color = NULL)
+material_page(inputId, ..., bgcolor = "transparent", fontcolor = NULL)
 }
 \arguments{
 \item{inputId}{String. The input identifier used to access the value.}
@@ -13,7 +13,7 @@ material_page(inputId, ..., bgcolor = "transparent", color = NULL)
 
 \item{bgcolor}{String. The color name for Sidenav backgroud. Leave empty for 'transparent' color. Visit \url{http://materializecss.com/color.html} for a list of available colors.}
 
-\item{color}{String. The color name for links and icons in Sidenav Leave empty for the 'teal lighten-1' color. Visit \url{http://materializecss.com/color.html} for a list of available colors.}
+\item{fontcolor}{String. The color name for links and icons in Sidenav Leave empty for the 'teal lighten-1' color. Visit \url{http://materializecss.com/color.html} for a list of available colors.}
 }
 \description{
 UI content can be insert in a container to organize items on a page.
