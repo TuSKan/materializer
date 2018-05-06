@@ -13,14 +13,14 @@ if (interactive()) {
         off = "Desktop",
         on = "Server",
         init = TRUE,
-        color = "yellow accent-4"
+        color = "orange darken-2"
       ),
       conditionalPanel(
         "input.switch == false",
         material_file(
           inputId = "desktop",
           label = "File",
-          color = "yellow accent-4",
+          color = "orange darken-2",
           icon = 'file_upload'
         )
       ),
@@ -30,7 +30,7 @@ if (interactive()) {
           inputId = "server",
           label = "File",
           server = TRUE,
-          color = "yellow accent-4",
+          color = "orange darken-2",
           icon = 'file_upload'
         )
       )

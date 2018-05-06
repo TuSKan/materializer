@@ -8,7 +8,7 @@ NULL
 #' @param title String. The title of the body
 #' @param footer tagList. The footer of the body
 #' @param bgcolor Body background color. Leave blank for "grey lighten-4" color. Visit \url{http://materializecss.com/color.html} for a list of available colors.
-#' @param fontColor String. The title font color. Leave blank for the default color. Visit \url{http://materializecss.com/color.html} for a list of available colors.
+#' @param fontcolor String. The title font color. Leave blank for the default color. Visit \url{http://materializecss.com/color.html} for a list of available colors.
 #' @param offline Boolean. Should the material font files be offline? (This will place the font sources in a directory 'www', at the same location as the app code.)
 #' @examples
 #' require(materializer)
@@ -18,7 +18,7 @@ NULL
 #'   shiny::tags$h1("Body Content")
 #' )
 #' @export
-material_body <- function(..., title = "", footer = NULL, bgcolor = "grey lighten-4", fontColor = NULL, offline = FALSE){
+material_body <- function(..., title = "", footer = NULL, bgcolor = "grey lighten-4", fontcolor = NULL, offline = FALSE){
 
   if (offline) fontsCopy()
 
@@ -61,7 +61,7 @@ material_body <- function(..., title = "", footer = NULL, bgcolor = "grey lighte
     # Body --------------------------------------------------------------------
     shiny::tags$body(
       shiny::div(
-        class = paste(bgcolor, ifDef(fontColor, "-text"), "materialize-body"),
+        class = paste(bgcolor, colortext(fontcolor) , "materialize-body"),
         ...
       )
     ),

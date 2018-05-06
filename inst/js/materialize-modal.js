@@ -1,7 +1,6 @@
 $(document).ready(function () {
     $('.modal').modal();
-
-    var modal_show = false;
+    $('.modal').prop('data-show', false);
 
     var materializeModal = new Shiny.InputBinding();
     $.extend(materializeModal, {
@@ -16,12 +15,12 @@ $(document).ready(function () {
                 callback();
             });
             $('.modal-trigger').bind('click', function() {
-                modal_show = true;
-                Shiny.onInputChange($(el).attr('id') + '-show', modal_show);
+                $(el).prop('data-show', $(el).prop('data-show') + 1);
+                Shiny.onInputChange($(el).attr('id') + '-show', $(el).prop('data-show'));
             });
             $('.modal-close').bind('click', function() {
-                modal_show = false;
-                Shiny.onInputChange($(el).attr('id') + '-close', modal_show);
+                $(el).prop('data-show', $(el).prop('data-show') + 1);
+                Shiny.onInputChange($(el).attr('id') + '-close', $(el).prop('data-show'));
             });
         },
         unsubscribe: function (el) {

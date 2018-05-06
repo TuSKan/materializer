@@ -134,7 +134,18 @@ material_file <- function(inputId, label, server = FALSE, multiple = FALSE, icon
         .text-', colornm,' input[type=text].valid:not(.browser-default) {
           border-bottom: 1px solid ', colorhex,';
           box-shadow: 0 1px 0 0 ', colorhex,';
-        }'
+        }
+        .cuteFileBrowser .data li {
+          background-color: rgba(', paste(hex2rgb(colorhex),collapse = ","),',0.2) !important;
+        }
+        .cuteFileBrowser .data li:hover {
+          background-color: rgba(', paste(hex2rgb(colorhex),collapse = ","),',0.3) !important;
+        }
+
+        .cuteFileBrowser .data li.selected {
+          background-color: rgba(', paste(hex2rgb(colorhex),collapse = ","),',0.5) !important;
+        }
+        '
       )
     )
   )
@@ -151,6 +162,6 @@ update_material_file <- function(input, inputId, rootDirectory, session = shiny:
     cuteFileBrowser::cuteFileBrowserServer(inputId = inputId, rootDirectory = rootDirectory, session = session)
   }, ignoreInit = TRUE, once = TRUE)
   shiny::observeEvent(input[[paste0(inputId,"-modal-close")]], {
-    session$sendInputMessage(paste0(inputId,"-path"), list(value = input[[inputId]]$path) )
+    session$sendInputMessage(paste0(inputId,"-path"), list(value = input[[inputId]]$name) )
   }, ignoreInit = TRUE)
 }

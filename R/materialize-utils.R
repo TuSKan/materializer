@@ -11,6 +11,13 @@ ifDef <- function(param, prefix = "", suffix = "") {
   sapply(param, function(x) paste0(prefix, x, suffix))
 }
 
+colortext <- function(color) {
+  res <- sub(" ", "-text.text-",color)
+  if (sum(!grepl("text",res)) > 0 )
+    res <- paste0(res, "-text")
+  res
+}
+
 css.names <- function(x) gsub("[ ]|[.]|[_]", "-", x)
 
 isEmpty <- function(x) is.null(x) || length(x) == 0
