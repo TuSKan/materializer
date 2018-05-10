@@ -2,7 +2,6 @@ if (interactive()) {
   library(shiny)
   library(materializer)
 
-  # Wrap materialize apps in material_page
   ui <- material_body(
     title = "Basic Page",
     material_page(
