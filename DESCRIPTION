@@ -43,3 +43,4 @@ Collate:
     'materialize-tabs.R'
     'materialize-text.R'
     'materialize-tooltip.R'
+Remotes: TuSKan/cuteFileBrowser
