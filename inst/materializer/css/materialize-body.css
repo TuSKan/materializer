@@ -1,5 +1,4 @@
 .materialize-body {
-  height: 100vmin;
   position: relative;
 }
 
@@ -20,8 +19,11 @@
 }
 
 .materialize-page {
-  height: 100vmin;
   position: relative;
+}
+
+.modal-content {
+  position: relative !important;
 }
 
 .container {

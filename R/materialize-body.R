@@ -43,9 +43,10 @@ material_body <- function(..., title = "", footer = NULL, bgcolor = "grey lighte
         rel = 'stylesheet',
         type = 'text/css'
       ),
-      shiny::includeCSS(
-        system.file("css/materialize-body.css",
-                    package = "materializer")
+      shiny::tags$link(
+        href = "materializer/css/materialize-body.css",
+        rel = 'stylesheet',
+        type = 'text/css'
       ),
       shiny::tags$link(
         href = "materializer/plugins/perfect-scrollbar.css",
@@ -77,9 +78,8 @@ material_body <- function(..., title = "", footer = NULL, bgcolor = "grey lighte
     shiny::tags$script(
       src = "materializer/plugins/perfect-scrollbar.min.js"
     ),
-    shiny::includeScript(
-      system.file("js/materialize-body.js",
-                  package = "materializer")
+    shiny::tags$script(
+      src = "materializer/js/materialize-body.js"
     )
   )
 

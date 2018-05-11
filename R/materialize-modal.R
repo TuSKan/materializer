@@ -6,6 +6,7 @@
 #' @param btnShow Button. The modal's show button tag.
 #' @param btnClose Button. The modal's close button tag.
 #' @param fixedFooter Logical. Should the footer be fixed?
+#'  @param bgcolor Body background color. Leave blank for "grey lighten-4" color. Visit \url{http://materializecss.com/color.html} for a list of available colors.
 #' @examples
 #' require(materializer)
 #' material_modal(
@@ -16,7 +17,8 @@
 material_modal <- function(inputId, ...,
                            btnShow = material_button(paste0(inputId,"_show"), "Show"),
                            btnClose = material_button(paste0(inputId,"_close"), "Close", class = "flat"),
-                           fixedFooter = FALSE) {
+                           fixedFooter = FALSE,
+                           bgcolor = "grey lighten-4") {
 
   shiny::div(
     class = "materialize-modal",
@@ -40,6 +42,13 @@ material_modal <- function(inputId, ...,
         )
       )
     ),
-    includeInHead("materialize-modal.js")
+    includeInHead(
+      "materialize-modal.js",
+      style = paste0(
+        '#', inputId, ' {
+          background-color: ',material_colormap(bgcolor),';
+        }'
+      )
+    )
   )
 }

@@ -15,7 +15,8 @@ $(document).ready(function () {
 
           } else {
 
-             function () {
+         //    function () {
+         if (typeof el.files !== 'undefined') {
                   var file = el.files[0];
            //       if (file) {
                       read = new FileReader();

@@ -41,29 +41,19 @@ includeInHead <- function(..., style = NULL, script = NULL, package = "materiali
             lapply(files, function(f) {
               switch(
                 tolower(tools::file_ext(f)),
-                "css" = shiny::includeCSS(
-                  system.file(
-                    file.path("css", f),
-                    package = package
-                  )
+                "css" = shiny::tags$link(
+                  type = "text/css",
+                  rel = "stylesheet",
+                  href = file.path("materializer/css", f)
                 ),
-                "js" = shiny::includeScript(
-                  system.file(
-                    file.path("js", f),
-                    package = package
-                  )
+                "js" = shiny::tags$script(
+                  src = file.path("materializer/js", f)
                 ),
                 "html" = shiny::includeHTML(
-                  system.file(
-                    file.path("html", f),
-                    package = package
-                  )
+                  file.path("materializer/html", f)
                 ),
                 "txt" = shiny::includeText(
-                  system.file(
-                    file.path("txt", f),
-                    package = package
-                  )
+                  file.path("materializer/txt", f)
                 )
               )
             })
