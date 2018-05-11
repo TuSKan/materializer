@@ -6,7 +6,7 @@
 #' @param btnShow Button. The modal's show button tag.
 #' @param btnClose Button. The modal's close button tag.
 #' @param fixedFooter Logical. Should the footer be fixed?
-#'  @param bgcolor Body background color. Leave blank for "grey lighten-4" color. Visit \url{http://materializecss.com/color.html} for a list of available colors.
+#' @param bgcolor Body background color. Leave blank for "grey lighten-4" color. Visit \url{http://materializecss.com/color.html} for a list of available colors.
 #' @examples
 #' require(materializer)
 #' material_modal(

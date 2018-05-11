@@ -6,7 +6,7 @@
 \usage{
 material_modal(inputId, ..., btnShow = material_button(paste0(inputId,
   "_show"), "Show"), btnClose = material_button(paste0(inputId, "_close"),
-  "Close", class = "flat"), fixedFooter = FALSE)
+  "Close", class = "flat"), fixedFooter = FALSE, bgcolor = "grey lighten-4")
 }
 \arguments{
 \item{inputId}{String. The ID for the modal. Must be unique per application.}
@@ -18,6 +18,8 @@ material_modal(inputId, ..., btnShow = material_button(paste0(inputId,
 \item{btnClose}{Button. The modal's close button tag.}
 
 \item{fixedFooter}{Logical. Should the footer be fixed?}
+
+\item{bgcolor}{Body background color. Leave blank for "grey lighten-4" color. Visit \url{http://materializecss.com/color.html} for a list of available colors.}
 }
 \description{
 Put any UI object inside of a modal. The modal will open when the button is pressed.
