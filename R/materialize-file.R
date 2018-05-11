@@ -141,9 +141,13 @@ material_file <- function(inputId, label, server = FALSE, multiple = FALSE, icon
         .cuteFileBrowser .data li:hover {
           background-color: rgba(', paste(hex2rgb(colorhex),collapse = ","),',0.3) !important;
         }
-
         .cuteFileBrowser .data li.selected {
           background-color: rgba(', paste(hex2rgb(colorhex),collapse = ","),',0.5) !important;
+        }
+        #server-modal {
+          max-height: 100% !important;
+          height: 80% !important;
+          width: 75% !important;
         }
         '
       )
