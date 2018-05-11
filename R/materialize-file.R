@@ -135,14 +135,11 @@ material_file <- function(inputId, label, server = FALSE, multiple = FALSE, icon
           border-bottom: 1px solid ', colorhex,';
           box-shadow: 0 1px 0 0 ', colorhex,';
         }
-        .cuteFileBrowser .data li {
-          background-color: rgba(', paste(hex2rgb(colorhex),collapse = ","),',0.2) !important;
-        }
         .cuteFileBrowser .data li:hover {
-          background-color: rgba(', paste(hex2rgb(colorhex),collapse = ","),',0.3) !important;
+          background-color: rgba(', paste(hex2rgb(colorhex),collapse = ","),',0.1) !important;
         }
         .cuteFileBrowser .data li.selected {
-          background-color: rgba(', paste(hex2rgb(colorhex),collapse = ","),',0.5) !important;
+          background-color: rgba(', paste(hex2rgb(colorhex),collapse = ","),',0.3) !important;
         }
         .server-modal {
           max-height: 100% !important;
