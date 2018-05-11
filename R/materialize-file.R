@@ -100,7 +100,7 @@ material_file <- function(inputId, label, server = FALSE, multiple = FALSE, icon
     if (server) {
       shiny::div(
         id =  paste0(inputId,"-modal"),
-        class = paste("modal","modal-fixed-footer","materialize-modal"),
+        class = paste("modal","modal-fixed-footer","server-modal"),
         shiny::div(
           class = "modal-content",
           cuteFileBrowser::cuteFileBrowserUI(inputId)
@@ -144,7 +144,7 @@ material_file <- function(inputId, label, server = FALSE, multiple = FALSE, icon
         .cuteFileBrowser .data li.selected {
           background-color: rgba(', paste(hex2rgb(colorhex),collapse = ","),',0.5) !important;
         }
-        #server-modal {
+        .server-modal {
           max-height: 100% !important;
           height: 80% !important;
           width: 75% !important;
