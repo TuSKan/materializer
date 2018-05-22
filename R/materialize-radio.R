@@ -2,7 +2,7 @@
 #'
 #' Build a materialize radio button.
 #' @param inputId String. The input identifier used to access the value.
-#' @param choices Named vector. The radio names and underyling values.
+#' @param choices Named vector or a list. The radio names and underyling values as a named vector or a list with 'names' and 'values' elements with same lenght.
 #' @param selected String. The initially selected underyling value.
 #' @param disabled String. The radio button should be disabled?
 #' @param class String. Aditional class for checkbox. Values should be with-gap or NULL
@@ -26,20 +26,27 @@ material_radio <- function(inputId, choices, selected = NULL, disabled = NULL, c
   colornm <- css.names(color)
   colorhex <- material_colormap(color)
 
-  values <- unname(choices)
-  choices <- names(choices)
-  if (is.null(choices)) choices <- values
+  if (is.list(choices)) {
+    values <- choices$values
+    choices <- choices$names
+  } else {
+    values <- unname(choices)
+    choices <- names(choices)
+    if (is.null(choices)) choices <- values
+  }
+
   selected <- values %in% selected
   disabled <- values %in% disabled
 
   shiny::tags$div(
     id = inputId,
     class = paste(paste0("radio-", colornm), "materialize-radio"),
+    style = if (inline) "text-align: left; display: grid; grid-gap: 1em; grid-template-columns: repeat(auto-fit, minmax(5em, 1fr));",
     lapply(
       seq_along(choices),
       function(i) {
         shiny::tags$p(
-          class = if (inline) "inline",
+          style = "text-align:justify",
           shiny::tags$label(
             shiny::tags$input(
               type = "radio",
@@ -49,9 +56,13 @@ material_radio <- function(inputId, choices, selected = NULL, disabled = NULL, c
               checked = if (selected[[i]]) NA,
               disabled = if (disabled[[i]]) "disabled"
             ),
-            shiny::tags$span(
+            if (is.character(choices[[i]])) {
+              shiny::tags$span(
+                choices[[i]]
+              )
+            } else {
               choices[[i]]
-            )
+            }
           )
         )
       }

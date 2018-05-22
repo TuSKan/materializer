@@ -14,7 +14,7 @@ update_material_radio(inputId, choices = NULL, selected = NULL,
 \arguments{
 \item{inputId}{String. The input identifier used to access the value.}
 
-\item{choices}{Named vector. The radio names and underyling values.}
+\item{choices}{Named vector or a list. The radio names and underyling values as a named vector or a list with 'names' and 'values' elements with same lenght.}
 
 \item{selected}{String. The initially selected underyling value.}
 

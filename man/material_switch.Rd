@@ -5,10 +5,10 @@
 \alias{update_material_switch}
 \title{Create a materialize switch}
 \usage{
-material_switch(inputId, on = "On", off = "Off", init = FALSE,
+material_switch(inputId, on = "On", off = "Off", value = FALSE,
   disabled = FALSE, color = NULL)
 
-update_material_switch(inputId, on = NULL, off = NULL, init = NULL,
+update_material_switch(inputId, on = NULL, off = NULL, value = NULL,
   disabled = NULL, session = shiny::getDefaultReactiveDomain())
 }
 \arguments{
@@ -18,7 +18,7 @@ update_material_switch(inputId, on = NULL, off = NULL, init = NULL,
 
 \item{off}{String. The label for the 'off' position of the switch.}
 
-\item{init}{Boolean. Is the switch initially on?}
+\item{value}{Boolean. Is the switch initially on?}
 
 \item{disabled}{String. The radio button should be disabled?}
 
@@ -35,7 +35,7 @@ material_switch(
   inputId = "example_switch",
   off = "Off",
   on = "On",
-  init = TRUE,
+  value = TRUE,
   color = 'teal lighten-1'
 )
 }

@@ -19,14 +19,17 @@ $.extend(materializeSwitch, {
   receiveMessage: function(el, data) {
    var $el = $(el);
 
-    if (data.on !== undefined) {
-      $el.find("label").text(data.on).change();
+    if (data.value !== undefined) {
+      $el.find("input").val(data.value).change();
     }
-    if (data.off !== undefined) {
-      $el.find("label").text(data.off).change();
+    if (data.labelon !== undefined) {
+      $el.find("label").text(data.labelon).change();
     }
-    if (data.init !== undefined) {
-      $el.find('input').prop('checked', data.init).change();
+    if (data.labeloff !== undefined) {
+      $el.find("label").text(data.labeloff).change();
+    }
+    if (data.value !== undefined) {
+      $el.find('input').prop('checked', data.value).change();
     }
     if (data.disabled !== undefined) {
       $el.find('input').prop('disabled', data.disabled).change();

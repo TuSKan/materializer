@@ -11,7 +11,7 @@ if (interactive()) {
         inputId = "switch",
         off = "Desktop",
         on = "Server",
-        init = TRUE,
+        value = TRUE,
         color = "orange darken-2"
       ),
       conditionalPanel(

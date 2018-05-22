@@ -4,7 +4,7 @@
 #' @param inputId String. The input identifier used to access the value.
 #' @param on String. The label for the 'on' position of the switch.
 #' @param off String. The label for the 'off' position of the switch.
-#' @param init Boolean. Is the switch initially on?
+#' @param value Boolean. Is the switch initially on?
 #' @param disabled String. The radio button should be disabled?
 #' @param color String. The color name of the Switch. Leave empty for 'teal lighten-1' color. Visit \url{http://materializecss.com/color.html} for a list of available colors.
 #' @param session Shiny default reactive domain.
@@ -14,11 +14,11 @@
 #'   inputId = "example_switch",
 #'   off = "Off",
 #'   on = "On",
-#'   init = TRUE,
+#'   value = TRUE,
 #'   color = 'teal lighten-1'
 #' )
 #' @export
-material_switch <- function(inputId, on = "On", off = "Off", init = FALSE, disabled = FALSE, color = NULL) {
+material_switch <- function(inputId, on = "On", off = "Off", value = FALSE, disabled = FALSE, color = NULL) {
 
   if (is.null(color)) color <- default_color
   colornm <- css.names(color)
@@ -36,7 +36,7 @@ material_switch <- function(inputId, on = "On", off = "Off", init = FALSE, disab
       shiny::tags$input(
         type = "checkbox",
         disabled = if (disabled) NA,
-        checked = if (init) NA
+        checked = if (value) NA
       ),
       shiny::tags$span(
         class = "lever"
@@ -60,13 +60,13 @@ material_switch <- function(inputId, on = "On", off = "Off", init = FALSE, disab
 
 #' @rdname material_switch
 #' @export
-update_material_switch <- function(inputId, on = NULL, off = NULL, init = NULL, disabled = NULL, session = shiny::getDefaultReactiveDomain()) {
+update_material_switch <- function(inputId, on = NULL, off = NULL, value = NULL, disabled = NULL, session = shiny::getDefaultReactiveDomain()) {
   session$sendInputMessage(
     inputId,
     cleanList(
       on = on,
       off = off,
-      init = init,
+      value = value,
       disabled = disabled
     )
   )
