@@ -6,8 +6,8 @@
 \usage{
 material_fab(inputId, icon, size = "large", color = NULL,
   direction = "left", position = "bottom-right", fixed = TRUE,
-  hover = TRUE, action = list(target = NULL, icon = NULL, size = NULL, color
-  = NULL))
+  hover = TRUE, action = list(target = NULL, icon = NULL, size = NULL,
+  color = NULL))
 }
 \arguments{
 \item{inputId}{String. The input identifier used to access the value.}

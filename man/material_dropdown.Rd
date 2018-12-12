@@ -5,7 +5,8 @@
 \alias{update_material_dropdown}
 \title{The material Dropdown Menu UI Element}
 \usage{
-material_dropdown(inputId, trigger, ddlist, bgcolor = "white", color = NULL)
+material_dropdown(inputId, trigger, ddlist, bgcolor = "white",
+  color = NULL)
 
 update_material_dropdown(inputId, ddlist,
   session = shiny::getDefaultReactiveDomain())

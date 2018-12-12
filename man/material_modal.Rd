@@ -5,8 +5,9 @@
 \title{Place UI content in a modal}
 \usage{
 material_modal(inputId, ..., btnShow = material_button(paste0(inputId,
-  "_show"), "Show"), btnClose = material_button(paste0(inputId, "_close"),
-  "Close", class = "flat"), fixedFooter = FALSE, bgcolor = "grey lighten-4")
+  "_show"), "Show"), btnClose = material_button(paste0(inputId,
+  "_close"), "Close", class = "flat"), fixedFooter = FALSE,
+  bgcolor = "grey lighten-4")
 }
 \arguments{
 \item{inputId}{String. The ID for the modal. Must be unique per application.}

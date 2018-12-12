@@ -4,8 +4,8 @@
 \alias{material_sidenav}
 \title{The material SideNav bar}
 \usage{
-material_sidenav(inputId, navlist, logo = NULL, fixed = TRUE, width = 300,
-  bgcolor = "white", color = NULL)
+material_sidenav(inputId, navlist, logo = NULL, fixed = TRUE,
+  width = 300, bgcolor = "white", color = NULL)
 }
 \arguments{
 \item{inputId}{String. The input identifier used to access the value.}

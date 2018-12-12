@@ -156,8 +156,7 @@ material_sidenav <- function(inputId, navlist, logo = NULL, fixed = TRUE, width 
     shiny::tags$a(
       href = "#!",
       "data-target" = inputId,
-      #style = "position: flex; padding: 16px 0 0 16px;",
-      class = paste("sidenav-trigger", "hide-on-large-only"),
+      class = paste("sidenav-trigger","show-on-large"),
       shiny::tags$i(
         class = "material-icons",
         "menu"
@@ -170,7 +169,7 @@ material_sidenav <- function(inputId, navlist, logo = NULL, fixed = TRUE, width 
           width: ', width ,'px;
         }
         header, main, footer {
-              padding-left: 300px;
+          padding-left: ', fixed*width ,'px;
         }
         header, body, footer {
           padding-left: ', fixed*width ,'px;

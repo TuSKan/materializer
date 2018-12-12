@@ -4,8 +4,8 @@
 \alias{material_body}
 \title{Create a materialize body}
 \usage{
-material_body(..., title = "", footer = NULL, bgcolor = "grey lighten-4",
-  fontcolor = NULL, offline = FALSE)
+material_body(..., title = "", footer = NULL,
+  bgcolor = "grey lighten-4", fontcolor = NULL, offline = FALSE)
 }
 \arguments{
 \item{...}{The UI elements to place in the body}
