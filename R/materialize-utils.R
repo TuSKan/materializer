@@ -27,7 +27,7 @@ clean <- function(x) x[!vapply(x, isEmpty, FUN.VALUE = logical(1))]
 cleanList <- function(...) clean(list(...))
 
 hex2rgb <- function(hexcol) {
-  if (substr(hexcol,1,1) != "#") stop("helcol is not a hex code color")
+  if (substr(hexcol,1,1) != "#") return(stats::setNames(c(0,0,0,1), c("r","g","b","a")))
   stats::setNames(strtoi(c(substr(hexcol,2,3),substr(hexcol,4,5),substr(hexcol,6,7)), 16), c("r","g","b"))
 }
 

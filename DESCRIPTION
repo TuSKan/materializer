@@ -20,10 +20,10 @@ LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 6.1.0.9000
 Collate: 
-    'material-breadcrumb.R'
     'materialize-badge.R'
     'materialize-utils.R'
     'materialize-body.R'
+    'materialize-breadcrumb.R'
     'materialize-button.R'
     'materialize-card.R'
     'materialize-checkbox.R'
