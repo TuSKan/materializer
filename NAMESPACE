@@ -2,6 +2,7 @@
 
 export(material_badge)
 export(material_body)
+export(material_breadcrumb)
 export(material_button)
 export(material_card)
 export(material_checkbox)
