@@ -6,10 +6,10 @@
 \title{Create a materialize rating}
 \usage{
 material_rating(inputId, n = 5L, checked = 3, size = 1.25,
-  space = 3, disable = FALSE, readonly = FALSE, color = NULL)
+  space = 3, disabled = FALSE, color = NULL)
 
-update_material_rating(inputId, checked = NULL, disable = NULL,
-  readonly = NULL, session = shiny::getDefaultReactiveDomain())
+update_material_rating(inputId, checked = NULL, disabled = NULL,
+  session = shiny::getDefaultReactiveDomain())
 }
 \arguments{
 \item{inputId}{String. The input identifier used to access the value.}
@@ -22,9 +22,7 @@ update_material_rating(inputId, checked = NULL, disable = NULL,
 
 \item{space}{Double. THe space between the stars based on pixels.}
 
-\item{disable}{Boolean. Is the rating disable?}
-
-\item{readonly}{Boolean. Is the rating read only?}
+\item{disabled}{Boolean. Is the rating disable?}
 
 \item{color}{String. The color name of the Checkbox. Leave empty for the 'yellow accent-4' color. Visit \url{http://materializecss.com/color.html} for a list of available colors.}
 

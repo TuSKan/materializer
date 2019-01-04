@@ -26,7 +26,7 @@ material_rating <- function(inputId, n = 5L, checked = 3, size = 1.25, space = 3
     id = inputId,
     class = paste("materialize-rating", "rating"),
     lapply(n:1, function(i) {
-      tagList(
+      shiny::tagList(
         shiny::tags$input(
           type = "radio",
           id = paste0(inputId,"_star_",i),
