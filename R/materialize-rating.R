@@ -31,7 +31,9 @@ material_rating <- function(inputId, n = 5L, checked = 3, size = 1.25, space = 3
           type = "radio",
           id = paste0(inputId,"_star_",i),
           name = "rating",
-          value = i
+          value = i,
+          checked = if (i == checked) NA,
+          disabled = if (disabled) NA
         ),
         shiny::tags$label(
           class = "full",
@@ -42,7 +44,9 @@ material_rating <- function(inputId, n = 5L, checked = 3, size = 1.25, space = 3
           type = "radio",
           id = paste0(inputId,"_star_",i - 0.5),
           name = "rating",
-          value = i - 0.5
+          value = i - 0.5,
+          checked = if (i - 0.5 == checked) NA,
+          disabled = if (disabled) NA
         ),
         shiny::tags$label(
           class = "half",
