@@ -37,5 +37,5 @@ $.extend(materializeSwitch, {
  }
 });
 
-Shiny.inputBindings.register(materializeSwitch);
+Shiny.inputBindings.register(materializeSwitch, "materialize.switch");
 });

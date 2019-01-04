@@ -7,7 +7,6 @@
 #' @param headercolor String. The color name of header. Leave empty for 'white' color. Visit \url{http://materializecss.com/color.html} for a list of available colors.
 #' @param bodycolor String. The color name of body. Leave empty for 'white' color. Visit \url{http://materializecss.com/color.html} for a list of available colors.
 #' @param color String. The color name of the text and icons. Leave empty for the 'teal lighten-1' color. Visit \url{http://materializecss.com/color.html} for a list of available colors.
-#' @param session Shiny default reactive domain.
 #' @examples
 #' require(materializer)
 #' material_collapsible(
@@ -44,6 +43,7 @@ material_collapsible <- function(inputId, cllist, class = "accordion", headercol
           shiny::tags$a(
             class = "collapsible-header",
             href = li[["target"]],
+            li[["header"]],
             if (!is.null(li[["icon"]])) {
               shiny::tags$i(
                 class = "material-icons",
@@ -87,12 +87,11 @@ material_collapsible <- function(inputId, cllist, class = "accordion", headercol
 
 
 #' @rdname material_collapsible
+#' @param session Shiny default reactive domain.
 #' @export
 update_material_collapsible <- function(inputId, cllist, session = shiny::getDefaultReactiveDomain()) {
   session$sendInputMessage(
     inputId,
-    cleanList(
-      cllist = cllist
-    )
+    cleanList(cllist = cllist)
   )
 }

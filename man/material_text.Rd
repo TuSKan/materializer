@@ -16,7 +16,7 @@
 \usage{
 material_text(inputId, label, placeholder = NULL, inline = FALSE,
   readonly = FALSE, help = NULL, type = "text", class = NULL,
-  icon = NULL, color = NULL)
+  icon = NULL, color = NULL, error = "wrong", success = "valid")
 
 material_number(inputId, label, placeholder = NULL, inline = FALSE,
   readonly = FALSE, help = NULL, class = NULL, icon = NULL,
@@ -78,6 +78,10 @@ update_material_date(inputId, value = NULL, label = NULL,
 \item{icon}{String. The name of the icon. Leave empty for no icon. Visit \url{http://materializecss.com/icons.html} for a list of available icons.}
 
 \item{color}{String. The color name of the text input. Leave empty for 'teal lighten-1' color. Visit \url{http://materializecss.com/color.html} for a list of available colors.}
+
+\item{error}{String. Validate mensage when is not valid}
+
+\item{success}{String. Validate mensage when is  valid}
 
 \item{value}{String or Numeric. The value to update the input.}
 

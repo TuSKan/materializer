@@ -16,5 +16,8 @@ UI content can be insert in a container to organize items on a page.
 }
 \examples{
 require(materializer)
-material_breadcrumb(inputId = "breadcrumb", navlist = list(page1 = list(target="!#", name="Page 1")))
+material_breadcrumb(
+  inputId = "breadcrumb",
+  navlist = list(page1 = list(target="!#", name="Page 1"))
+)
 }

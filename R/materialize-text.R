@@ -11,6 +11,8 @@
 #' @param class String. Additional class for text input.
 #' @param icon String. The name of the icon. Leave empty for no icon. Visit \url{http://materializecss.com/icons.html} for a list of available icons.
 #' @param color String. The color name of the text input. Leave empty for 'teal lighten-1' color. Visit \url{http://materializecss.com/color.html} for a list of available colors.
+#' @param error String. Validate mensage when is not valid
+#' @param success String. Validate mensage when is  valid
 #' @param value String or Numeric. The value to update the input.
 #' @param session Shiny default reactive domain.
 #' @examples
@@ -21,7 +23,7 @@
 #'   color = 'teal lighten-1'
 #' )
 #' @export
-material_text <- function(inputId, label, placeholder = NULL, inline = FALSE, readonly = FALSE, help = NULL, type = "text", class = NULL, icon = NULL, color = NULL) {
+material_text <- function(inputId, label, placeholder = NULL, inline = FALSE, readonly = FALSE, help = NULL, type = "text", class = NULL, icon = NULL, color = NULL, error = "wrong", success = "valid") {
 
   if (is.null(color)) color <- default_color
   colornm <- css.names(color)
@@ -48,7 +50,7 @@ material_text <- function(inputId, label, placeholder = NULL, inline = FALSE, re
       id = inputId,
       placeholder = placeholder,
       type = typeInput,
-      class = paste("validate", class, paste0("materialize-",type))
+      class = paste("validate", class, "materialize-text")
     ),
     shiny::tags$label(
       "for" = inputId,
@@ -57,8 +59,8 @@ material_text <- function(inputId, label, placeholder = NULL, inline = FALSE, re
     if (!is.null(help)) {
       shiny::tags$span(
         class = "helper-text",
-        "data-error" = "wrong",
-        "data-success" = "right",
+        "data-error" = error,
+        "data-success" = success,
         help
       )
     },

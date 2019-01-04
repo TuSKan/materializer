@@ -34,9 +34,9 @@ $(document).ready(function () {
               $el.prop("disabled", data.readonly).change();
             }
             if (data.help !== undefined) {
-              $el.parent().find("span")
-              .text(data.help).change();
+              $el.parent().find("span").text(data.help).change();
             }
+            M.updateTextFields();
          }
     });
 

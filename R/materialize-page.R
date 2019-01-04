@@ -21,10 +21,25 @@ material_page <- function(inputId, ..., bgcolor = "transparent", fontcolor = NUL
     shiny::div(
       class = "section",
       ...
+    ),
+    includeInHead(
+      "materialize-page.js"
     )
   )
 }
 
+#' @rdname material_page
+#' @export
+#' @param active Boolean. Show Page
+#' @param session Shiny default reactive domain.
+update_material_page <- function(inputId, active, session = shiny::getDefaultReactiveDomain()) {
+  session$sendInputMessage(
+    inputId,
+    cleanList(
+      active = active
+    )
+  )
+}
 
 
 #' Material Icon

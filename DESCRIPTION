@@ -37,6 +37,7 @@ Collate:
     'materialize-navbar.R'
     'materialize-page.R'
     'materialize-radio.R'
+    'materialize-rating.R'
     'materialize-select.R'
     'materialize-sidenav.R'
     'materialize-slider.R'
