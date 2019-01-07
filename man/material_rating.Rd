@@ -6,7 +6,7 @@
 \title{Create a materialize rating}
 \usage{
 material_rating(inputId, n = 5L, checked = 3, size = 1.25,
-  space = 3, disabled = FALSE, color = NULL)
+  space = 3, disabled = FALSE, color = NULL, ...)
 
 update_material_rating(inputId, checked = NULL, disabled = NULL,
   session = shiny::getDefaultReactiveDomain())
@@ -25,6 +25,8 @@ update_material_rating(inputId, checked = NULL, disabled = NULL,
 \item{disabled}{Boolean. Is the rating disable?}
 
 \item{color}{String. The color name of the Checkbox. Leave empty for the 'yellow accent-4' color. Visit \url{http://materializecss.com/color.html} for a list of available colors.}
+
+\item{...}{Aditional parameters}
 
 \item{session}{Shiny default reactive domain.}
 }

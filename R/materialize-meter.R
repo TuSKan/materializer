@@ -8,6 +8,7 @@
 #' @param high Double. It represents the lower bound of the high end of the measured range. This must be less than the max attribute, but greater than the low and min value (if specified). If unspecified, or if greater than the max value, the high value is equal to the max value.
 #' @param low Double. It represents the upper bound of the low end of the measured range. This must be greater than the min attribute, but less than the high and max value (if specified). If unspecified, or if less than the minimum value, the low value is equal to the min value.
 #' @param optimum Double. This attribute indicates the optimum value and must be within the range of min and max values. When used with the low and high attribute, it indicates the preferred zone for a given range.
+#' @param ... tagList. Aditional arguments
 #' @examples
 #' require(materializer)
 #' material_meter(
@@ -18,7 +19,7 @@
 #' )
 #' @export
 
-material_meter <- function(inputId, value = 0.5, min = 0.0, max = 1.0, high = 1.0, low = 0.0, optimum = 0.5) {
+material_meter <- function(inputId, value = 0.5, min = 0.0, max = 1.0, high = 0.8, low = 0.2, optimum = 0.5, ...) {
   shiny::tags$meter(
     id = inputId,
     class = paste("materialize-meter", "meter"),
@@ -27,6 +28,7 @@ material_meter <- function(inputId, value = 0.5, min = 0.0, max = 1.0, high = 1.
     max = max,
     high = high,
     low = low,
+    ...,
     optimum = optimum,
     includeInHead(
       "materialize-meter.js"

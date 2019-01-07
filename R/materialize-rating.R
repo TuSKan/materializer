@@ -8,6 +8,7 @@
 #' @param space Double. THe space between the stars based on pixels.
 #' @param disabled Boolean. Is the rating disable?
 #' @param color String. The color name of the Checkbox. Leave empty for the 'yellow accent-4' color. Visit \url{http://materializecss.com/color.html} for a list of available colors.
+#' @param ... Aditional parameters
 #' @examples
 #' require(materializer)
 #' material_rating(
@@ -18,7 +19,7 @@
 #' )
 #' @export
 
-material_rating <- function(inputId, n = 5L, checked = 3, size = 1.25, space = 3, disabled = FALSE, color = NULL) {
+material_rating <- function(inputId, n = 5L, checked = 3, size = 1.25, space = 3, disabled = FALSE, color = NULL, ...) {
   if (is.null(color)) color <- "yellow accent-4"
   colorhex <- material_colormap(color)
 
@@ -30,9 +31,9 @@ material_rating <- function(inputId, n = 5L, checked = 3, size = 1.25, space = 3
         shiny::tags$input(
           type = "radio",
           id = paste0(inputId,"_star_",i),
-          name = "rating",
+          name = inputId,
           value = i,
-          checked = if (i == checked) NA,
+          checked = if (i == checked) "checked",
           disabled = if (disabled) NA
         ),
         shiny::tags$label(
@@ -43,9 +44,9 @@ material_rating <- function(inputId, n = 5L, checked = 3, size = 1.25, space = 3
         shiny::tags$input(
           type = "radio",
           id = paste0(inputId,"_star_",i - 0.5),
-          name = "rating",
+          name = inputId,
           value = i - 0.5,
-          checked = if (i - 0.5 == checked) NA,
+          checked = if (i - 0.5 == checked) "checked",
           disabled = if (disabled) NA
         ),
         shiny::tags$label(
@@ -78,7 +79,8 @@ material_rating <- function(inputId, n = 5L, checked = 3, size = 1.25, space = 3
       style = shiny::HTML(paste0(
         '.rating > label:before { margin: ',space,'px; font-size: ',size,'em; !important;};'
       ))
-    )
+    ),
+    ...
   )
 }
 
