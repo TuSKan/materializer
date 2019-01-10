@@ -2,14 +2,21 @@
 % Please edit documentation in R/materialize-card.R
 \name{material_card}
 \alias{material_card}
+\alias{update_material_card}
 \title{Create a card that will contain UI content}
 \usage{
-material_card(..., title = NULL, img = NULL, footer = NULL,
-  class = "stacked", header = TRUE, tabs = NULL, depth = NULL,
-  horizontal = FALSE, hoverable = TRUE, bgcolor = NULL)
+material_card(inputId, content = NULL, title = NULL, img = NULL,
+  footer = NULL, class = "stacked", header = TRUE, tabs = NULL,
+  depth = NULL, horizontal = FALSE, hoverable = TRUE,
+  bgcolor = NULL, ...)
+
+update_material_card(inputId, content = NULL, title = NULL,
+  footer = NULL, session = shiny::getDefaultReactiveDomain())
 }
 \arguments{
-\item{...}{tagList. The UI elements to place in the card}
+\item{inputId}{String. The input identifier used to access the value.}
+
+\item{content}{tagList. The UI elements to place in card content}
 
 \item{title}{String. The title of the card}
 
@@ -30,6 +37,10 @@ material_card(..., title = NULL, img = NULL, footer = NULL,
 \item{hoverable}{Loginal. Enable/disable hover effect.}
 
 \item{bgcolor}{String. The background color name of the card. Leave empty for the 'teal lighten-1' color. Visit \url{http://materializecss.com/color.html} for a list of available colors.}
+
+\item{...}{tagList. additional tag elements}
+
+\item{session}{Shiny default reactive domain.}
 }
 \description{
 UI content can be placed in cards to organize items on a page.
@@ -37,8 +48,9 @@ UI content can be placed in cards to organize items on a page.
 \examples{
 require(materializer)
 material_card(
+  inputId = "exampleCard",
   title = "Example Card",
-  shiny::h5("Card Content"),
+  content = shiny::h5("Card Content"),
   footer = shiny::hr()
 )
 }

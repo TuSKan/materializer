@@ -10,7 +10,7 @@ material_navbar(inputId, navlist, logo = NULL, logoPosition = "left",
 \arguments{
 \item{inputId}{String. The input identifier used to access the value.}
 
-\item{navlist}{list. The nav bar element list. The list need to contain a 'target' element and in adition could contain 'name' (string), 'icon' (string), 'active' (logical).}
+\item{navlist}{list. The nav bar element list. The list need to contain a 'target' element and in adition could contain 'name' (string), 'icon' (string), 'active' (logical) and content (tagList).}
 
 \item{logo}{list. The nav bar logo element list. The list need to contain a 'target' element and in adition could contain 'name' (string), 'icon' (string) or any tagList elements.}
 

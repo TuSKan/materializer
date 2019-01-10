@@ -33,6 +33,7 @@ Collate:
     'materialize-fab.R'
     'materialize-file.R'
     'materialize-grid.R'
+    'materialize-like.R'
     'materialize-meter.R'
     'materialize-modal.R'
     'materialize-navbar.R'

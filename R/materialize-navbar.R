@@ -2,7 +2,7 @@
 #'
 #' The material Nav bar UI Element
 #' @param inputId String. The input identifier used to access the value.
-#' @param navlist list. The nav bar element list. The list need to contain a 'target' element and in adition could contain 'name' (string), 'icon' (string), 'active' (logical).
+#' @param navlist list. The nav bar element list. The list need to contain a 'target' element and in adition could contain 'name' (string), 'icon' (string), 'active' (logical) and content (tagList).
 #' @param logo list. The nav bar logo element list. The list need to contain a 'target' element and in adition could contain 'name' (string), 'icon' (string) or any tagList elements.
 #' @param logoPosition String. The logo position in the nav bar. Values should be "left", "right".
 #' @param tabs material_tabs. A material tabs could be included in nav bar.
@@ -66,21 +66,25 @@ material_navbar <- function(inputId, navlist, logo = NULL, logoPosition = "left"
                         ifelse(sidenav, "hide-on-med-and-down", "hide-on-down")),
           lapply(navlist, function(li) {
             li <- as.list(li)
-            shiny::tags$li(
-              class = if (isTRUE(as.logical(li[["active"]]))) "active",
-              shiny::tags$a(
-                href = li[["target"]],
-                class = li[["class"]],
-                "data-target" = li[["data-target"]],
-                if (!is.null(li[["icon"]])) {
-                  shiny::tags$i(
-                    class = "material-icons left",
-                    li[["icon"]]
+              shiny::tags$li(
+                class = if (isTRUE(as.logical(li[["active"]]))) "active",
+                if (!is.null(li[["content"]])) {
+                  li[["content"]]
+                } else {
+                  shiny::tags$a(
+                    href = li[["target"]],
+                    class = li[["class"]],
+                    "data-target" = li[["data-target"]],
+                    if (!is.null(li[["icon"]])) {
+                      shiny::tags$i(
+                        class = "material-icons left",
+                        li[["icon"]]
+                      )
+                    },
+                    li[["name"]]
                   )
-                },
-                li[["name"]]
+                }
               )
-            )
           })
         )
       ),
@@ -99,19 +103,23 @@ material_navbar <- function(inputId, navlist, logo = NULL, logoPosition = "left"
           li <- as.list(li)
           shiny::tags$li(
             class = if (isTRUE(as.logical(li[["active"]]))) "active",
-            shiny::tags$a(
-              href = li[["target"]],
-              class = li[["class"]],
-              type = li[["input"]],
-              "data-target" = li[["data-target"]],
-              if (!is.null(li[["icon"]])) {
-                shiny::tags$i(
-                  class = "material-icons left",
-                  li[["icon"]]
-                )
-              },
-              li[["name"]]
-            )
+            if (!is.null(li[["content"]])) {
+              li[["content"]]
+            } else {
+              shiny::tags$a(
+                href = li[["target"]],
+                class = li[["class"]],
+                type = li[["input"]],
+                "data-target" = li[["data-target"]],
+                if (!is.null(li[["icon"]])) {
+                  shiny::tags$i(
+                    class = "material-icons left",
+                    li[["icon"]]
+                  )
+                },
+                li[["name"]]
+              )
+            }
           )
         })
       )

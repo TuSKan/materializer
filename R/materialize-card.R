@@ -1,7 +1,8 @@
 #' Create a card that will contain UI content
 #'
 #' UI content can be placed in cards to organize items on a page.
-#' @param ... tagList. The UI elements to place in the card
+#' @param inputId String. The input identifier used to access the value.
+#' @param content tagList. The UI elements to place in card content
 #' @param title String. The title of the card
 #' @param img String. The filepath of a image of the card
 #' @param footer tagList. The UI elements to place in the card footer
@@ -12,51 +13,75 @@
 #' @param horizontal Logical. Should the card be on horizontal orientation?'
 #' @param hoverable Loginal. Enable/disable hover effect.
 #' @param bgcolor String. The background color name of the card. Leave empty for the 'teal lighten-1' color. Visit \url{http://materializecss.com/color.html} for a list of available colors.
+#' @param ... tagList. additional tag elements
 #' @examples
 #' require(materializer)
 #' material_card(
+#'   inputId = "exampleCard",
 #'   title = "Example Card",
-#'   shiny::h5("Card Content"),
+#'   content = shiny::h5("Card Content"),
 #'   footer = shiny::hr()
 #' )
 #' @export
-material_card <- function(..., title = NULL, img = NULL, footer = NULL, class = "stacked", header = TRUE, tabs = NULL, depth = NULL, horizontal = FALSE, hoverable = TRUE, bgcolor = NULL) {
+material_card <- function(inputId, content = NULL, title = NULL, img = NULL, footer = NULL, class = "stacked", header = TRUE, tabs = NULL, depth = NULL, horizontal = FALSE, hoverable = TRUE, bgcolor = NULL,  ...) {
 
+  shiny::div(
+    id = inputId,
+    class = paste(
+      "materialize-card",
+      "card",
+      if (hoverable) "hoverable",
+      ifDef(depth, "z-depth-"),
+      if (horizontal) "horizontal",
+      ifDef(bgcolor)
+    ),
+    if (header) {
+      shiny::div(
+        class = ifelse(is.null(img), "card-header", "card-image"),
+        if (!is.null(img)) shiny::img(src = img),
+        shiny::span(
+          class = "card-title",
+          title
+        )
+      )
+    },
     shiny::div(
-      class = paste(
-        "materialize-card",
-        "card",
-        if (hoverable) "hoverable",
-        ifDef(depth, "z-depth-"),
-        if (horizontal) "horizontal",
-        ifDef(bgcolor)
+      class = paste0("card-", class),
+      shiny::div(
+        class = "card-content",
+        content
       ),
-      if (header) {
+      if (!is.null(tabs)) {
+          tabs
+      },
+      if (!is.null(footer)) {
         shiny::div(
-          class = ifelse(is.null(img), "card-header", "card-image"),
-          if (!is.null(img)) shiny::img(src = img),
-          shiny::span(
-            class = "card-title",
-            title
-          )
+          class = "card-action",
+          footer
         )
       },
-      shiny::div(
-        class = paste0("card-", class),
-        shiny::div(
-          class = "card-content",
-          ...
-        ),
-        if (!is.null(tabs)) {
-            tabs
-        },
-        if (!is.null(footer)) {
-          shiny::div(
-            class = "card-action",
-            footer
-          )
-        }
-      ),
-      includeInHead("materialize-card.css")
+      ...
+    ),
+    includeInHead(
+      "materialize-card.js",
+      "materialize-card.css"
     )
+  )
+}
+
+
+
+
+#' @rdname material_card
+#' @param session Shiny default reactive domain.
+#' @export
+update_material_card <- function(inputId, content = NULL, title = NULL, footer = NULL, session = shiny::getDefaultReactiveDomain()) {
+  session$sendInputMessage(
+    inputId,
+    cleanList(
+      content = as.character(content),
+      title = as.character(title),
+      footer = as.character(footer)
+    )
+  )
 }
