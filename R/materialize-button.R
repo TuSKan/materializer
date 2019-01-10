@@ -18,7 +18,7 @@
 #' )
 #' @export
 material_button <- function(inputId, label = NULL, icon = NULL, class = NULL, depth = NULL, color = NULL) {
-  if (is.character(icon)) icon <- material_icon(icon, ifelse(is.null(label), "center", "left"))
+  if (is.character(icon)) icon <- material_icon(icon, align = ifelse(is.null(label), "center", "left"), color = color)
   shiny::tags$button(
     id = inputId,
     class =

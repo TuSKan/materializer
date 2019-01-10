@@ -90,6 +90,12 @@ material_collapsible <- function(inputId, cllist, class = "accordion", headercol
 #' @param session Shiny default reactive domain.
 #' @export
 update_material_collapsible <- function(inputId, cllist, session = shiny::getDefaultReactiveDomain()) {
+  cllist <- lapply(cllist, function(cl) {
+    cl[["content"]] <- as.character(cl[["content"]])
+    cl[["header"]] <- as.character(cl[["header"]])
+    cl
+  })
+
   session$sendInputMessage(
     inputId,
     cleanList(cllist = cllist)

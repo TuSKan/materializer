@@ -12,10 +12,9 @@ ifDef <- function(param, prefix = "", suffix = "") {
 }
 
 colortext <- function(color) {
-  res <- sub(" ", "-text.text-",color)
-  if (sum(!grepl("text",res)) > 0 )
-    res <- paste0(res, "-text")
-  res
+  if (isEmpty(color)) return("")
+  colour = strsplit(color, " ")[[1]]
+  paste0(paste0(colour[1],"-text"), if (!is.na(colour[2])) paste0(" text-", colour[2]))
 }
 
 css.names <- function(x) gsub("[ ]|[.]|[_]", "-", x)

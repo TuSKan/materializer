@@ -48,8 +48,8 @@ $(document).ready(function () {
             },
             receiveMessage: function(el, data) {
               var $el = $(el);
+               $el.find('li').remove();
               if (data.cllist !== undefined) {
-                $el.find('li').remove();
                 $.each(data.cllist, function(index, item) {
                   $el.append(generate_collapse(item));
                 });

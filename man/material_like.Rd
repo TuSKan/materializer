@@ -5,8 +5,7 @@
 \alias{update_material_like}
 \title{Create a materialize like element}
 \usage{
-material_like(inputId, liked = TRUE, size = "medium", depth = FALSE,
-  color = NULL)
+material_like(inputId, liked = TRUE, size = "medium", color = NULL)
 
 update_material_like(inputId, liked = NULL,
   session = shiny::getDefaultReactiveDomain())
@@ -17,8 +16,6 @@ update_material_like(inputId, liked = NULL,
 \item{liked}{Boolian. The initial status of the element}
 
 \item{size}{String. Size of icon, could be 'tiny' (1rem), 'small' (2rem), 'medium' (4rem) and 'large' (6rem).}
-
-\item{depth}{Integer. The amount of depth of the button. The value should be between 0 and 5. Leave empty for the default depth.}
 
 \item{color}{String. The color name of the Checkbox. Leave empty for the 'teal lighten-1' color. Visit \url{http://materializecss.com/color.html} for a list of available colors.}
 
