@@ -18,7 +18,7 @@ ui <-
         ),
         material_column(
           width = 8,
-          material_like(inputId = "like", liked = TRUE, size = "large", depth = 5, color = "red")
+          material_like(inputId = "like", liked = TRUE, size = "large", color = "red")
         )
       )
     )
