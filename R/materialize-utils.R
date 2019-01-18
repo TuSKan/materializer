@@ -30,7 +30,7 @@ hex2rgb <- function(hexcol) {
   stats::setNames(strtoi(c(substr(hexcol,2,3),substr(hexcol,4,5),substr(hexcol,6,7)), 16), c("r","g","b"))
 }
 
-includeInHead <- function(..., style = NULL, script = NULL, package = "materializer") {
+includeInHead <- function(..., style = NULL, script = NULL) {
   files <- clean(list(...))
   clean(
     shiny::tagList(

@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-    var elems = document.querySelectorAll('.fixed-action-btn');
+    var elems = document.querySelectorAll('.materialize-fab');
     elems.forEach( function(el, id, list) {
       M.FloatingActionButton.init(el, {
         direction: el.getAttribute("data-direction"),
@@ -8,23 +8,24 @@ $(document).ready(function () {
       });
     });
 
-    var materializeFloating = new Shiny.InputBinding();
-    $.extend(materializeFloating, {
+    var materializeFab = new Shiny.InputBinding();
+    $.extend(materializeFab, {
         find: function (scope) {
-            return scope.querySelectorAll('.fixed-action-btn');
+            return $(scope).find(".materialize-fab");
         },
         getValue: function (el) {
             return parseInt($(el).val());
         },
         subscribe: function (el, callback) {
-            $(el).on("change.materialize-floating", function (e) {
+            $(el).on("change.materialize-fab", function (e) {
                 callback();
             });
         },
         unsubscribe: function (el) {
-            $(el).off(".materialize-floating");
+            $(el).off(".materialize-fab");
         }
     });
 
-    Shiny.inputBindings.register(materializeFloating);
+    Shiny.inputBindings.register(materializeFab);
+
 });

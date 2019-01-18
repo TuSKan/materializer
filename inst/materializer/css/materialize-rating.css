@@ -7,7 +7,10 @@
   float: left;
 }
 
-.rating > input { display: none; }
+.rating > input {
+  display: none;
+}
+
 .rating > label:before {
   margin: 3px;
   font-size: 1.25em;

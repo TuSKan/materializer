@@ -5,19 +5,20 @@
 \alias{update_material_like}
 \title{Create a materialize like element}
 \usage{
-material_like(inputId, liked = TRUE, size = "medium", color = NULL)
+material_like(inputId, liked = NULL, size = "medium",
+  disabled = FALSE)
 
-update_material_like(inputId, liked = NULL,
+update_material_like(inputId, liked = NULL, disabled = NULL,
   session = shiny::getDefaultReactiveDomain())
 }
 \arguments{
 \item{inputId}{String. The input identifier used to access the value.}
 
-\item{liked}{Boolian. The initial status of the element}
+\item{liked}{Boolian. The initial status of the element. Could be TRUE, FALSE or NULL}
 
 \item{size}{String. Size of icon, could be 'tiny' (1rem), 'small' (2rem), 'medium' (4rem) and 'large' (6rem).}
 
-\item{color}{String. The color name of the Checkbox. Leave empty for the 'teal lighten-1' color. Visit \url{http://materializecss.com/color.html} for a list of available colors.}
+\item{disabled}{Boolean. Disable iteractivity (click).}
 
 \item{session}{Shiny default reactive domain.}
 }
@@ -28,6 +29,6 @@ Build a materialize like and dislike element
 require(materializer)
 material_like(
   inputId = "example_checkbox",
-  color = 'teal lighten-1'
+  liked = TRUE
 )
 }

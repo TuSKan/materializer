@@ -6,7 +6,7 @@
 \title{Create a materialize meter}
 \usage{
 material_meter(inputId, value = 0.5, min = 0, max = 1, high = 0.8,
-  low = 0.2, optimum = 0.5, ...)
+  low = 0.2, optimum = 0.5, width = "5em", height = "1em", ...)
 
 update_material_meter(inputId, value = NULL, min = NULL, max = NULL,
   high = NULL, low = NULL, optimum = NULL,
@@ -26,6 +26,10 @@ update_material_meter(inputId, value = NULL, min = NULL, max = NULL,
 \item{low}{Double. It represents the upper bound of the low end of the measured range. This must be greater than the min attribute, but less than the high and max value (if specified). If unspecified, or if less than the minimum value, the low value is equal to the min value.}
 
 \item{optimum}{Double. This attribute indicates the optimum value and must be within the range of min and max values. When used with the low and high attribute, it indicates the preferred zone for a given range.}
+
+\item{width}{String. The width of the meter. Could be any css length.}
+
+\item{height}{String. Could be any css length}
 
 \item{...}{tagList. Aditional arguments}
 

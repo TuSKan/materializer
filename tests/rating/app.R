@@ -20,7 +20,7 @@ ui <-
           ),
         material_column(
           width = 8,
-          material_rating(inputId = "stars", n = 5, checked = 3.5, size = 5, space = 10, color = color, disabled = TRUE)
+          material_rating(inputId = "stars", n = 5, checked = 3.5, size = 5, space = 10, color = color, disabled = FALSE)
         )
       )
     )

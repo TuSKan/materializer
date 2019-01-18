@@ -25,10 +25,7 @@ material_tooltip <- function(tagList, tooltip, position = "bottom", delay = 50) 
       "data-position" = position,
       "data-delay" = delay
     ),
-    shiny::tagList(
-      shiny::tags$script(shiny::HTML("$('.tooltipped').tooltip();")),
-      includeInHead("materialize-tooltip.js")
-    )
+    includeInHead("materialize-tooltip.js")
   )
 }
 

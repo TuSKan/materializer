@@ -33,7 +33,7 @@ $(document).ready(function () {
                 return $(scope).find(".materialize-collapsible");
             },
             getValue: function (el) {
-                return $(el).val();
+                return $(el).find('li').length;
             },
              getState: function(el, data) {
               return { value: this.getValue(el) };
@@ -44,16 +44,18 @@ $(document).ready(function () {
                 });
             },
             unsubscribe: function (el) {
-                $(el).destroy();
+                M.Collapsible.getInstance(el).destroy();
             },
             receiveMessage: function(el, data) {
               var $el = $(el);
                $el.find('li').remove();
               if (data.cllist !== undefined) {
+                Shiny.unbindAll(el);
                 $.each(data.cllist, function(index, item) {
                   $el.append(generate_collapse(item));
                 });
                 $el.change();
+                Shiny.bindAll(el);
               }
             }
         });

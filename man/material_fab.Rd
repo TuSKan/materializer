@@ -2,31 +2,32 @@
 % Please edit documentation in R/materialize-fab.R
 \name{material_fab}
 \alias{material_fab}
-\title{Create a materialize floating action button (fab)}
+\title{Create a materialize fab action button (fab)}
 \usage{
-material_fab(inputId, icon, size = "large", color = NULL,
-  direction = "left", position = "bottom-right", fixed = TRUE,
-  hover = TRUE, action = list(target = NULL, icon = NULL, size = NULL,
-  color = NULL))
+material_fab(inputId, actlist = list(), icon = "mode_edit",
+  size = "large", color = NULL, icolor = NULL, direction = "top",
+  position = "bottom-right", fixed = TRUE, hover = TRUE)
 }
 \arguments{
 \item{inputId}{String. The input identifier used to access the value.}
+
+\item{actlist}{List. A list of action attributes such as target, icon, size, color and icolor.}
 
 \item{icon}{String The name of the icon. Leave empty for no icon. Visit \url{http://materializecss.com/icons.html} for a list of available icons.}
 
 \item{size}{String. The size of the icon. Values should be 'large', 'medium' or 'small'.}
 
-\item{color}{String. The color name of the floating action button. Leave empty for the 'teal lighten-1' color. Visit \url{http://materializecss.com/color.html} for a list of available colors.}
+\item{color}{String. The color name of the fab action button. Leave empty for the 'teal lighten-1' color. Visit \url{http://materializecss.com/color.html} for a list of available colors.}
 
-\item{direction}{String. The direction of the floating action button when open. values should be 'top', 'right', 'buttom', 'left'.}
+\item{icolor}{String. The color name of the icon. Leave empty for the 'teal lighten-1' color. Visit \url{http://materializecss.com/color.html} for a list of available colors.}
 
-\item{position}{String. The position of the floating action button. Values should be 'bottom-left', 'bottom-right', 'top-left' and 'top-right'.}
+\item{direction}{String. The direction of the fab action button when open. values should be 'top', 'right', 'buttom', 'left'.}
 
-\item{fixed}{Logical. The floating action button should be fixed?}
+\item{position}{String. The position of the fab action button. Values should be 'bottom-left', 'bottom-right', 'top-left' and 'top-right'.}
 
-\item{hover}{Logical. Should the floating action button be hoveable ?}
+\item{fixed}{Logical. The fab action button should be fixed?}
 
-\item{action}{List. A list of action attributes such as target, icon, size and color.}
+\item{hover}{Logical. Should the fab action button be hoveable ?}
 }
 \description{
 Build a materialize button. The initial value is zero, and increases by one on each press.
@@ -35,11 +36,11 @@ Build a materialize button. The initial value is zero, and increases by one on e
 require(materializer)
 material_fab(
   inputId = "example_flt_action",
+  actlist = list(
+    c(target = "ex1", icon = "home"),
+    c(target = "ex2", icon = "chart")
+  ),
   icon = "add",
-  color = 'teal lighten-1',
-  action = list(
-    target = c("id1", "id2", "id3", "id4"),
-    icon = c("model_edit", "insert_chart", "attach_file", "publish")
-  )
+  color = 'teal lighten-1'
 )
 }

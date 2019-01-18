@@ -5,8 +5,8 @@
 \alias{update_material_rating}
 \title{Create a materialize rating}
 \usage{
-material_rating(inputId, n = 5L, checked = 3, size = 1.25,
-  space = 3, disabled = FALSE, color = NULL, ...)
+material_rating(inputId, n = 5L, checked = 3, size = "1.25em",
+  space = "3em", disabled = FALSE, color = NULL, ...)
 
 update_material_rating(inputId, checked = NULL, disabled = NULL,
   session = shiny::getDefaultReactiveDomain())
@@ -18,9 +18,9 @@ update_material_rating(inputId, checked = NULL, disabled = NULL,
 
 \item{checked}{Double The rating value, cloud be half values.}
 
-\item{size}{Double. The size of the star rating based on 'em' css}
+\item{size}{String. The size of the star rating. Could be any css length.}
 
-\item{space}{Double. THe space between the stars based on pixels.}
+\item{space}{String. THe space between the stars. Could be any css length.}
 
 \item{disabled}{Boolean. Is the rating disable?}
 

@@ -1077,8 +1077,8 @@ if (typeof define === 'function' && define.amd) {
   });
 
   // Common JS
-} else if (typeof exports !== 'undefined' && !exports.nodeType) {
-  if (typeof module !== 'undefined' && !module.nodeType && module.exports) {
+} else if (typeof exports !== undefined && !exports.nodeType) {
+  if (typeof module !== undefined && !module.nodeType && module.exports) {
     exports = module.exports = M;
   }
   exports.default = M;
@@ -6516,7 +6516,7 @@ $jscomp.polyfill = function (e, r, p, m) {
         this.container.addEventListener('mousedown', this._handleContainerMousedownAndTouchstartBound);
         this.container.addEventListener('mouseup', this._handleContainerMouseupAndTouchendBound);
 
-        if (typeof window.ontouchstart !== 'undefined') {
+        if (typeof window.ontouchstart !== undefined) {
           this.container.addEventListener('touchstart', this._handleContainerMousedownAndTouchstartBound);
           this.container.addEventListener('touchend', this._handleContainerMouseupAndTouchendBound);
         }
@@ -6537,7 +6537,7 @@ $jscomp.polyfill = function (e, r, p, m) {
         this.container.removeEventListener('mousedown', this._handleContainerMousedownAndTouchstartBound);
         this.container.removeEventListener('mouseup', this._handleContainerMouseupAndTouchendBound);
 
-        if (typeof window.ontouchstart !== 'undefined') {
+        if (typeof window.ontouchstart !== undefined) {
           this.container.removeEventListener('touchstart', this._handleContainerMousedownAndTouchstartBound);
           this.container.removeEventListener('touchend', this._handleContainerMouseupAndTouchendBound);
         }
@@ -10012,7 +10012,7 @@ $jscomp.polyfill = function (e, r, p, m) {
       value: function _updateTimeFromInput() {
         // Get the time
         var value = ((this.el.value || this.options.defaultTime || '') + '').split(':');
-        if (this.options.twelveHour && !(typeof value[1] === 'undefined')) {
+        if (this.options.twelveHour && !(typeof value[1] === undefined)) {
           if (value[1].toUpperCase().indexOf('AM') > 0) {
             this.amOrPm = 'AM';
           } else {
@@ -10558,7 +10558,7 @@ $jscomp.polyfill = function (e, r, p, m) {
       _this62.xform = 'transform';
       ['webkit', 'Moz', 'O', 'ms'].every(function (prefix) {
         var e = prefix + 'Transform';
-        if (typeof document.body.style[e] !== 'undefined') {
+        if (typeof document.body.style[e] !== undefined) {
           _this62.xform = e;
           return false;
         }
@@ -10596,7 +10596,7 @@ $jscomp.polyfill = function (e, r, p, m) {
         this._handleCarouselReleaseBound = this._handleCarouselRelease.bind(this);
         this._handleCarouselClickBound = this._handleCarouselClick.bind(this);
 
-        if (typeof window.ontouchstart !== 'undefined') {
+        if (typeof window.ontouchstart !== undefined) {
           this.el.addEventListener('touchstart', this._handleCarouselTapBound);
           this.el.addEventListener('touchmove', this._handleCarouselDragBound);
           this.el.addEventListener('touchend', this._handleCarouselReleaseBound);
@@ -10631,7 +10631,7 @@ $jscomp.polyfill = function (e, r, p, m) {
       value: function _removeEventHandlers() {
         var _this64 = this;
 
-        if (typeof window.ontouchstart !== 'undefined') {
+        if (typeof window.ontouchstart !== undefined) {
           this.el.removeEventListener('touchstart', this._handleCarouselTapBound);
           this.el.removeEventListener('touchmove', this._handleCarouselDragBound);
           this.el.removeEventListener('touchend', this._handleCarouselReleaseBound);

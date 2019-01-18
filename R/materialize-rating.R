@@ -4,8 +4,8 @@
 #' @param inputId String. The input identifier used to access the value.
 #' @param n integer The number of stars
 #' @param checked Double The rating value, cloud be half values.
-#' @param size Double. The size of the star rating based on 'em' css
-#' @param space Double. THe space between the stars based on pixels.
+#' @param size String. The size of the star rating. Could be any css length.
+#' @param space String. THe space between the stars. Could be any css length.
 #' @param disabled Boolean. Is the rating disable?
 #' @param color String. The color name of the Checkbox. Leave empty for the 'yellow accent-4' color. Visit \url{http://materializecss.com/color.html} for a list of available colors.
 #' @param ... Aditional parameters
@@ -19,7 +19,7 @@
 #' )
 #' @export
 
-material_rating <- function(inputId, n = 5L, checked = 3, size = 1.25, space = 3, disabled = FALSE, color = NULL, ...) {
+material_rating <- function(inputId, n = 5L, checked = 3, size = "1.25em", space = "3em", disabled = FALSE, color = NULL, ...) {
   if (is.null(color)) color <- "yellow accent-4"
   colorhex <- material_colormap(color)
 
@@ -77,7 +77,7 @@ material_rating <- function(inputId, n = 5L, checked = 3, size = 1.25, space = 3
     ),
     includeInHead(
       style = shiny::HTML(paste0(
-        '.rating > label:before { margin: ',space,'px; font-size: ',size,'em; !important;};'
+        '.rating > label:before { margin: ',space,'; font-size: ',size,'; !important;};'
       ))
     ),
     ...

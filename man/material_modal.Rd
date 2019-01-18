@@ -2,25 +2,31 @@
 % Please edit documentation in R/materialize-modal.R
 \name{material_modal}
 \alias{material_modal}
+\alias{material_modal_trigger}
+\alias{material_modal_close}
 \title{Place UI content in a modal}
 \usage{
-material_modal(inputId, ..., btnShow = material_button(paste0(inputId,
-  "_show"), "Show"), btnClose = material_button(paste0(inputId,
-  "_close"), "Close", class = "flat"), fixedFooter = FALSE,
+material_modal(inputId, content, footer = NULL, fixedFooter = FALSE,
   bgcolor = "grey lighten-4")
+
+material_modal_trigger(tagList, triggerId)
+
+material_modal_close(tagList)
 }
 \arguments{
 \item{inputId}{String. The ID for the modal. Must be unique per application.}
 
-\item{...}{The UI elements to place in the modal}
+\item{content}{The UI elements to place in the modal}
 
-\item{btnShow}{Button. The modal's show button tag.}
-
-\item{btnClose}{Button. The modal's close button tag.}
+\item{footer}{The UI elements to place in the footer}
 
 \item{fixedFooter}{Logical. Should the footer be fixed?}
 
 \item{bgcolor}{Body background color. Leave blank for "grey lighten-4" color. Visit \url{http://materializecss.com/color.html} for a list of available colors.}
+
+\item{tagList}{A tagList (button) to trigger/close the modal}
+
+\item{triggerId}{The Id to be triggered.}
 }
 \description{
 Put any UI object inside of a modal. The modal will open when the button is pressed.
@@ -28,7 +34,14 @@ Put any UI object inside of a modal. The modal will open when the button is pres
 \examples{
 require(materializer)
 material_modal(
-  inputId = "example_modal",
-  shiny::tags$p("Modal Content")
+  inputId = "modal",
+  content = shiny::tags$p("Modal Content"),
+  footer = material_modal_close(
+    material_button("close", icon = "close", class = "flat")
+  )
+)
+material_modal_trigger(
+  triggerId = "modal",
+  material_button("show", icon = "open_in_new", class = "round")
 )
 }
