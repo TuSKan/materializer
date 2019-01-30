@@ -5,8 +5,8 @@
 \alias{update_material_tags}
 \title{Material Tags (Chips)}
 \usage{
-material_tags(inputId, tags = list(), placeholder = NULL,
-  autocomplete = NULL, color = NULL, ...)
+material_tags(inputId, tags = list(), readonly = FALSE,
+  placeholder = "", autocomplete = NULL, color = NULL, ...)
 
 update_material_tags(inputId, addtags = NULL, deltags = NULL,
   seltags = NULL, session = shiny::getDefaultReactiveDomain())
@@ -14,7 +14,9 @@ update_material_tags(inputId, addtags = NULL, deltags = NULL,
 \arguments{
 \item{inputId}{String.}
 
-\item{tags}{list A list of tag elements, could have 'tag', 'icon', 'image'.}
+\item{tags}{list. A list of tag elements, could have 'tag', 'icon', 'image'.}
+
+\item{readonly}{Boolean. Should the tags be readonly?}
 
 \item{placeholder}{String. A placeholder for the input text.}
 

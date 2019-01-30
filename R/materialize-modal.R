@@ -6,6 +6,7 @@
 #' @param footer  The UI elements to place in the footer
 #' @param fixedFooter Logical. Should the footer be fixed?
 #' @param bgcolor Body background color. Leave blank for "grey lighten-4" color. Visit \url{http://materializecss.com/color.html} for a list of available colors.
+#' @param ... tagList. Aditional tag elements.
 #' @examples
 #' require(materializer)
 #' material_modal(
@@ -20,7 +21,7 @@
 #'   material_button("show", icon = "open_in_new", class = "round")
 #' )
 #' @export
-material_modal <- function(inputId, content, footer = NULL, fixedFooter = FALSE, bgcolor = "grey lighten-4") {
+material_modal <- function(inputId, content, footer = NULL, fixedFooter = FALSE, bgcolor = "grey lighten-4", ...) {
   shiny::div(
     id = inputId,
     class = paste("materialize-modal", "modal", if (fixedFooter) "modal-fixed-footer"),
@@ -32,6 +33,7 @@ material_modal <- function(inputId, content, footer = NULL, fixedFooter = FALSE,
       class = "modal-footer",
       footer
     ),
+    ...,
     includeInHead(
       "materialize-modal.js",
       style = paste0(

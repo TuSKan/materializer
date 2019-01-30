@@ -1,18 +1,20 @@
 $(document).ready(function () {
 
-      var placeholder = $('.chips-placeholder').attr("data-placeholder");
-      var initial = JSON.parse($('.chips-initial').attr("data-initial"));
-      var autocomplete = JSON.parse($('.chips-autocomplete').attr("data-autocomplete"));
-     $('.materialize-tags').chips({
-        data: initial,
+    if ( $('.materialize-tags').attr("readonly") === undefined) {
+      var initial = $('.materialize-tags').attr("data-initial");
+      var placeholder = $('.materialize-tags').attr("data-placeholder");
+      var autocomplete = $('.materialize-tags').attr("data-autocomplete");
+      $('.materialize-tags').chips({
+        data: initial === undefined ? {} : JSON.parse(initial),
         placeholder: placeholder,
         secondaryPlaceholder: placeholder,
         autocompleteOptions: {
-         data: autocomplete,
+         data: autocomplete === undefined ? {} : JSON.parse(autocomplete),
           limit: Infinity,
           minLength: 1
         }
-     });
+      });
+    }
 
      var materializeTags = new Shiny.InputBinding();
      $.extend(materializeTags, {
@@ -23,8 +25,12 @@ $(document).ready(function () {
              return M.Chips.getInstance(el).chipsData;
          },
          subscribe: function (el, callback) {
-             $(el).on("change.materialize-tags", function (e) {
+             $(el).on("change", function (e) {
                  callback();
+             });
+             $(el).on("keydown", function (e) {
+               if(e.which == 13)
+                 Shiny.setInputValue($(el).attr('id'), M.Chips.getInstance(el).chipsData);
              });
          },
          unsubscribe: function (el) {
@@ -36,7 +42,7 @@ $(document).ready(function () {
               if (data.addtags.length !== undefined) {
                   $.each(data.addtags, function(tag) {
                      instance.addChip(tag);
-              });
+                  });
               }
               else {
                  instance.addChip(data.addtags);
@@ -46,21 +52,21 @@ $(document).ready(function () {
            if (data.deltags !== undefined) {
              if (data.deltags.length !== undefined) {
                   $.each(data.deltags, function(tag) {
-                     instance.deleteChip(tag);
-              });
+                     instance.deleteChip(tag + 1);
+                  });
               }
               else {
-                 instance.deleteChip(data.deltags);
+                 instance.deleteChip(data.deltags + 1);
               }
            }
            if (data.seltags !== undefined) {
               if (data.seltags.length !== undefined) {
                   $.each(data.seltags, function(tag) {
-                     instance.selectChip(tag);
-              });
+                     instance.selectChip(tag + 1);
+                  });
               }
               else {
-                 instance.selectChip(data.seltags);
+                 instance.selectChip(data.seltags + 1);
               }
            }
          }

@@ -7,7 +7,7 @@
 \title{Place UI content in a modal}
 \usage{
 material_modal(inputId, content, footer = NULL, fixedFooter = FALSE,
-  bgcolor = "grey lighten-4")
+  bgcolor = "grey lighten-4", ...)
 
 material_modal_trigger(tagList, triggerId)
 
@@ -23,6 +23,8 @@ material_modal_close(tagList)
 \item{fixedFooter}{Logical. Should the footer be fixed?}
 
 \item{bgcolor}{Body background color. Leave blank for "grey lighten-4" color. Visit \url{http://materializecss.com/color.html} for a list of available colors.}
+
+\item{...}{tagList. Aditional tag elements.}
 
 \item{tagList}{A tagList (button) to trigger/close the modal}
 

@@ -10,7 +10,6 @@ ui <-
     material_page(
       inputId = "page1",
       h2("Tags"),
-      hr(),
       material_row(
         material_column(
           width = 4,
@@ -31,7 +30,7 @@ ui <-
           width = 8,
           material_tags(
             inputId = "tags",
-            editable = FALSE,
+            readonly = FALSE,
             tags = list(c(tag = "Apple"),
                         c(tag = "Amazon"),
                         c(tag = "Google")),
