@@ -5,6 +5,8 @@
 .rating {
   border: none;
   float: left;
+  padding: 0;
+  margin: 0;
 }
 
 .rating > input {
@@ -12,7 +14,6 @@
 }
 
 .rating > label:before {
-  margin: 3px;
   font-size: 1.25em;
   font-family: FontAwesome;
   display: inline-block;

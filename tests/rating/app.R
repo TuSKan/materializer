@@ -3,6 +3,7 @@ library(shiny)
 library(materializer)
 
 color = "light-blue accent-4"
+color2 = "deep-orange darken-3"
 ui <-
   material_body(
     title = "Material Rating",
@@ -20,7 +21,11 @@ ui <-
           ),
         material_column(
           width = 8,
-          material_rating(inputId = "stars", n = 5, checked = 3.5, size = 5, space = 10, color = color, disabled = FALSE)
+          material_rating(inputId = "stars", n = 5, checked = 3.5, size = "3em", space = "0.1em", color = color, disabled = FALSE)
+        ),
+        material_column(
+          width = 8, offset = 4,
+          material_rating(inputId = "stars2", n = 5, checked = 3, size = "5em", space = "1em", color = color2, disabled = TRUE)
         )
       )
     )

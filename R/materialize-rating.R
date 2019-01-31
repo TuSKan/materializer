@@ -22,10 +22,11 @@
 material_rating <- function(inputId, n = 5L, checked = 3, size = "1.25em", space = "3em", disabled = FALSE, color = NULL, ...) {
   if (is.null(color)) color <- "yellow accent-4"
   colorhex <- material_colormap(color)
+  css.names(color)
 
   shiny::tags$fieldset(
     id = inputId,
-    class = paste("materialize-rating", "rating"),
+    class = paste("materialize-rating", "rating", css.names(color), paste0("size",size,"space",space)),
     lapply(n:1, function(i) {
       shiny::tagList(
         shiny::tags$input(
@@ -62,22 +63,22 @@ material_rating <- function(inputId, n = 5L, checked = 3, size = "1.25em", space
     ),
     includeInHead(
       style = shiny::HTML(paste0(
-        '.rating > input:checked ~ label,\n',
-        '.rating:not(:checked) > input:not(:disabled) ~ label:hover,\n',
-        '.rating:not(:checked) > input:not(:disabled) ~ label:hover ~ label { color: ', colorhex, ' !important; };'
+        '.rating', '.', css.names(color), '.', paste0("size",size,"space",space),' > input:checked ~ label,\n',
+        '.rating', '.', css.names(color), '.', paste0("size",size,"space",space),':not(:checked) > input:not(:disabled) ~ label:hover,\n',
+        '.rating', '.', css.names(color), '.', paste0("size",size,"space",space),':not(:checked) > input:not(:disabled) ~ label:hover ~ label { color: ', colorhex, ' !important; };'
       ))
     ),
     includeInHead(
       style = shiny::HTML(paste0(
-        '.rating > input:not(:disabled):checked + label:hover,\n',
-        '.rating > input:not(:disabled):checked ~ label:hover,\n',
-        '.rating > label:hover ~ input:not(:disabled):checked ~ label,\n',
-        '.rating > input:not(:disabled):checked ~ label:hover ~ label { color: rgba(', paste(hex2rgb(colorhex) - 30,collapse = ","),',1) !important; };'
+        '.rating', '.', css.names(color), '.', paste0("size",size,"space",space),'  > input:not(:disabled):checked + label:hover,\n',
+        '.rating', '.', css.names(color), '.', paste0("size",size,"space",space),'  > input:not(:disabled):checked ~ label:hover,\n',
+        '.rating', '.', css.names(color), '.', paste0("size",size,"space",space),'  > label:hover ~ input:not(:disabled):checked ~ label,\n',
+        '.rating', '.', css.names(color), '.', paste0("size",size,"space",space),'  > input:not(:disabled):checked ~ label:hover ~ label { color: rgba(', paste(hex2rgb(colorhex) - 30,collapse = ","),',1) !important; };'
       ))
     ),
     includeInHead(
       style = shiny::HTML(paste0(
-        '.rating > label:before { margin: ',space,'; font-size: ',size,'; !important;};'
+        '.rating', '.', css.names(color), '.', paste0("size",size,"space",space),' > label:before { margin: ',space,'; font-size: ',size,'; !important;};'
       ))
     ),
     ...
