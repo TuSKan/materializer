@@ -25,7 +25,17 @@ $(document).ready(function () {
         },
         unsubscribe: function (el) {
             $(el).off(".materialize-modal");
-        }
+        },
+        receiveMessage: function(el, data) {
+           var $el = $(el);
+
+            if (data.content !== undefined) {
+              Shiny.unbindAll(el);
+              $el.find('.modal-content').empty().append(data.content);
+              $el.change();
+              Shiny.bindAll(el);
+            }
+         }
     });
 
     Shiny.inputBindings.register(materializeModal);

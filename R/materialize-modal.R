@@ -65,3 +65,15 @@ material_modal_close <- function(tagList) {
     class = "modal-action modal-close"
   )
 }
+
+#' @rdname material_modal
+#' @param session Shiny default reactive domain.
+#' @export
+update_material_modal <- function(inputId, content = NULL, session = shiny::getDefaultReactiveDomain()) {
+  session$sendInputMessage(
+    inputId,
+    cleanList(
+      content = as.character(content)
+    )
+  )
+}

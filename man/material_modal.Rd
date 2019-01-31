@@ -4,6 +4,7 @@
 \alias{material_modal}
 \alias{material_modal_trigger}
 \alias{material_modal_close}
+\alias{update_material_modal}
 \title{Place UI content in a modal}
 \usage{
 material_modal(inputId, content, footer = NULL, fixedFooter = FALSE,
@@ -12,6 +13,9 @@ material_modal(inputId, content, footer = NULL, fixedFooter = FALSE,
 material_modal_trigger(tagList, triggerId)
 
 material_modal_close(tagList)
+
+update_material_modal(inputId, content = NULL,
+  session = shiny::getDefaultReactiveDomain())
 }
 \arguments{
 \item{inputId}{String. The ID for the modal. Must be unique per application.}
@@ -29,6 +33,8 @@ material_modal_close(tagList)
 \item{tagList}{A tagList (button) to trigger/close the modal}
 
 \item{triggerId}{The Id to be triggered.}
+
+\item{session}{Shiny default reactive domain.}
 }
 \description{
 Put any UI object inside of a modal. The modal will open when the button is pressed.
