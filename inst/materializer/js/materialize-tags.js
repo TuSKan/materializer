@@ -22,7 +22,11 @@ $(document).ready(function () {
              return $(scope).find(".materialize-tags");
          },
          getValue: function (el) {
-             return M.Chips.getInstance(el).chipsData;
+           var tags = M.Chips.getInstance(el);
+           if (tags !== undefined) {
+             return tags.chipsData;
+           }
+           return null;
          },
          subscribe: function (el, callback) {
              $(el).on("change", function (e) {
