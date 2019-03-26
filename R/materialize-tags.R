@@ -37,8 +37,7 @@ material_tags <- function(inputId, tags = list(), readonly = FALSE, placeholder 
         shiny::div(
           class = "chip",
           if (!is.null(tag[["image"]])) shiny::img(src = tag[["image"]]),
-          tag[["tag"]],
-          material_icon("close", align = "right", class = "close")
+          tag[["tag"]]
         )
       })
    },
