@@ -23,7 +23,7 @@ material_rating <- function(inputId, n = 5L, checked = 3, size = "1.25em", space
   if (is.null(color)) color <- "yellow accent-4"
   colorhex <- material_colormap(color)
   css.names(color)
-  checked = ifelse(is.na(as.numeric(checked)), 0, as.numeric(checked))
+  checked = ifelse(is.na(as.numeric(checked)) || is.null(checked), 0, as.numeric(checked))
 
   shiny::tags$fieldset(
     id = inputId,
