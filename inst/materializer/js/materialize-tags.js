@@ -36,9 +36,15 @@ $(document).ready(function () {
          subscribe: function (el, callback) {
              $(el).on("change", function (e) {
                  callback();
+                 Shiny.setInputValue($(el).attr('id'), M.Chips.getInstance(el).chipsData);
              });
              $(el).on("keydown", function (e) {
+               callback();
                if(e.which == 13)
+                 Shiny.setInputValue($(el).attr('id'), M.Chips.getInstance(el).chipsData);
+             });
+              $(el).on("click", function (e) {
+                 callback();
                  Shiny.setInputValue($(el).attr('id'), M.Chips.getInstance(el).chipsData);
              });
          },
