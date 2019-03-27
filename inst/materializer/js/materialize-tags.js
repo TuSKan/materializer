@@ -1,20 +1,25 @@
 $(document).ready(function () {
 
-    if ( $('.materialize-tags').attr("readonly") === undefined) {
-      var initial = $('.materialize-tags').attr("data-initial");
-      var placeholder = $('.materialize-tags').attr("data-placeholder");
-      var autocomplete = $('.materialize-tags').attr("data-autocomplete");
-      $('.materialize-tags').chips({
-        data: initial === undefined ? {} : JSON.parse(initial),
-        placeholder: placeholder,
-        secondaryPlaceholder: placeholder,
-        autocompleteOptions: {
-         data: autocomplete === undefined ? {} : JSON.parse(autocomplete),
-          limit: Infinity,
-          minLength: 1
+    document.querySelectorAll('.materialize-tags').forEach(function(tag) {
+      if ( tag.getAttribute("readonly") !== "readonly") {
+          var initial = tag.getAttribute("data-initial");
+          var placeholder = tag.getAttribute("data-placeholder");
+          var autocomplete = tag.getAttribute("data-autocomplete");
+          M.Chips.init(
+            tag,
+            {
+              data: initial === undefined ? {} : JSON.parse(initial),
+              placeholder: placeholder,
+              secondaryPlaceholder: placeholder,
+              autocompleteOptions: {
+               data: autocomplete === undefined ? {} : JSON.parse(autocomplete),
+                limit: Infinity,
+                minLength: 1
+              }
+            }
+          );
         }
-      });
-    }
+    });
 
      var materializeTags = new Shiny.InputBinding();
      $.extend(materializeTags, {
@@ -42,7 +47,7 @@ $(document).ready(function () {
          },
          receiveMessage: function(el, data) {
            var instance = M.Chips.getInstance(el);
-           if (data.addtags !== undefined) {
+           if (data.addtags !== undefined && data.addtags !== null) {
               if (data.addtags.length !== undefined) {
                   $.each(data.addtags, function(tag) {
                      instance.addChip(tag);
@@ -53,24 +58,24 @@ $(document).ready(function () {
               }
            }
            var i = 0;
-           if (data.deltags !== undefined) {
+           if (data.deltags !== undefined && data.addtags !== null) {
              if (data.deltags.length !== undefined) {
                   $.each(data.deltags, function(tag) {
-                     instance.deleteChip(tag + 1);
+                     instance.deleteChip(tag);
                   });
               }
               else {
-                 instance.deleteChip(data.deltags + 1);
+                 instance.deleteChip(data.deltags);
               }
            }
            if (data.seltags !== undefined) {
               if (data.seltags.length !== undefined) {
                   $.each(data.seltags, function(tag) {
-                     instance.selectChip(tag + 1);
+                     instance.selectChip(tag);
                   });
               }
               else {
-                 instance.selectChip(data.seltags + 1);
+                 instance.selectChip(data.seltags);
               }
            }
          }

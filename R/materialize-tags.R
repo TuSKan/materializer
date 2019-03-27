@@ -30,7 +30,7 @@ material_tags <- function(inputId, tags = list(), readonly = FALSE, placeholder 
       if (!is.null(placeholder)) "chips-placeholder",
       if (!is.null(autocomplete)) "chips-autocomplete"
     ),
-    "readonly" = if (readonly) NA,
+    "readonly" = if (readonly) "readonly",
     if (readonly) {
       lapply(tags, function(tag) {
         tag <- as.list(tag)

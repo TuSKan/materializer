@@ -19,7 +19,7 @@ colortext <- function(color) {
 
 css.names <- function(x) gsub("[ ]|[.]|[_]", "-", x)
 
-isEmpty <- function(x) is.null(x) || length(x) == 0
+isEmpty <- function(x) is.null(x) || length(x) == 0 || sum(is.na(x)) == 1
 
 clean <- function(x) x[!vapply(x, isEmpty, FUN.VALUE = logical(1))]
 
