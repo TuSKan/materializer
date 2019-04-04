@@ -55,9 +55,9 @@ $(document).ready(function () {
            var instance = M.Chips.getInstance(el);
            if (data.addtags !== undefined && data.addtags !== null) {
               if (data.addtags.length !== undefined) {
-                  $.each(data.addtags, function(tag) {
-                     instance.addChip(tag);
-                  });
+                 data.addtags.forEach(function(tag) {
+                   instance.addChip(tag);
+                 });
               }
               else {
                  instance.addChip(data.addtags);
@@ -66,8 +66,8 @@ $(document).ready(function () {
            var i = 0;
            if (data.deltags !== undefined && data.addtags !== null) {
              if (data.deltags.length !== undefined) {
-                  $.each(data.deltags, function(tag) {
-                     instance.deleteChip(tag);
+                  data.deltags.forEach(function(tag) {
+                    instance.deleteChip(tag);
                   });
               }
               else {
@@ -76,9 +76,9 @@ $(document).ready(function () {
            }
            if (data.seltags !== undefined) {
               if (data.seltags.length !== undefined) {
-                  $.each(data.seltags, function(tag) {
-                     instance.selectChip(tag);
-                  });
+                  data.seltags.forEach(function(tag) {
+                   instance.selectChip(tag);
+                 });
               }
               else {
                  instance.selectChip(data.seltags);
