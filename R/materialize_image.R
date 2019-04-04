@@ -12,11 +12,11 @@
 #' require(materializer)
 #' material_img(src = "image.png", width = 50)
 #' @export
-material_img <- function(src, width = NULL, heigth = NULL, class = NULL, caption = NULL, ...) {
+material_img <- function(src, width = NULL, height = NULL, class = NULL, caption = NULL, ...) {
   shiny::tags$img(
     src = src,
     width = width,
-    heigth = heigth,
+    height = height,
     "data-caption" = caption,
     ...
   )
