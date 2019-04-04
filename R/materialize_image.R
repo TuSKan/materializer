@@ -3,8 +3,8 @@
 #'
 #' Createa material Image element
 #' @param src String. The file path of the image
-#' @param width Integer The width of the image in pixels
-#' @param heigth Integer The heigth of the image in pixels
+#' @param width String The width of the image in html metric. Could be 100px, auto, 100%
+#' @param heigth String The heigth of the image in html metric. Could be 100px, auto, 100%
 #' @param class String. Aditional class to image
 #' @param caption String. The caption of the image
 #' @param ... tagList. Any additional tag list
