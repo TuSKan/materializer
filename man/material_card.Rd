@@ -20,7 +20,7 @@ update_material_card(inputId, content = NULL, title = NULL,
 
 \item{title}{String. The title of the card}
 
-\item{img}{String. The filepath of a image of the card}
+\item{img}{String. A material_img tagList}
 
 \item{footer}{tagList. The UI elements to place in the card footer}
 

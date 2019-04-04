@@ -49,4 +49,5 @@ Collate:
     'materialize-tags.R'
     'materialize-text.R'
     'materialize-tooltip.R'
+    'materialize_image.R'
 Remotes: TuSKan/cuteFileBrowser

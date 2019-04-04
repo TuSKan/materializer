@@ -4,7 +4,7 @@
 #' @param inputId String. The input identifier used to access the value.
 #' @param content tagList. The UI elements to place in card content
 #' @param title String. The title of the card
-#' @param img String. The filepath of a image of the card
+#' @param img String. A material_img tagList
 #' @param footer tagList. The UI elements to place in the card footer
 #' @param class String. The aditional class to the card. Values should be stacked or panel.
 #' @param header Logical. Option to include a header in the card.
@@ -38,7 +38,7 @@ material_card <- function(inputId, content = NULL, title = NULL, img = NULL, foo
     if (header) {
       shiny::div(
         class = ifelse(is.null(img), "card-header", "card-image"),
-        if (!is.null(img)) shiny::img(src = img),
+        img,
         shiny::span(
           class = "card-title",
           title
