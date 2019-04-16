@@ -19,16 +19,13 @@ $(document).ready(function () {
          receiveMessage: function(el, data) {
             var $el = $(el);
             if(data.content !== undefined) {
-               $el.find('card-content').remove();
-               $el.append('<div class = "card-content">' + data.content + '</div>');
+               $el.find('.card-content').html(data.content);
             }
             if(data.title !== undefined) {
-               $el.find('card-title').remove();
-               $el.append('<span class = "card-title">' + data.title + '</span>');
+               $el.find('.card-title').text(data.title);
             }
             if(data.footer !== undefined) {
-               $el.find('card-action').remove();
-               $el.append('<div class = "card-action">' + data.footer + '</div>');
+               $el.find('.card-action').html(data.footer);
             }
             $el.change();
          }
